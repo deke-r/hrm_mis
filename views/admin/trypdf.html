@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Preview</title>
+</head>
+<body>
+
+<input type="file" id="pdfInput">
+<div id="pdfPreviewContainer">
+  <embed id="pdfPreview" type="application/pdf" width="100%" height="600px" />
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#pdfInput').on('change', function(e) {
+    var file = e.target.files[0];
+    if (file.type === 'application/pdf') {
+      var reader = new FileReader();
+      reader.onload = function(event) {
+        $('#pdfPreview').attr('src', event.target.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert('Please select a PDF file.');
+    }
+  });
+});
+</script>
+
+</body>
+</html>

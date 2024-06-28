@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM </title>
+    <link rel="icon" href="/static/images/it.webp" >
+    <link rel="stylesheet" href="/static/css/to_do_list.css">
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+    
+
+    
+
+</head>
+<body>
+    <%-include('../common/header')%>
+    
+      <%-include('../common/sidebar')%>
+
+      <div class="mt-5"></div>
+      <div class="container-fluid h-100 position-relative">
+          <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+         <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+            </button>
+      <div class="row dyn_row justify-content-end ">
+      
+      
+      <div class="col-xl-10 col-md-9 col-8 dyn_col">  
+
+        <div class="container-fluid parentbox  my-4">
+            <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+              <div class="row bg_bck border-t">
+                <h5 class="text-light text-center f_16 mt-2">Manage Request</h5>
+              </div>
+              <div class="row">
+                <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+              </div>
+  
+  
+              <div class="container-fluid parentbox my-4">
+                <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+                  <div class="row vbvb border-t">
+  
+                      
+          <div class="px-1 table-responsive table_1 mt-4">
+            <table class="w-100 table table-bordered table-striped " id="jd_table">
+                <thead class="top_fix">
+                    <tr class="text-center text-nowrap f_13 bg_b fw_600">
+                        <th>Request ID</th>
+                        <th>Candidate ID</th>
+                        <th>Name</th>
+                        <th>Leave Type</th>
+                        <th>No of Days</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <%for(let i=0; i<data1.length; i++){%>
+                    <tr class="f_13 text-center text-nowrap">
+                        <td><%= data1[i].request_id %></td>
+                        <td><%= data1[i].candidate_id %></td>
+                        <td><%= data1[i].candidate_name %></td>
+                        <td><%= data1[i].leave_type %></td>
+                        <td><%= data1[i].no_of_days %></td>
+
+
+                        <td>
+                            <!-- <button class="btn_sty bg_green w_75">Approved</button>
+                            <button class="btn_sty bg_red w_75">Reject</button> -->
+                            <a href="/to_do_list_view/<%= data1[i].candidate_id %>/<%= data1[i].request_id %>">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+
+
+
+                        </td>
+                        
+                        
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+
+
+
+      
+        </div>
+                  </div>
+  
+  
+  
+                 
+  
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+
+<script src="/static/js/main_dataTable.js"></script>
+<script src="/static/js/to_do_list.js"></script>
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+
+</body>
+</html>

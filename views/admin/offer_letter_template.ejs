@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp" >
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+    <link rel="stylesheet" href="/static/css/offer_letter_template.css">
+   
+  </head>
+  <body>
+    <%-include('../common/header')%> <%-include('../common/sidebar')%>
+    <div class="mt-5"></div>
+    <div class="container-fluid h-100 position-relative">
+        <button class=" pos offbtn  p-0 " type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i
+                class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+        </button>
+        <div class="row dyn_row justify-content-end ">
+
+            <div class="col-xl-10 col-md-9 col-8 dyn_col px-3">
+
+              <h5 class="text-center mt-3 text-light fs_16" ><center>Offer Letter Template</center> </h5>
+              <div class="p-1">
+                  <table class="w-100 table_text_aling_middle table-bordered border-dark" id="jd_table">
+              <thead class="table_bg">
+              <tr>
+                  <th>Candidate Id</th>
+                  <th>JD ID</th>
+                  <th>Candidate Name</th>
+                  <th>Candidate Email</th>
+                  <th>Candidate mobile</th>
+                
+                  <th>Generate</th>
+                 
+      
+              </tr>
+          </thead>
+          <tbody id="abcd">
+      
+              <%for(var i=0; all_data.length>i;  i++){%>
+                 
+                  <tr>
+                      <td><%=all_data[i].candidate_id%></td>
+                      <td><%=all_data[i].jd_id%></td>
+                      <td><%=all_data[i].candidate_name%></td>
+                      <td><%=all_data[i].candidate_email%></td>
+                      <td><%=all_data[i].candidate_mobile%></td>
+                     
+                    
+                     
+                    
+              <td><i class="fa-solid fa-eye view_req"  id="offer_letter_btn"  candidate_id="<%=all_data[i].candidate_id%>" candidate_name="<%=all_data[i].candidate_name%>"  candidate_email="<%=all_data[i].candidate_email%>"></i></td>
+                     
+                          <!-- <td><i class="fa-solid fa-file-pdf dwnld" ></i></td> -->
+                          <!-- <td><i class="fa fa-trash text-danger delete" r_id="<%=all_data[i].r_id%>"  level="<%=all_data[i].level%>" ></i></td> -->
+                  </tr>
+            
+            <%}%>
+                  
+           
+         
+       
+          </tbody>
+              </table>
+          
+           
+          </div>
+
+          <div id="offer_letter">
+
+       
+         
+
+        </div>
+
+
+        <div class="container-fluid mt-3 d-none   pdf" id="content-pdf">
+          <table class="table">
+            <thead>
+              <tr class="border-none">
+                <th colspan="" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div>
+                      <img src="/static/images/logo.png" height="80px" width="140px">
+                    </div>
+                  </div>
+                </th>
+                <th colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-end align-items-center">
+                    <div class="f_14 fw_600">
+                      April 2,2024
+                    </div>
+                  </div>
+                </th>
+              </tr>
+              
+            </thead>
+            <tbody>
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-center">
+                    <div class="f_14 fw_600 text-center">
+                      Sub: <u class="fw-bold">Offer of appointment</u>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_14 fw-bold">
+                      Dear Adhrit
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw_600">
+                      This has reference to your application and subsequent discussion with us. We are pleased to offer you an
+                      appointment in our organization as
+                      Territory Executive – WWA, based out of Kurnool – Andhra Pradesh, on the terms and conditions as have been
+                      mutually agreed upon. </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw_600">
+                      We welcome you to Jubilant Agri & Consumer Products Limited, and look forward to having a happy
+                      association. Please sign the duplicate copy of
+                      this letter in token of your acceptance and return the same to us </div>
+                  </div>
+                </td>
+              </tr>
+        
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw_600">
+                      Please note that the cost that will be incurred on account of your joining or reimbursement to you by the
+                      company i.e. Relocation Expenses, OneTime Joining Bonus and Notice Pay Reimbursement will be recovered in
+                      the full in the event of your leaving the company before completion of 12
+                      months of the services in the company.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+        
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw_600">
+                      YIt is understood that our decision to appoint you is based on information provided by you in the
+                      application and during the time of interview, you
+                      had with us. If, later, the information found to be incorrect, your employment is liable to be terminated
+                      without any notice or salary in lieu of
+                      notice.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+        
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw_600">
+                      The company reserves the right to verify your documents and background through internal or external
+                      agencies. These may include your previous
+                      employment history, education/ professional credentials and other background checks. </div>
+                  </div>
+                </td>
+              </tr>
+        
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw_600">
+                      This offer shall automatically stands withdrawn if we do not receive your acceptance within three days
+                      from the date of receipt of offer and your
+                      resignation mail within five days from the offer date. </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw_600">
+                      This offer is subject to satisfactory completion of pre-employment medical examination, reference check,
+                      verification and authentication
+                      of following documents with original that you need to present on the date of joining: -
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                   <ol class="f_13 fw_600">
+                    <li>Pan Card, Aadhar Car, UAN Card from previous employer</li>
+                    <li>Photocopies of your educational qualification certificates</li>
+                    <li>Four recent passport size photographs</li>
+                    <li>Relieving letter from your previous employer with copy of the last pay-slip</li>
+                    <li>Certificate for current year income and tax deducted by previous employer.
+                    </li>
+                    <li>Cancelled cheque with name printed on it.</li>
+
+                   </ol>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw_600">
+                      We once again would like to thank you for your interest and hope you will have a fruitful and successful career with us.
+<br>Thanking you,
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw_600">
+                      For<span class="fw-bold"> Jubilant Agri & Consumer Products Ltd.</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-none">
+                <td colspan="" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw-bold">
+                      Amit Roy Chowdhury<br>
+                      DGM – Human Resources 
+                                            </div>
+                  </div>
+                </td>
+                <td colspan="2" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_13 fw-bold">
+                      Rohit Jain<br>
+                      DGM – FP&A
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              
+              <tr class="border-none">
+                <td colspan="3" class="border-none">
+                  <div class="container-fluid d-flex justify-content-start">
+                    <div class="f_14 fw-bold t_b">
+                   <img src="/static/images/Capture.PNG" height="150px">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="loader-div d-none" id="loader-div">
+      <div class="loader">
+          <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+      </div>
+  </div>
+  
+  
+    <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+    <script src="/static/cdn/html2pdf/html2pdf.js"></script>
+    <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+    <script src="/static/js/main_dataTable.js"></script>
+    <script src="/static/js/offer_letter_template.js"></script>
+    
+  </body>
+</html>

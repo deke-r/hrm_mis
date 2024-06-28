@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp" >
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+    <link rel="stylesheet" href="/static/css/view_user.css">
+  
+</head>
+<body>
+   
+    <%-include('../common/header')%>
+    <%-include('../common/sidebar')%>
+
+    <div class="mt-5"></div>
+    <div class="container-fluid ">
+        <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+               </button>
+<div class="row  dyn_row justify-content-end">
+<!-- 
+    <div class="col-2 bgF9F9F9  height_vh px-0  text-white ">
+     <h6 class=" mb-0 text-center text-light py-2 bg_royal rounded-pills">vie</h6>
+   
+
+    </div> -->
+
+    <div class="col-xl-10 col-md-9 col-8 dyn_col ps-4 ">
+        <h5 class="text-center mt-3 text-light fs_16" ><center>View User</center> </h5>
+<div class="p-1">
+    <table class="w-100 table_text_aling_middle table-bordered border-dark" id="jd_table">
+<thead class="table_bg">
+            <tr>
+                <th>EMP CODE</th>
+                <th>EMP NAME</th>
+                <th>ROLE</th>
+                <th>EMP DESI</th>
+                <th>EMP Email ID</th>
+                <th>EMP NUMBER</th>
+                <th>EMP VERTICAL</th>
+                <th>REP MANAGER ID</th>
+                <th>REP MANAGER NAME</th>
+                <th>REP MANAGER Email ID</th>
+                <th>REP MANAGER MOBILE</th>
+               
+                <th>STATUS</th>
+                <th>Submit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% user_data.forEach(employee => { %>
+                <tr>
+                    
+                    <td><%= employee.EMP_CODE %></td>
+                    <td><%= employee.EMP_NAME %></td>
+                    <td><%= employee.ROLE %></td>
+                    <td><%= employee.EMP_DESI %></td>
+                    <td><%= employee.EMP_Email_ID %></td>
+                    <td><%= employee.EMP_NUMBER %></td>
+                    <td><%= employee.EMP_VERTICAL %></td>
+                    <td><%= employee.REP_MANAGER_ID %></td>
+                    <td><%= employee.REP_MANAGER_NAME %></td>
+                    <td><%= employee.REP_MANAGER_Email_ID %></td>
+                    <td><%= employee.REP_MANAGER_MOBILE %></td>
+                  
+                    <td> <select name="" id="STATUS" class="status-dropdown" data-status="<%= employee.STATUS %>" >
+                     <!-- <input type="text" value="<%= employee.STATUS %>">    -->
+                     <option value="1" <%= employee.STATUS == '1' ? 'selected' : '' %>>Active</option>
+                     <option value="0" <%= employee.STATUS == '0' ? 'selected' : '' %>>Deactive</option>
+                        
+                    </select></td>
+                    <td><button type="submit" id="submit_btn">Submit</button></td>
+
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+ 
+</div>
+    </div>
+</div>
+
+
+
+    </div>
+
+    <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+  
+    <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+    <script src="/static/js/main_dataTable.js"></script>
+  
+   <script src="/static/js/view_user.js"></script>
+    <!-- <script src="/static/cdn/printThis.js"></script> -->
+</body>
+</html>

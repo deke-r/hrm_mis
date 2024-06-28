@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HRM</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="icon" href="/static/images/it.webp" >
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.js"> -->
+    <link rel="stylesheet" href="/static/css/createuser.css">
+
+</head>
+<body>
+    <%-include('../common/header')%>
+    <%-include('../common/sidebar')%>
+    <div class="mt-5"></div>
+    <div class="container-fluid">
+        <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+               </button>
+<div class="row justify-content-end dyn_row">
+   
+<div class="col-xl-10 col-md-9 col-8 dyn_col px-3  ps-4">
+    <form id="employee-form" class="shadow_high row" method="post" action="/createuser">
+        
+        <center> <h6 class="create f_16">Create User</h6> </center> 
+      
+       
+                 <div class="col-md-6 col-12 col-lg-4   ">
+                     <label for="EMP_CODE">Employee Code:</label>
+                     <input type="text" class="form-control" id="EMP_CODE" name="EMP_CODE"   title="Employee code must start with '1600'"required placeholder="E.g., 1600XXXX">
+                 </div>
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="EMP_NAME">Employee Name:</label>
+                     <input type="text" class="form-control" id="EMP_NAME" name="EMP_NAME"  title="Please enter only characters" required placeholder="E.g., John Doe">
+                 </div>
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="role">Role:</label>
+                     <select class="form-select role f_12" name="ROLE" id="role" required>
+                         <option value="">Select a role</option>
+                         <option value="ADMIN">ADMIN</option>
+                         <option value="HR">HR</option>
+                     </select>
+                 </div>
+            
+     
+         
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="PASSWORD">Password:</label>
+                     <input type="password" class="form-control" id="PASSWORD" name="PASSWORD" placeholder="Enter your password">
+                 </div>
+            
+            
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="EMP_DESI">Employee Designation:</label>
+                     <input type="text" class="form-control" id="EMP_DESI" name="EMP_DESI" placeholder="Enter employee designation">
+                 </div>
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="EMP_Email_ID">Employee Email Id:</label>
+                     <input type="email" class="form-control" id="EMP_Email_ID" name="EMP_Email_ID" placeholder="E.g., example@example.com">
+                 </div>
+     
+     
+      
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="EMP_NUMBER">Employee Mobile:</label>
+                     <input type="text" class="form-control" id="EMP_NUMBER" name="EMP_NUMBER" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required placeholder="E.g., 9134567890">
+                 </div>
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="EMP_VERTICAL">Employee Vertical:</label>
+                     <input type="text" class="form-control" id="EMP_VERTICAL" name="EMP_VERTICAL" placeholder="Enter employee vertical">
+                 </div>
+            
+            
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="REP_MANAGER_ID">Reporting Manager Id:</label>
+                     <input type="text" class="form-control" id="REP_MANAGER_ID" name="REP_MANAGER_ID" placeholder="Enter reporting manager ID">
+                 </div>
+     
+   
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="REP_MANAGER_NAME">Reporting Manager Name:</label>
+                     <input type="text" class="form-control" id="REP_MANAGER_NAME" name="REP_MANAGER_NAME"  title="Please enter only characters" required required placeholder="E.g., Jane Smith">
+                 </div>
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="REP_MANAGER_Email_ID">Reporting Manager Email Id:</label>
+                     <input type="email" class="form-control" id="REP_MANAGER_Email_ID" name="REP_MANAGER_Email_ID" placeholder="E.g., manager@example.com">
+                 </div>
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="REP_MANAGER_MOBILE">Reporting Manager Mobile:</label>
+                     <input type="text" class="form-control" id="REP_MANAGER_MOBILE" name="REP_MANAGER_MOBILE" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required placeholder="E.g., 8834567890">
+                 </div>
+     
+           
+  
+                 <!-- <div class="col-md-6 col-12 col-lg-4">
+                     <label for="BRANCH">Branch:</label>
+                     <input type="text" class="form-control" id="BRANCH" name="BRANCH"placeholder="Enter branch">
+                 </div>
+                 <div class="col-md-6 col-12 col-lg-4">
+                     <label for="ZONE">Zone:</label>
+                     <select class="form-select zone f_12" name="ZONE" id="ZONE">
+                         <option value="">Select a zone</option>
+                         <option value="North">North</option>
+                         <option value="South">South</option>
+                         <option value="East">East</option>
+                         <option value="West">West</option>
+                     </select>
+                 </div> -->
+                 <div class="col-12 col-lg-12  p_30 text-center">
+                 <!-- Add more columns here if needed -->
+                 <center> <input type="submit" class="btn btn-primary f_12" value="Submit"></center>
+             </div>
+             
+       
+         </form>
+
+</div>
+
+</div>
+
+</div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+    <script src="/static/cdn/propper.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+    <script src="/static/js/createuser.js"></script>
+    <!-- <script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script> -->
+</body>
+</html>

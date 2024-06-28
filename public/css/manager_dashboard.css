@@ -1,0 +1,93 @@
+/* Custom CSS for mixed color nav bar */
+
+  /* Adjust text color for better contrast */
+  .navbar-custom .navbar-nav .nav-link {
+    color: #fff; /* white text color */
+  }
+
+
+
+ 
+  /* Style for container holding the three divs */
+  /* .container {
+    display: flex; 
+    justify-content: space-between; 
+  } */
+
+  /* Style for each individual div */
+  .box {
+    width: 30%; /* 30% width to fit three divs in one row */
+    background-size: cover; /* Ensure background image covers the entire div */
+    background-position: center; /* Center the background image */
+    height: 200px; /* Set height for the divs */
+  }
+
+  /* Background images for the divs */
+
+ 
+
+  /* Define background colors for each div */
+  #div1 {
+    background-image:  url('/static/images/emp_07-removebg-preview.png');
+    background-color: #dab221fb;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 70px 0;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) ;
+  }
+
+  #div2 {
+    background-image:  url('/static/images/cloud-uploading-icon-technology-graphic-removebg-preview.png');
+    background-color: #0882b6ab;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 70px 0;
+
+  border-radius: 10px;
+    color: white;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) ;
+  }
+
+  #div3 {
+    background-image:url('/static/images/admin_nobg.png');
+background-color:#5a9a6c ;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 70px 0;
+
+  border-radius: 10px;
+    color: white;;
+  
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) ;
+  }
+
+  #div4 {
+    
+    background-image: url('/static/images/jd_01-removebg-preview.png');
+    background-color: #0751a1b4;
+    background-position: center;
+    background-size: contain;
+    padding: 70px 0;
+    background-repeat: no-repeat;
+  border-radius: 10px;
+    color: white;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) ;
+  }
+
+  .onhov:hover{
+    transform: scale(1.05,1.05);
+    transition: 0.8s all;
+  }
+  
+  .onhov:hover h6{
+    /* background-color: #0c50a1;
+    padding: 2px 0px; */
+    transform: scale(1.05,1.05);
+    transition: 0.8s all;
+  }
+  

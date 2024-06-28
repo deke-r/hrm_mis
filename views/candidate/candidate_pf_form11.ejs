@@ -1,0 +1,702 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/candidate_pf_form11.css">
+    <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+</head>
+<body> -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HRM </title>
+        <link rel="icon" href="/static/images/logo.png" >
+        <link rel="stylesheet" href="/static/css/candidate_form.css">
+        <link rel="stylesheet" href="/static/css/candidate_pf_form11.css">
+        <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+              
+    </head>
+    <body>
+      <%-include('../common/candidate_common/candidate_header')%>
+      <%-include('../common/candidate_common/candidate_sidebar')%>
+    
+    
+      <div class="mt_46"></div>
+      <div class="container-fluid h-100 position-relative">
+        <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+       <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+          </button>
+    <div class="row dyn_row justify-content-end ">
+    
+    <div class="col-xl-10 col-md-9 col-8 dyn_col px-4" >
+    
+
+<input type="text" value="<%= data1[0].candidate_id %>" id="candidate_id" hidden>
+
+
+
+    <div class="container-fluid f_13 my-3 " >
+        <div class="row justify-content-center ">
+            <div class="col-12 border border-dark">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 text-end fw_bold">
+                            <div class="f_18">
+                                New Form No.11- Declaration Form
+                            </div>
+                            <div class="f_10">
+                                (To be retained by the employer for future reference)
+                            </div>
+                        </div> 
+                        <div class="col-12">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                        <img src="/static/images/pf_icon.png" alt="" width="90px">
+                                    </div>
+            
+                                    <div class="col-md-7">
+                                        <div class="f_20 fw_bold">
+                                            EMPLOYEES PROVIDENT FUND ORGANIZATION
+                                        </div>
+                                        <div class="f_15">
+                                            Employees provident funds scheme, 1952 (paragraph 34 & 57) & Employees pension scheme 1995 (paragraph 24)
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 ">
+                                        <table class="w-100 border border-dark border-2 table_border">
+                                            <tbody >
+                                                <tr >
+                                                    <td class="text-nowrap px-2 py-1">Emp Code:</td>
+                                                    <td class="px-2 py-1">
+                                                        <input type="text" class="input_style border_bottom" id="emp_code">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap px-2 py-1">Company:</td>
+                                                    <td class="px-2 py-1">
+                                                        <input type="text" class="input_style border_bottom" id="company">
+                                                    </td>
+                                                </tr>
+                
+                                            </tbody>
+                                           
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        (Declaration by a person taking up employment in any establishment on which EPF Scheme, 1952 end /of EPS1995 is applicable)
+                                    </div>
+                                </div>
+
+                                <!-- ----------------------pf form11 table start--------------- -->
+                                <!-- ----------------------pf form11 table start--------------- -->
+                                <div class="row table_1 fw_600 " style="overflow:auto;">
+                                    <table class=" w-100 border border-dark border-2 table_border"  id="pf_form11_tbl1">
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="ps-2">Name of the member</td>
+                                                <td >
+                                                    <input type="text" class="input_style" id="candidate_name" value="<%= data1[0].candidate_firstname %> <%= data1[0].candidate_lastname %>" readonly >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td class="ps-2">
+                                                    <div>
+                                                        Father’s Name ( <input type="checkbox" id="father" >  ) Spouse’s Name ( <input type="checkbox" id="candidate_father_spouse_name"> )
+                                                    </div>                                                    
+                                                    <div>
+                                                        (Please Tick Whichever Is Applicable)
+                                                    </div>
+                                                </td>
+                                                <td class="ps-2">
+                                                    <input type="text" class="input_style" id="father_spouse_name" value="<%= data1[0].spouse_name %>" readonly >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td class="ps-2">Date of Birth (DD/MM/YYYY)</td>
+                                                <td>
+                                                    <input type="text" class="input_style2 datepicker1" id="candidate_DOB" placeholder="DD-MM-YYYY" value="<%= data1[0].formatted_date_of_birth %>" disabled >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td class="ps-2">Gender: ( male / Female /Transgender )</td>
+                                                <td>
+                                                    <input type="text" class="input_style" id="candidate_gender" value="<%= data1[0].gender %>" readonly>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td class="ps-2">Marital Status (Married /Unmarried /Widow/Divorce)</td>
+                                                <td>
+                                                    <input type="text" class="input_style" id="candidate_marital_status" value="<%= data1[0].marital_status %>"  readonly>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2">6</td>
+                                                <td class="ps-2">(a)Email ID:</td>
+                                                <td>
+                                                    <input type="email" class="input_style" id="candidate_email_id" value="<%= data1[0].email_id %>" readonly>
+                                                </td>
+                                            </tr>
+                                            <tr>                                                
+                                                <td class="text-start ps-2">(b)Mobile No:</td>
+                                                <td>
+                                                    <input type="text" class="input_style" id="candidate_mobile_no" value="<%= data1[0].mobile_no %>" readonly>
+                                                </td>
+                                            </tr>
+
+                                            <tr> 
+                                                <td>7*</td>                                               
+                                                <td class="ps-2">Whether earlier a member of Employees ‘provident Fund Scheme 1952</td>
+                                                <td class="text-center">
+                                                    <span class="px-4">
+                                                        <span id="member_of_epfs_1952_yes">Yes</span>
+                                                         <input type="checkbox" class="ms-1 yes_check yes_check_epfs" >
+                                                    </span>
+                                                    <span class="px-4">
+                                                       <span id="member_of_epfs_1952_no">No</span>  
+                                                       <input type="checkbox" class="ms-1 no_check no_check_epfs" >
+                                                    </span>
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr> 
+                                                <td>8*</td>                                               
+                                                <td class="ps-2">Whether earlier a member of Employees ‘Pension Scheme ,1995</td>
+                                                <td class="text-center">
+                                                    <span class="px-4">
+                                                        <span id="member_of_eps_1995_yes">Yes</span>
+                                                        <input type="checkbox" class="ms-1 yes_check yes_check_eps" id="">
+                                                        
+                                                        <!-- <span id="member_of_epfs_1952_yes">Yes</span>
+                                                         <input type="checkbox" class="ms-1 yes_check" > -->
+                                                    </span>
+                                                    <span class="px-4">
+                                                        <span id="member_of_eps_1995_no">No</span>
+                                                        <input type="checkbox" class="ms-1 no_check no_check_eps" id="">
+                                                        
+                                                       <!-- <span>No</span>  <input type="checkbox" class="ms-1 no_check" id=""> -->
+                                                    </span>
+                                                    
+                                                </td>
+                                            </tr>    
+                                            
+                                            <tr> 
+                                                <td rowspan="6">9</td>                                               
+                                                <td colspan="2" class="fw_bold text-center f_16">
+                                                    If response to any or both of (7) & (8) above is yes. MANDATORY FILL UP THE (COLUMN 9)
+                                                </td>
+                                                
+                                            </tr> 
+
+                                            <tr> 
+                                                                                               
+                                                <td class="border-0 fw_bold text-start ps_50">
+                                                    a) Universal Account Number(UAN)
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="input_style2" id="uan_no">
+                                                </td>
+                                            </tr> 
+
+                                            <tr> 
+                                                                                               
+                                                <td class=" fw_bold text-start ps_50">
+                                                    b) Previous PF a/c No 
+                                                    <span>
+                                                        <table class="d_inline_block">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>AD</td>
+                                                                    <td>HYD</td>
+                                                                    <td>EST.CODE</td>
+                                                                    <td>EXTN</td>
+                                                                    <td>PF NO.</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="input_style2" id="pre_pf_acc_no">
+                                                </td>
+                                            </tr>
+
+                                            <tr> 
+                                                                                               
+                                                <td class=" fw_bold text-start ps_50">
+                                                    c)	Date of exit from previous employment (DD/MM/YYY)
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="input_style2 datepicker1" id="date_of_exit_from_prev" placeholder="DD-MM-YYY" readonly>
+                                                </td>
+                                            </tr> 
+
+                                            <tr> 
+                                                                                               
+                                                <td class=" fw_bold text-start ps_50">
+                                                    d) Scheme Certificate No (if Issued )
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="input_style2" id="scheme_certificate_no">
+                                                </td>
+                                            </tr> 
+
+                                            <tr> 
+                                                                                               
+                                                <td class=" fw_bold text-start ps_50">
+                                                    e)	Pension Payment Order (PPO)No (if Issued)
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="input_style2" id="pension_payment_order_no">
+                                                </td>
+                                            </tr> 
+
+                                            <tr> 
+                                                <td rowspan="4">10</td>                                               
+                                                <td class=" fw_bold text-start ps_50">
+                                                    a) InternationalWorker:                                                
+                                                </td>
+                                                
+                                                <td class="text-center">
+                                                    <span class="px-4">
+                                                        <span id="international_work_span_id_yes">Yes</span>
+                                                        <input type="checkbox" class="ms-1 yes_check yes_check_international_worker" id="international_work_yes">
+                                                    </span>
+                                                    <span class="px-4">
+                                                       <span id="international_work_span_id_no">No</span>  
+                                                       <input type="checkbox" class="ms-1 no_check no_check_international_worker" id="international_work_no">
+                                                    </span>
+                                                    
+                                                </td>
+                                                
+                                            </tr> 
+                                            
+                                            <tr> 
+                                                <td class=" fw_bold text-start ps_50">
+                                                    b) If Yes , State Country Of Origin (India /Name of Other Country)                                          
+                                                </td>
+                                                
+                                                <td class="text-center">
+                                                    <input type="text" class="input_style2" id="country_name" >
+                                                </td>
+                                                
+                                            </tr> 
+                                            
+                                            <tr> 
+                                                <td class=" fw_bold text-start ps_50">
+                                                    c)	Passport No
+                                                </td>
+                                                
+                                                <td class="text-center">
+                                                    <input type="text" class="input_style2" id="passport_no">
+                                                </td>
+                                                
+                                            </tr> 
+                                            <tr> 
+                                                <td class=" fw_bold text-start ps_50">
+                                                    d) Validity Of Passport (DD/MM/YYY) to(DD/MM/YYY)
+                                                </td>
+                                                
+                                                <td class="text-center">
+                                                    <div class="d_inline_block">
+                                                        <input type="text" class="input_style2 datepicker1" placeholder="DD-MM-YYYY" id="passport_issue_date" readonly>
+                                                        
+                                                    </div>
+                                                    <div class="d_inline_block ">
+                                                        <input type="text" class="input_style2 datepicker1" placeholder="DD-MM-YYYY" id="passport_expiry_date" readonly>
+                                                    </div>
+
+                                                </td>
+                                                
+                                            </tr> 
+
+                                                                                        
+                                            <tr> 
+                                                <td rowspan="4">11</td>                                               
+                                                <td colspan="2" class="fw_bold text-center f_16">
+                                                    If response to any or both of (7) & (8) above is yes. MANDATORY FILL UP THE (COLUMN 9)
+                                                </td>
+                                                
+                                            </tr> 
+
+                                            <tr> 
+                                                <td class=" fw_bold text-start ps_50">
+                                                    a)	Bank Account No .& IFS code
+                                                </td>
+                                                
+                                                <td class="text-center  ">
+                                                    <input type="text" class="input_style2 border-bottom border-dark" id="bank_acc_no">
+                                                    <input type="text" class="input_style2 " id="ifs_code">
+                                                </td>
+                                                
+                                            </tr> 
+
+                                            <tr> 
+                                                <td class=" fw_bold text-start ps_50">
+                                                    b) AADHAR Number (12 Digit)
+                                                </td>
+                                                
+                                                <td class="text-center">
+                                                    <input type="text" class="input_style2" id="aaddhar_no">
+                                                </td>
+                                                
+                                            </tr> 
+
+                                            <tr> 
+                                                <td class=" fw_bold text-start ps_50">
+                                                    c)	Permanent Account Number (PAN),If available
+                                                </td>
+                                                
+                                                <td class="text-center">
+                                                    <input type="text" class="input_style2" id="pan_no">
+                                                </td>
+                                                
+                                            </tr> 
+
+                                            
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- ----------------------pf form11 table end--------------- -->
+                                <!-- ----------------------pf form11 table end--------------- -->
+
+
+                                <div class="row f_13">
+                                    <div class="col-12">
+
+                                        <div class="row">
+                                            <div class="col-12 text-center fw_bold f_16 text-decoration-underline">
+                                                UNDERTAKING                                                
+                                            </div>  
+                                            <div class="col-12 px-0">  
+                                            <table>
+                                                <tbody>
+                                                    
+                                                    <tr>
+                                                        <td class="vtrl_top width_25">1)</td>
+                                                        <td>
+                                                            Certified that the Particulars are true to the best of my Knowledge
+                                                        </td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="vtrl_top width_25">2)</td>
+                                                        <td >
+                                                            I authorize EPFO to use my Aadhar for verification / e KYC purpose   for       service   delivery
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="vtrl_top width_25">3)</td>
+                                                        <td >
+                                                            Kindly transfer the funds and service details, if applicable if applicable, from the previous PF account as declared above to the present P.F Account (The Transfer Would be possible only if the identified KYC details approved by previous employer has  been verified by present employer)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="vtrl_top width_25">4)</td>
+                                                        <td>
+                                                            In case of changes In above details the same Will be intimate to employer at the     earliest
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>                            
+                    
+                                            </table>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="my-2">
+                                                Date: <input type="text" class="outline_0 datepicker1 w_100px" id="undertaking_date" readonly>
+                                            </div>
+                                            <div class="my-2">
+                                                Place: <input type="text" class="outline_0 w_100px" id="undertaking_place">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6   text-end">
+                                            
+                                            <div class="row ">
+                                                <div class="col-6"></div>
+                                                <div  class="col-sm-6  border_black_1 h_50px p-0" id="member_sign_box">
+                                                    <img src="" alt="" hidden class="w-100 h-100 " id="member_sign_img">                                                   
+                                                </div>
+                                                <input type="file" hidden id="member_sign_input" name="member_sign_input" class="border border-danger">
+                                                
+                                                <div class="col-6 text-center"></div>
+                                                <div class="col-sm-6 text-center fw_bold f_15">Signature of Member</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     
+                                    
+                                </div>
+
+                                <!-- <div class="row f_13">
+                                    <div class="col-12 text-center fw_bold my-2 f_16">
+                                        <u>DECLARATION BY PRESENT EMPLOYER</u>
+                                    </div>
+                                    <div class="col-12">
+                                        <ol type="A" class="mb-0">
+                                            <li>The member Mr./Ms./Mrs 
+                                                <input type="text" class="w_100px outline_0" value="<%= data1[0].candidate_firstname %> <%= data1[0].candidate_lastname %>" readonly>
+                                                has joined on
+                                                <input type="text" class="w_100px outline_0 datepicker1" id="candidate_joining_date">
+                                                and has been allotted PF Number
+                                                <input type="text" class="w_100px outline_0" id="alloted_pf_no">
+                                            </li>
+                                            <li>
+                                                In case person was earlier not a member of EPF Scheme ,1952 and EPS,1995
+                                            </li>
+                                        
+
+                                        <ul>
+                                            <li>
+                                                (Post allotment of UAN ) The UAN Allotted for the member is 
+                                                <input type="text" class="w_100px outline_0" id="alloted_uan_no">
+                                            </li>
+                                            <li class="fw_bold">
+                                                Please tick the Appropriate Option:
+                                            </li>
+                                            <li>
+                                                The KYC details of the above member in the UAN database
+                                            </li>
+                                                <ul type="none">
+                                                    
+                                                    <input type="text" id="declaration_b_checkbox_val" hidden>
+                                                    <li>
+                                                        <input type="checkbox" id="declaration_b_checkbox1">
+                                                        <span>
+                                                            Have not been uploaded
+                                                        </span>                                                    
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" id="declaration_b_checkbox2">
+                                                        <span>
+                                                            Have been uploaded but not approved
+                                                        </span>                                                     
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" id="declaration_b_checkbox3">
+                                                        <span>
+                                                            Have been uploaded and approved with DSC
+                                                        </span> 
+                                                    </li>
+                                                </ul>
+                                            
+                                        </ul>
+
+                                        <li>
+                                            In case the person was earlier a member of EPF Scheme ,1952 and EPS, 1995:
+                                        </li>
+                                            <ul >
+                                                <li>
+                                                    The above PF account number /UAN of the member as mentioned in (a) above has been tagged with his /her UAN/previous member ID as declared by member
+                                                </li>
+                                                <li class="fw_bold">
+                                                    Please Tick the Appropriate Option
+                                                </li>
+                                                    <ul type="none">
+                                                        <input type="text" id="declaration_c_checkbox_val" hidden>
+
+                                                        <li>
+                                                            <input type="checkbox" id="declaration_c_checkbox1"> 
+                                                            <span>
+                                                                The KYC details of the above member in the UAN database have been approved with digital signature Certificate and transfer request has been generated on portal.
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="declaration_c_checkbox2" >
+                                                            <span>
+                                                                As the DSC of establishment are not registered With EPFO the member has been informed to file physical claim (Form13) for transfer of funds from his previous establishment.
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                            </ul>
+                                    </ol>
+                                        
+                                    </div>
+                                </div> -->
+
+                                <div class="row f_13">
+                                        <div class="col-12 text-center fw_bold f_16 text-decoration-underline ">
+                                            DECLARATION BY PRESENT EMPLOYER                                                
+                                        </div>
+                                        <div class="col-12 px-0">
+                                            <table class="w-100 ">
+                                                <tbody>
+                                                 
+                                                    <tr>
+                                                        <td class="vtrl_top width_25">A)</td>
+                                                        <td >
+                                                        The member Mr./Ms./Mrs 
+                                                        <input type="text" class="w_100px outline_0" value="<%= data1[0].candidate_firstname %> <%= data1[0].candidate_lastname %>" readonly>
+                                                        has joined on
+                                                        <input type="text" class="w_100px outline_0 datepicker1" id="candidate_joining_date" readonly> 
+                                                        and has been allotted PF Number
+                                                        <input type="text" class="w_100px outline_0" id="alloted_pf_no">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="vtrl_top width_25">B)</td>
+                                                        <td colspan="2">
+                                                            In case person was earlier not a member of EPF Scheme ,1952 and EPS,1995
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" >
+                                                            • (Post allotment of UAN ) The UAN Allotted for the member is
+                                                            <input type="text" class="w_100px outline_0" id="alloted_uan_no">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" >
+                                                            • Please tick the Appropriate Option:
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" >
+                                                            • The KYC details of the above member in the UAN database
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <input type="text" id="declaration_b_checkbox_val" hidden>
+
+                                                        <td colspan="2" class="ps-4">
+                                                            
+                                                            <input type="checkbox" id="declaration_b_checkbox1">
+                                                            <span>Have not been uploaded</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" class="ps-4">
+                                                            <input type="checkbox" id="declaration_b_checkbox2"> 
+                                                            <span> Have been uploaded but not approved</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" class="ps-4">
+                                                            <input type="checkbox" id="declaration_b_checkbox3">
+                                                            <span>  Have been uploaded and approved with DSC</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="vtrl_top width_25">C)</td>
+                                                        <td >
+                                                            In case the person was earlier a member of EPF Scheme ,1952 and EPS, 1995:
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            • The above PF account number /UAN of the member as mentioned in (a) above has been tagged with his /her UAN/previous member ID as declared by member
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            • Please Tick the Appropriate Option
+                                                        </td>
+                                                    </tr>
+                    
+                                                    
+                                                    <tr>
+
+                                                        <input type="text" id="declaration_c_checkbox_val" hidden>
+
+                                                        <td colspan="2" class="ps-4">
+                                                            <input type="checkbox" id="declaration_c_checkbox1"> 
+                                                            <span>
+                                                            <span>
+                                                                The KYC details of the above member in the UAN database have been approved with digital signature Certificate and transfer request has been generated on portal.
+                                                            </span>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td colspan="2" class="ps-4">
+                                                            <input type="checkbox" id="declaration_c_checkbox2" >
+                                                            <span>
+                                                                As the DSC of establishment are not registered With EPFO the member has been informed to file physical claim (Form13) for transfer of funds from his previous establishment.
+                                                            </span>
+                                                            
+                                                        </td>
+                                                    </tr>
+                    
+                    
+                    
+                    
+                                                    
+                                                </tbody>                            
+                    
+                                            </table>
+                                        </div>
+                                </div>
+                                        
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="my-2">
+                                            Date: <input type="text" class="outline_0 datepicker1 w_100px" id="declaration_date" readonly>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6   text-end">
+                                        
+                                        <div class="row ">
+                                            <div class="col-6"></div>
+                                            <div  class="col-sm-6  border_black_1 h_50px p-0" id="employer_sign_box">
+                                                <img src="" alt="" hidden class="w-100 h-100 " id="employer_sign_img">                                                   
+                                            </div>
+                                            <input type="file" hidden id="employer_sign_input" name="employer_sign_input" class="border border-danger">
+                                            
+                                            <div class="col-6 text-center"></div>
+                                            <div class="col-sm-6 text-center fw_bold f_15">Signature of Employer With seal of Establishment</div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                            <div class="row text-center my-2">
+                                <div class="col-12">
+                                    <div class="btn btn-primary fw_bold" id="submit_btn"> Sumbit</div>
+                                </div>
+                            </div>
+
+                                
+
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                        
+            </div>
+        </div>
+    </div>
+    
+
+    </div>
+    </div>
+    </div>
+
+
+    <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+    <script src="/static/js/candidate_pf_form11.js"></script>
+    <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+</body>
+</html>

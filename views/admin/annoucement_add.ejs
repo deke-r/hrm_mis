@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRM</title>
+  <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+  <link rel="icon" href="/static/images/images-removebg-preview.png" >
+  <link rel="stylesheet" href="/static/css/annoucement_add.css">
+  <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+
+</head>
+
+
+<body>
+
+
+    <%-include('../common/header')%> <%-include('../common/sidebar')%>
+
+  <div class="mt_46"></div>
+  <div class="container-fluid h-100 position-relative">
+      <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+        </button>
+        <div class="row dyn_row justify-content-end ">
+            
+            <div class="col-xl-10 col-md-9 pt-3 col-8 dyn_col px-3">
+                
+                
+              <div class="container-fluid my-4">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-end align-items-end">
+                        <button class="btn mt-4 bg_bck text-light f_13 fw_600" id="add" data-bs-toggle="modal" data-bs-target="#uniqueModal"><i class="fa-solid fa-plus"></i> <span class="ms-1">Add Announcement</span> </button>
+                    </div>
+                </div>
+            </div>
+
+    <div class="container-fluid parentbox  my-4">
+      <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+        <div class="row bg_bck border-t">
+          <h5 class="text-light text-center f_16 mt-2">Announcements</h5>
+        </div>
+        <div class="row">
+          <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+        </div>
+
+
+        <div class="container-fluid parentbox my-4">
+          <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+            <div class="row vbvb border-t">
+
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered table-responsive table-striped" id="view_table">
+                        <thead>
+                            <tr class="text-center text-nowrap f_13 bg_b fw_600">
+                              <th>Announcement Id</th>
+                                <th>From Date</th>
+                                <th>To Date</th>
+                                <th>Announcement</th>
+                                <th>Date of Add</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                          <% data.forEach(function(announcement) { %>
+                            <tr>
+                              <td><%= announcement.announcement_id %></td>
+                              <td><%= formatDate(announcement.from_date) %></td>
+                              <td><%= formatDate(announcement.to_date) %></td>
+                              <td>
+                                <textarea  placeholder="<%= announcement.announcement %>" rows="2" cols="10" class="form-control text-center" disabled></textarea>
+                                
+                              </td>
+                              <td><%= formatDate(announcement.date_of_add) %></td>
+                              <td>
+<button class="btn bg_r text-light fw_600 f_13" id="delete" announcement_id="<%= announcement.announcement_id %>" >Delete</button>
+                                </td>
+                            </tr>
+                          <% }); %>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <% function formatDate(date) {
+                      if (!date) return '';
+                      let d = new Date(date);
+                      let day = ('0' + d.getDate()).slice(-2);
+                      let month = ('0' + (d.getMonth() + 1)).slice(-2);
+                      let year = d.getFullYear();
+                      return `${day}-${month}-${year}`;
+                    } %>
+                    
+                        
+                        
+                      
+                        
+                        
+                        
+                    </table>
+                </div>
+            </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+   
+
+
+
+    
+
+
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="uniqueModal" tabindex="-1" aria-labelledby="uniqueModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h1 class="modal-title fs-5" id="uniqueModalLabel">Assign</h1> -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="container-fluid parentbox  mt-1">
+                    <div class="container-fluid bg_dot box_sdw border-t pb-1 childbox bg-light">
+                      <div class="row bg_bck border-t">
+                        <h5 class="text-light text-center f_16 mt-2">Add Announcement
+                        </h5>
+                      </div>
+                      <div class="row">
+                        <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+                      </div>
+                      <div class="container-fluid parentbox my-4">
+                        <div class="container-fluid newmp pb-1  border-t childbox bg-light">
+                          <div class="row bg_r border-t pt-1 rounded-top-2">
+                            <!-- <h5 class="text-light text-center f_14 mt-2">Leave Request</h5> -->
+                          </div>
+                          
+                          <div class="row my-3 mt-4">
+        
+                            <div class="col-md-12 my_cols ">
+                              <h6 class="fw_bold f_13 ms-1 ">From Date:</h6>
+                              <input type="date" id="from_date"  class="form-control  border-leftb box_sdw11 f_13 fw_600" placeholder="DD-MM-YYYY" name="from_date">
+                            </div>
+                          </div>
+                          <div class="row my-3 mt-4">
+
+                            <div class="col-md-12 my_cols">
+                              <h6 class="fw_bold f_13 ms-1 ">To Date:</h6>
+                              <input type="date" id="to_date"  class="form-control  border-leftb box_sdw11 f_13 fw_600" placeholder="DD-MM-YYYY" name="to_date">
+        
+                            </div>
+                          </div>
+                           
+        
+                     
+                         
+        
+        
+        
+        
+
+                        <div class="row my-3 mt-4">
+                            <div class="col-md-12 my_cols" id="">
+        
+                                <h6 class="fw_bold f_13 ms-1 ">Announcement<span class="text-danger">*</span> :</h6>
+                                <textarea  id="annoucement"  name="candidate_id" class=" form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Announcement..." rows="5" cols="10"  required></textarea>
+        
+                            </div>
+                        </div>
+                        <!-- <div class="row my-3 mt-4">
+
+        
+                            <div class="col-md-12 my_cols ">
+                              <h6 class="fw_bold f_13 ms-1 ">Attachment :</h6>
+                              <input type="file" id="candidate_attachment"  class=" form-control  border-leftb box_sdw11 f_13 fw_600" placeholder="Add File" name="c_name" >
+                            </div>
+                        </div> -->
+        
+                          
+                            
+                          </div>
+                          <div class="row my-3">
+                            <div class="col-md-12 d-flex justify-content-center   my_cols">
+                              <button class="btn bg_bck mt-4 text-nowrap text-light f_13 fw_600 submitExpense email" type="sumbit" id="sub_btn">Submit</button>
+                            </div>
+                          </div>
+        
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+  <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+  <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+  <script src="/static/js/main_dataTable.js"></script>
+  <script src="/static/js/annoucement_add.js"></script>
+</body>
+
+</html>

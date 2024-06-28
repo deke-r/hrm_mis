@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp" >
+    <link rel="stylesheet" href="/static/css/arn_template_pdf.css" />
+    <link
+      rel="stylesheet"
+      href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css" />
+  </head>
+  <body>
+    
+
+
+
+          <div class="container my-4 border border-dark" id="content-pdf">
+            <div class="row naruto"></div>
+            <div class="row mt-2">
+              <div class="col-12 text-center">
+                <h6 class="fw-bold">'To whom so ever it may concern'</h6>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  I authorize AuthBridge Research Services Private Limited
+                  (“<span class="fw-bold f_15">Company”</span>) or the retained
+                  third parties to obtain investigative employment verification
+                  report in connection to my application for employment.
+                </p>
+              </div>
+            </div>
+
+            <div class="row my-4">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  The employment verification report may include information
+                  regarding my character, general reputation, personal
+                  characteristics, Education (Authentication of acquired or
+                  pursuing Degrees/Diplomas); Employment history; Credit
+                  history; court records, including criminal verification
+                  records as permitted by law; Passport Verification; Permanent
+                  Account Number verification; Drug Test; Finger Print
+                  Verification; Address Verification ,references from
+                  professional and personal associates as maybe applicable and
+                  any other check as found relevant for the profile.
+                </p>
+              </div>
+            </div>
+
+            <div class="row my-4">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  I further understand and agree that the employment
+                  verification report may be obtained at any time and any number
+                  of times as necessary before, during or post my employment.
+                </p>
+              </div>
+            </div>
+
+            <div class="row my-4">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  I provide my consent to the company or the third parties for
+                  the processing of any sensitive personal information obtained
+                  for the purpose of verification and call me in case any
+                  further information is required.
+                </p>
+              </div>
+            </div>
+
+            <div class="row my-4">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  I understand that some or all of the information I have
+                  provided in this application form or that may be obtained
+                  through various sources during the process of the verification
+                  will be held as digitized or physical records for a period and
+                  for such use as may be permitted under the applicable laws.
+                </p>
+              </div>
+            </div>
+
+            <div class="row my-4">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  I hereby authorize all previous employers, educational
+                  institutions, consumer reporting agencies and other persons or
+                  entities having information about me to provide such
+                  information to the Company or any other third party/ies
+                  retained by them for the purpose.
+                </p>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  I understand that the continuance of the employment or the
+                  offer of employment is contingent upon the outcome of the
+                  background check conducted on me
+                </p>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  The proof of Identity enclosed and self attested for
+                  reference. A Photostat, or any other copy, of this instrument
+                  bearing my signature shall be equally legally valid as the
+                  original.
+                </p>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  All the information furnished by me in the Background
+                  Verification Form is true to the best of my knowledge.
+                </p>
+              </div>
+            </div>
+
+            <div class="row my-4">
+              <div
+                class="col-md-5 d-flex justify-content-start align-items-center"
+              >
+                <label class="f_13 fw_600">Signature&nbsp;&nbsp;:</label>
+                <div >
+                  <img class="" width="50px"  height="50px" src="/hrm_documents/<%= c_id %>/image/<%= arn.signature %>" alt="Signature">
+
+                </div>
+
+              </div>
+            </div>
+            <div class="row my-4">
+              <div
+                class="col-md-5 d-flex justify-content-start align-items-center"
+              >
+                <label class="f_13 fw_600"
+                  >Name :</label
+                >
+                <div>
+
+                  
+                  <span class="fw-bold f_13"> <%= arn.name || 'N/A' %> </span>
+                </div>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div
+                class="col-md-5 d-flex justify-content-start align-items-center"
+              >
+                <label class="f_13 fw_600"
+                  >Date :</label
+                >
+                <div>
+<span class="fw-bold f_13"><%= arn.date ? new Date(arn.date).toLocaleDateString() : 'N/A' %></span></div>
+              </div>
+            </div>
+            <div class="row my-4">
+              <div
+                class="col-md-5 d-flex justify-content-start align-items-center"
+              >
+                <label class="f_13 fw_600"
+                  >Place :</label
+                >
+                <div>
+<span class="fw-bold f_13"><%= arn.place || 'N/A' %></span></div>
+            </div>
+            
+
+            <div class="row mt-5 mb-2">
+              <div class="col-12 text-start">
+                <p class="f_13 fw_600">
+                  <span class="f_15 fw-bold"><i>Note:</i></span> It is mandatory
+                  to duly sign the form on the space provided above or else the
+                  application form would be rejected.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+    
+
+
+        <div class="container">
+          <div class="row my-4">
+            <div
+              class="col-12 d-flex justify-content-center align-items-center"
+            >
+                <button
+                  class="btn bg_b f_13 text-light fw_600"
+                  id="generate-pdf"
+                >
+                  Finish
+                </button>
+               
+            </div>
+          </div>
+        </div>
+   
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/cdn/html2pdf/html2pdf.js"></script>
+    <script src="/static/js/arn_template_pdf.js"></script>
+    <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+  </body>
+</html>

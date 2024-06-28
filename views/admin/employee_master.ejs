@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRM</title>
+  <link rel="icon" href="/static/images/it.webp" >
+  <link rel="stylesheet" href="/static/css/employee_master.css"> 
+
+<!-- <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css"> -->
+
+</head>
+
+
+<body >
+    <!-- Container for Bootstrap styling -->
+    <%-include('../common/header')%>
+
+<%-include('../common/sidebar')%>
+
+<div class="mt-5"></div>
+
+<div class="container-fluid" id="bod">
+  <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+    <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+       </button>
+  <div id="loader" class="d-none h-100 w-100  justify-content-center align-items-center">
+    <span  class="spinner-border text-white p-3" aria-hidden="true"></span>
+    &nbsp;&nbsp;<span role="status" class="text-white">Please wait...</span>
+  </div>
+  <div class="row dyn_row justify-content-end" >
+    
+     <div class="col-xl-10 col-md-9 col-8 dyn_col ps-md-4 p-0 ps-2">
+      <div class="container-fluid table-box employee-master">
+
+
+
+        <!-- Container for Bootstrap styling -->
+        <div class="container-fluid import-box p-0 mt-3">
+          <!-- Custom button that triggers file input -->
+          <div class="csvfile-upload p-md-1 m-md-0">
+            <!-- <div class="container text-end download">     
+              <a href="" class="btn"> <button class="button ">Download CSV</button></a>
+        
+              </div> -->
+         
+              <p class="mb-0 text-center"><a href="/static/sample_csv/sample.csv" class="fw-bold   click">Click Here</a> to Download Sample CSV</p>
+           
+  
+            <p class="mb-0 p-1">Every column should have column name <br> you can upload data in batches of 50,000 at a time. Only .CSV
+              files are allowed.</p>
+            <center>
+  
+              <p class="select-filename  mb-0">File Name : &nbsp;<a id="uploadMessage"></a><a id="showfilename"></a></p>
+              <label for="fileInput" class="custom-upload-btn">Browse Document</label>
+              <input type="file" id="fileInput" class="file-input browse_file" accept=".csv" onchange="readFile(this)">
+            </center>
+            <div class="text-start total">
+              <span><b>Total Records :</b> <a id="totalCount"></a></span>
+            </div>
+          </div>
+  
+  
+          <!-- Display area for selected field data -->
+          <div id="fieldData"></div>
+          <div class="search-container">
+            <!-- Add the search input here -->
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div>
+          <!-- Table for displaying selected field data with fixed headers -->
+<div class="table-responsive p-0">
+  <table id="dataTable" class="table table-box1 pt-0 position-relative table-bordered" style="max-height: 350px;">
+    <thead class="tableth_13 thead_bg pt-0 sticky_thead">
+      <tr class="">
+        <th>EMPLID</th>
+        <th>Emp_Name</th>
+        <th>COMPANY</th>
+        <th>Comp_Name</th>
+        <th>Vertical</th>
+        <th>SubVertical</th>
+        <th>POSITION</th>
+        <th>Prefix</th>
+        <th>FIRST_NAME</th>
+        <th>MIDDLE_NAME</th>
+        <th>LAST_NAME</th>
+        <th>PAYROLL_STATUS</th>
+        <th>BUSINESS_UNIT</th>
+        <th>BU_Descr</th>
+        <th>DEPTID</th>
+        <th>Department</th>
+        <th>CostCenterID</th>
+        <th>EMP_FUNCTION</th>
+        <th>SUB_FUNCTION</th>
+        <th>BUSINESS</th>
+        <th>PAYGROUP</th>
+        <th>PAYGROUP_DESCR</th>
+        <th>LOCATION_STATE</th>
+        <th>LOCATION</th>
+        <th>LOCATION_DESCR</th>
+        <th>SEX</th>
+        <th>BIRTHDATE</th>
+        <th>QUALIFICATION</th>
+        <th>Prev_Exp</th>
+        <th>Jub_Exp</th>
+        <th>Tot_Exp</th>
+        <th>TERM_DATE</th>
+        <th>HIRE_DATE</th>
+        <th>Designation</th>
+        <th>JOBCODE</th>
+        <th>GRADE</th>
+        <th>Supervisor_PositionID</th>
+        <th>SUPERVISOR_ID</th>
+        <th>SUPERVISOR_NAME</th>
+        <th>Sup_EMAIL_ADDR</th>
+        <th>L2_SUPERVISOR_ID</th>
+        <th>L2_SUPRVISOR_NAME</th>
+        <th>L2_POSITION_NBR</th>
+        <th>L2_EMAIL</th>
+        <th>Previous_EMPLOYER</th>
+        <th>BLOOD_TYPE</th>
+        <th>MAR_STATUS</th>
+        <th>MARRIAGE_DATE</th>
+        <th>PAN</th>
+        <th>EmpBUSSINESS_EMAILID</th>
+        <th>EmpPersonal_EMAILID</th>
+        <th>BUS_PHONE</th>
+        <th>HOME_PHONE</th>
+        <th>EMERG_CNTCT</th>
+        <th>ADDRESS</th>
+        <th>FATHER_NAME</th>
+      </tr>
+    </thead>
+    <tbody id="dataBody" class="tabletd_12 border border-dark"></tbody>
+  </table>
+</div>
+          
+            <!-- Save button -->
+          <div class="text-center">
+            <button id="saveButton" class="btn btn-success"  disabled>Save</button>
+
+          </div>
+        </div>
+      </div>
+     </div>
+
+  </div>
+
+</div>
+ 
+
+<!-- <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="/static/cdn/jquery/jquery3.7.1.js"></script> -->
+    <script src="/static/js/employeemaster.js"></script>
+
+    <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+    <!-- Custom JavaScript code for handling file upload and form submission -->
+    <script src="/static/cdn/papaparse.min.js"></script>
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script> -->
+<script>
+  
+</script>
+
+  </body>
+
+  </html>
+
+
+
+
+

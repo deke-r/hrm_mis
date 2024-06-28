@@ -1,0 +1,461 @@
+
+
+<link rel="stylesheet" href="/static/css/sidebar.css">
+<link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css">
+<link rel="stylesheet" href="/static/css/header.css">
+
+
+<div class="offcanvas  offcanvas-start p-0 show " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel"  data-bs-backdrop="false">
+    <div class="offcanvas-header px-0 py-2">
+      <%if(page=="job_description" || page=="view_job_description" || page=="recruitement_request"  || page=="interview view"){%>
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6>
+
+    </div>
+    <div class="offcanvas-body px-0 pt-0 small">
+        <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+        <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+          </button>
+        <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+          <%if(role=="ADMIN"){%>
+            <li class="nav-item ">
+              <a class="nav-link ps-2 text-light" href="/jobDescription"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; JD Creation </a>
+            </li>
+            <%}%>
+            <li class="nav-item">
+              <a class="nav-link   ps-2 text-light" aria-current="page" href="/view_job_description"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Manage JD </i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  ps-2 text-light" aria-current="page" href="/recruitement_request"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Recruitment Request </i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  ps-2 text-light" aria-current="page" href="/interview_view"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Interview View </i></a>
+            </li>
+        </ul>
+   
+    </div>
+    <%}else if(page=="employee_master" || page=="view_employee" || page=="today_emp_on_leave" || page=='admin_view_ar_request'  || page=='admin_resignation' || page=='annoucement_add' || page=='admin_leave_dashboard'  ){%>
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Admin </h6>
+      
+    </div>
+    <div class="offcanvas-body px-0 pt-0 small">
+        <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+        <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+        </button>
+        <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+       
+          <li class="nav-item ">
+            <a class="nav-link text-center text-light" href="/admin_leave_dashboard"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Admin Leave Dashboard </a>
+          </li>
+          
+        <li class="nav-item ">
+          <a class="nav-link text-center text-light" href="/employee-master"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Upload Employee Master </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link pe-5  text-center text-light" aria-current="page" href="/view_employee"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Employee Master </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link pe-5  text-center text-light" aria-current="page" href="/today_emp_on_leave">
+            <i class="fa-solid fa-list-check text-light"></i>
+            &nbsp;&nbsp;&nbsp;&nbsp; Today Leave List </a>
+        </li>
+
+        <!-- <li class="nav-item ">
+          <a class="nav-link pe-5  text-center text-light" aria-current="page" href="/admin_view_ar_request"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; View All Requests </a>
+        </li> -->
+        <!-- <li class="nav-item ">
+          <a class="nav-link pe-5  text-center text-light" aria-current="page" href="/admin_to_do_list"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Manage Requests </a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link pe-5  text-center text-light" aria-current="page" href="/admin_manage_wfh"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Manage WFH Requests </a>
+        </li> -->
+
+
+
+
+        <li class="nav-item">
+
+          <div class="dropdown ms-2">
+            <a class="nav-link ms-4 text-start text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-list-check text-light"></i>
+               <span class="ms-2">Manage Requests</span>
+            </a>
+          
+            <ul class="dropdown-menu p-0" id="dpppd">
+              <li><a class="dropdown-item" href="/admin_to_do_list">
+                <i class="fa-solid fa-plus"></i>
+                <span class="ms-2">  Leave Request  </span></a></li>
+              <li><a class="dropdown-item" href="/admin_manage_wfh">
+                <i class="fa-solid fa-eye"></i>
+                 <span class="ms-2">Work From Home Request  </span></a></li>
+
+             
+            </ul>
+          </div>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <li class="nav-item ">
+          <a class="nav-link pe-5  text-center text-light" aria-current="page" href="/admin_view_ar_request"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;View All Requests </a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link pe-5  text-center text-light" aria-current="page" href="/admin_resignation"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; View Resignation </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link pe-5  text-center text-light" aria-current="page" href="/annoucement_add"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Announcements </a>
+        </li>
+
+              
+
+        </ul>
+    </div>
+
+
+
+  
+
+
+
+
+    <%}else if( page=="hr_view_employee"){%>
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Employee View </h6>
+      
+    </div>
+    <div class="offcanvas-body px-0 pt-0 small">
+        <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+        <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+        </button>
+        <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+       
+     
+        <li class="nav-item ">
+          <a class="nav-link pe-5  text-center text-light" aria-current="page" href="/hr_view_employee"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; View Employee Master </a>
+        </li>
+        </ul>
+    </div>
+
+   
+
+    <%}else if( page=="manager_requirement"  || page=="manager_view_jd"){%>
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">View Requirement </h6>
+      
+    </div>
+    <div class="offcanvas-body px-0 pt-0 small">
+        <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+        <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+        </button>
+        <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+       
+        <li class="nav-item ">
+          <a class="nav-link text-center text-light" href="/requirment"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manager Raised Jd  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-center text-light" aria-current="page" href="/manager_view"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Manager Raised View  </i></a>
+        </li>
+        </ul>
+    </div>
+
+
+
+
+    <%}else if( page=="offer_letter_template"  || page=="health_template"){%>
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Create Offer Letter </h6>
+      
+    </div>
+    <div class="offcanvas-body px-0 pt-0 small">
+        <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+        <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+        </button>
+        <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+       
+        <li class="nav-item ">
+          <a class="nav-link text-center text-light" href="/offer_letter_template"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Offer Letter Template  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-center text-light" aria-current="page" href="/health_template"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Health Template  </i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-center text-light" aria-current="page" href="/terminate_temp"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Terminate Template  </i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-center text-light" aria-current="page" href="/warning_temp"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Warning Template  </i></a>
+        </li>
+        </ul>
+    </div>
+
+    <%}else if( page=="manager_interview_schedule" || page=="manager_view_score"){%>
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Interview Schedules</h6>
+      
+    </div>
+    <div class="offcanvas-body px-0 pt-0 small">
+        <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+        <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+        </button>
+        <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+       
+        <li class="nav-item ">
+          <a class="nav-link text-light" href="/manager_interview_schedule"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Interview Schedules  </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link text-light" href="/manager_interview_score"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Update Interview Score  </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link text-light" href="/manager_view_score"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Interview Score  </a>
+        </li>
+        
+        </ul>
+    </div>
+
+
+    <%}else if( page=="candidate_status"){%>
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Interview Schedules</h6>
+      
+    </div>
+    <div class="offcanvas-body px-0 pt-0 small">
+        <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+        <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+        </button>
+        <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+       
+        <li class="nav-item ">
+          <a class="nav-link ms-4 text-light" href=""><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Insafe Dockets </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link ms-4 text-light" href=""><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Pre Employement <br><center> Health Checkup</center> </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link ms-4 text-light" href=""><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Offer Letter </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link ms-4 text-light" href=""><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Interview Score  </a>
+        </li>
+        
+        </ul>
+    </div>
+
+
+    
+    <%}else if( page=="interview_manage" ){%>
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Interview Manage </h6>
+      
+    </div>
+    <div class="offcanvas-body px-0 pt-0 small">
+        <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+        <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+        </button>
+        <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+       
+        <li class="nav-item ">
+          <a class="nav-link text-center text-light" href="/interview_manage"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manager Create JD  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-center text-light" aria-current="page" href="/interview_manage_view"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Interview Manage View </i></a>
+        </li>
+        </ul>
+    </div>
+    
+    <%}else if( page=="to_do_list" || page=="to_do_list_view" || page=='manage_report' || page=='manage_assets' || page=='view_ar_request' || page=='mang_leave_dashboard'   || 'manager_resignation' ){%>
+
+
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Manager</h6>
+    
+  </div>
+  <div class="offcanvas-body px-0 pt-0 small">
+      
+      <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+      </button>
+      <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+     
+      <!-- <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/to_do_list"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Manage Request</span> </a>
+      </li> -->
+
+      <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/mang_leave_dashboard"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Dashboard  </span></a>
+      </li>
+
+      <li class="nav-item ">
+
+        <div class="dropdown">
+          <a class="nav-link ms-2 text-start text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-square-plus text-light"></i> <span class="ms-2">Add Request</span>
+          </a>
+        
+          <ul class="dropdown-menu p-0" id="dpppd">
+            <li><a class="dropdown-item" href="/manager_leave_request">
+              <i class="fa-solid fa-plus"></i>
+              <span class="ms-2">  Leave Request  </span></a></li>
+              <li><a class="dropdown-item" href="/manager_view_request">
+                <i class="fa-solid fa-eye"></i>
+                 <span class="ms-2">View Request  </span></a></li>
+
+
+                 <li><a class="dropdown-item" href="/manager_wfh_request">
+                  <i class="fa-solid fa-plus"></i>
+                  <span class="ms-2">  Work From Home Request  </span></a></li>
+                  <li><a class="dropdown-item" href="/manager_wfh_request_view">
+                    <i class="fa-solid fa-eye"></i>
+                     <span class="ms-2">View Work From Home Request  </span></a></li>
+
+           
+          </ul>
+        </div>
+      </li>
+
+
+
+<!-- 
+      <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/to_do_list"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Manage Leave  </span></a>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/manage_wfh_req"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Manage Work From Home  </span></a>
+      </li> -->
+
+
+
+
+
+      <li class="nav-item ">
+
+        <div class="dropdown">
+          <a class="nav-link ms-2 text-start text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-square-plus text-light"></i> <span class="ms-2">Manage Request</span>
+          </a>
+        
+          <ul class="dropdown-menu p-0" id="dpppd">
+
+              <li><a class="dropdown-item" href="/to_do_list">
+                <i class="fa-solid fa-eye"></i>
+                 <span class="ms-2">Leave Request  </span></a></li>
+                  <li><a class="dropdown-item" href="/manage_wfh_req">
+                    <i class="fa-solid fa-eye"></i>
+                     <span class="ms-2">Work From Home Request  </span></a></li>
+
+           
+          </ul>
+        </div>
+      </li>
+
+
+
+
+
+
+
+      
+      <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/view_ar_request"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">View All Requests</span></a>
+      </li>
+      <!-- <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/assign_assets"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Assign Assets  </span></a>
+      </li>
+      
+      <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/assigned_assets"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Assigned Assets  </span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/unassigned_assets"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Unassigned Assets  </span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/manage_report"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Assets With Problem  </span></a>
+      </li> -->
+      
+      <li class="nav-item ">
+
+        <div class="dropdown">
+          <a class="nav-link ms-2 text-start text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Manage Assets</span>
+          </a>
+        
+          <ul class="dropdown-menu p-0" id="dpppd">
+            <li><a class="dropdown-item" href="/assign_assets">
+              <i class="fa-solid fa-plus"></i>
+              <span class="ms-2"> Assign Assets  </span></a></li>
+            <li><a class="dropdown-item" href="/assigned_assets">
+              <i class="fa-brands fa-atlassian"></i>
+               <span class="ms-2">Assigned Assets  </span></a></li>
+            <li><a class="dropdown-item" href="/unassigned_assets">
+              <i class="fa-solid ms-2 fa-exclamation"></i>
+               <span class="ms-2">Unassigned Assets  </span></a></li>
+            <li><a class="dropdown-item" href="/manage_report">
+              <i class="fa-solid fa-passport"></i>
+                                           <span class="ms-2">Assets With Problem  </span></a>
+                                          </li>
+             <li><a class="dropdown-item" href="/request_assets_view">
+                                            <i class="fa-solid fa-passport"></i>
+                                              <span class="ms-2">New Assets Request</span></a>
+                                          </li>
+
+                                         
+          </ul>
+        </div>
+        <!-- <a class="nav-link ms-2 text-start text-light" href="/assign_assets"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">Assign Assets  </span></a> -->
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link ms-2 text-start text-light" href="/manager_resignation"><i class="fa-solid fa-list-check text-light"></i> <span class="ms-2">View Resignation</span></a>
+      </li>
+      </ul>
+  </div>
+
+      <%}else{%>
+        <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">User </h6>
+      
+      </div>
+      <div class="offcanvas-body px-0 pt-0 small">
+          <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+          <button class="btn pos-end offbtn shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+          </button>
+          <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+         
+          <li class="nav-item ">
+            <a class="nav-link text-center text-light pe-3" href="/createuser"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; Create User </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-center text-light" aria-current="page" href="/view_user"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp; View All Users</i></a>
+          </li>
+          </ul>
+      </div>
+  
+        <%}%>
+  </div>
+
+<script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+  <script src="/static/js/sidebar.js"></script>
+  <!-- <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.min.js"></script> -->
+  <script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script> 

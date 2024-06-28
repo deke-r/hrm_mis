@@ -1,0 +1,19 @@
+.naruto{
+    height: 20px;
+    background-color: black;
+}
+
+.f_13{font-size: 13px !important;}
+.f_14{font-size: 14px;}
+.f_15{font-size: 15px;}
+.fw_600{font-weight: 600;}
+.sig{
+    border-bottom: 1px dotted gray !important;
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-radius: 0px !important;
+}
+
+.sig:focus{box-shadow: none !important;}
+.bg_b{background-color: #0473cf !important;}

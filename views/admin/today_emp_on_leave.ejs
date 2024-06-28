@@ -1,0 +1,68 @@
+<!-- manage_employee_master.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp">
+  <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+<link rel="stylesheet" href="/static/css/today_emp_on_leave.css">
+
+</head>
+<body>
+  <%-include('../common/header')%>
+  <%-include('../common/sidebar')%>
+  <div class="mt-5"></div>
+  <div class="container-fluid h-100 position-relative">
+      <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+     <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+      </button>
+        
+        <div class="row dyn_row justify-content-end ">
+
+          <div class="col-xl-10 col-md-9 col-8 dyn_col ps-4">
+
+
+            <h5 class="text-center mt-3 text-light fs_16" >Today Leave Details  </h5>
+
+            <table id="today_leave_tbl" class="display  table_text_aling_middle table-bordered border-dark">
+              <thead class="bg_blue">
+                  <tr>
+                    <th>S.No</th>
+                    <th>Request ID</th>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>leave Type</th>
+                    <th>Day Type</th>
+                    <th>Date</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <% for(let i=0; i<data1.length; i++){%>
+                  <tr>
+                    <td><%= i+1%></td>
+                    <td><%= data1[i].request_id %></td>
+                    <td><%= data1[i].candidate_id %></td>
+                    <td><%= data1[i].candidate_name %></td>
+                    <td><%= data1[i].leave_type %></td>
+                    <td><%= data1[i].day_type %></td>
+                    <td><%= today_date2 %></td>
+                  </tr>
+                  <%}%>
+              </tbody>
+          </table>
+
+          </div>
+  
+
+        </div>
+  </div>
+
+
+ 
+<script src="/static/js/main_dataTable.js"></script>
+<script src="/static/js/today_emp_on_leave.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp">
+  <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+  <link rel="stylesheet" href="/static/css/view_job_description.css">
+  <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+  
+</head>
+
+<body>
+    <%-include('../common/header')%>
+    <%-include('../common/sidebar')%>
+
+
+    <div class="mt-5"></div>
+    <div class="container-fluid h-100 position-relative">
+        <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+       <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+          </button>
+    <div class="row dyn_row justify-content-end ">
+    <div class="col-xl-10 col-md-9 col-8 dyn_col px-3 ps-4" id="dfd">
+        <h5 class="text-center mt-3 text-light fs_16">Manage JD</h5>
+        <div class="container-fluid my-4">
+            <div class="row">
+                <div class="col-md-3 fs_13 pt-0 pt-2">
+                    <label for="" class="pb-1 ps-1">From </label>
+                    <input type="text" class="form-control" id="from_date" placeholder="Select From Date" readonly>
+                </div>
+                <div class="col-md-3 fs_13 pt-0 pt-2">
+                    <label for="" class="pb-1 ps-1">To </label>
+                    <input type="text" class="form-control" id="to_date" placeholder="Select End Date" readonly>
+                </div>
+                <div class="col-md-3 status fs_13 pt-0 pt-2">
+                    <label for="" class="pb-1 ps-1">Status</label>
+                    <select name=""  class="form-select" id="status_filter">
+                        <option value="none">Select Status</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="col-md-3 p-0 pt-3 d-flex justify-content-end align-items-end btn_style btn_style">
+                    <button class="btn" id="search_btn">Search</button>
+                    <button class="btn ms-3" id="reset_btn">Reset</button>
+                </div>
+            </div>
+
+        </div>
+
+<div class="px-2 border rounded-4 pb-4 table_1">
+    <table class="w-100 table_text_aling_middle table-bordered border-dark " id="jd_table">
+<thead class="table_bg">
+    <tr>
+        <th>JD ID</th>
+        <th>Job Title</th>
+        <th>Function</th>
+        <th>Business</th>
+        <th>Creation Date</th>
+        <th>Created By</th>
+        <th>Modified Date</th>
+        <th>Modified by</th>
+        <th>Edit</th>
+        <th>PDF</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody class="" >
+
+    <%for(var i=0; i<jd_data.length; i++){%>
+        
+<tr>
+    <td ><%=jd_data[i].prefix.concat(jd_data[i].jd_id)%></td>
+    <td><%=jd_data[i].job_title%></td>
+    <td><%=jd_data[i].function%></td>
+    <td><%=jd_data[i].business%></td>
+    <td><%=jd_data[i].creation_date%></td>
+    <td class="date"><%=jd_data[i].created_by%> </td>
+    <td><%=jd_data[i].modified_date%></td>
+    <td><%=jd_data[i].modified_by%></td>
+    <td><i class="fas fa-edit update_j" data-bs-toggle="modal" data-bs-target="#exampleModal" jd_id="<%=jd_data[i].prefix.concat(jd_data[i].jd_id)%>" jtitle="<%=jd_data[i].job_title%>" func="<%=jd_data[i].function%>"   business="<%=jd_data[i].business%>" about="<%=jd_data[i].about_us%>" role_s="<%=jd_data[i].role_summary%>" role_res="<%=jd_data[i].role_nd_responsibilites%>"
+     k_per="<%=jd_data[i].key_performance%>" edu="<%=jd_data[i].education_qualification%>"></i></td>
+     <td>
+    <i class="fa-solid fa-file-pdf dwnld" ></i>
+    </td>
+
+    <td>
+        <select name="options" id="options" class="form-select">
+        <option  selected disabled value="<%=jd_data[i].jd_status%>"><%=jd_data[i].jd_status%></option>
+        <option hidden  value="Active">Active</option>
+        <option hidden  value="Inactive">Inactive</option>
+        </select>
+    </td>
+    <td><button id="button" >Save</button></td>
+
+
+    
+    
+    
+
+</tr>
+<%}%>
+</tbody>
+    </table>
+
+ 
+</div>
+    </div>
+</div>
+
+
+
+    </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content ">
+            <div class="modal-header">
+              <h5 class="modal-title  text-white w-100 text-center fs_16 py-1"   id="exampleModalLabel">Update JD</h5>
+            </div>
+            <div class="modal-body">
+                <div >
+                    <div class="row mb-3 fs_13 inpfs_12 textfs_12">
+                        <div class="col-md-3">
+                            <label for="jdid">Job Description Id:</label>
+                            <input type="text" class="form-control" id="jdid" value="" readonly name="jdid">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="Job_title">Job Title</label>
+                            <input type="text" class="form-control" id="Job_title" value="" name="job_tittle">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="function">Function</label>
+                            <input type="text" class="form-control" id="function" value="" name="function">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="business">Business</label>
+                            <input type="text" class="form-control" id="Business" value="" name="business">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="role">Role Summary</label>
+                            <textarea rows="3" type="text" class="form-control" id="role" value="" name="Summary"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="role_responsibility">Role and Responsibility</label>
+                            <textarea rows="3" type="text" class="form-control" id="responsibility" value="" name="responsibility"></textarea>
+                        </div>
+                  
+                        <div class="col">
+                            <label for="key_performance">Key Performance</label>
+                            <textarea rows="3"  class="form-control" id="key_performance" value="" name="key_performance"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="Qualification">Qualification</label>
+                            <textarea rows="3" class="form-control" id="Qualification" value="" name="qualification"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" id="update_jd" class="btn btn-primary submit">Submit</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- pdf work -->
+      <div class="container-fluid pdf pdf-fluid" id="printpdf">
+
+        <table class="table">
+            <thead >
+            <tr >
+                <th colspan="4" class="text-center job  cent" style="text-align: center  !important;">JOB DESCRIPTION</th>
+            </tr>
+            <tr>
+                <th>Job Title:</th>
+                <th colspan="2"><b id="p_title"></b></th>
+                <div class="image">
+                <th rowspan="5" class="logo"><center><img src="/static/images/images-removebg-preview.png" class="img-fluid image_logo" alt="" srcset=""></center></th>
+            </div>
+            </tr>
+            <!-- Add rows with data here -->
+            <!-- Example row -->
+            <tr>
+                <td>Department/Group:</td>
+                <td colspan="2" id="p_func"></td>
+            </tr>
+            <tr>
+                <td>Reporting to:</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td>Team Size:</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <th colspan="4" class="text-center job cent" style="text-align: center  !important;">ABOUT US</th>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div class="content" >
+                        <!-- <h6 class="fs-13">Jubilant Agri and Consumer Products Limited (JACPL)</h6> -->
+                       <div id="#p_about">
+                        Jubilant Agri and Consumer Products Limited (JACPL) is a part of the <b>Jubilant Bhartia Group</b>–a global Conglomerate with strong presence in diverse sectors like Pharmaceuticals, Life Science, Food Services, Motor Works, Oil & Gas Consulting, Consumer & Agri Products and Performance Polymers. <br><br>
+
+                        <b>Jubilant Agri and Consumer Products Limited (JACPL)</b> is a unique and well diversified portfolio across Consumer Products, Agri and Performance Polymers like:
+
+                        <ul class="und_list">
+                            <li> <b>Consumer Products:</b>
+                                <ol type="a">
+                                    <li><b>2nd largest Consumer Brand </b>in the <b>Wood Work Adhesives</b>  with a range of Premium Adhesives under popular brands like JivanJor and Vamicol. These brands have a strong National presence through a distribution network of over 300+ distributors and 10,000+ dealers</li>
+                                    <li>
+                                        A significant player in <b>Wood Finishes and Wood Preservatives </b>category with its popular Charmwood brand. The company has also made strategic tie ups with Large Global players like Verinlegno Spa, Italy to offer a strong portfolio of Premium & Specialised Poly Urethane (PU) Paints under the brand Ultra Italia. 
+                                    </li>
+                                </ol>
+                            </li>
+                            <li> <b>Performance Ploymers:</b>
+                                <ol type="a">
+                                    <li><b>The largest manufacturer in India and 2nd largest globally of Performance Polymers </b>like VP Latex, supplying this key ingredient to leading Tyre manufacturers globally such as JK Tyres, SRF, Continental Tyres (USA) etc.</li>
+                                    <li>
+                                       <b>2nd largest globally and only Indian manufacturer and Supplier of Food </b>like SPVA – a key ingredient in Chewing Gums; with supplies to leading global brands like Wrigleys, Mondelez, Perfetti Van Melle and others
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>
+                               <b>Agri Products</b>- One of India’s leading producer of Agri Products like SSP (Single Super Phosphate), Fertilizers for Crop Nutrition & Crop Growth under its flagship brand RAMBAN; and also producer of Industrial Chemical (Sulphuric Acid).
+                            </li>
+
+                        </ul>
+
+                        The organisation has a strong Innovation Culture as its bedrock to support its ambition to deliver World Class products and services to its customers and consumers across the globe. Fully owned State of the art manufacturing facilities at Gajraula & Sahibabad in Uttar Pradesh, Kapasan in Rajasthan and Savli in Gujarat manufacture World class products <b>which are distributed across the country and exported to over 35+ countries.</b> <br><br>
+
+                        With a team of 1000 + dedicated and passionate professionals, JACPL is well poised to accelerate on the journey of building exciting businesses and brands, producing best in class products and <b>transforming itself to deliver exponential growth and stronger shareholder value.</b><br><br>
+                        
+                        <b>JACPL is a wholly owned subsidiary of Jubilant Industries Limited (JIL) and listed on BSE & NSE since Feb 14, 2011.</b>
+
+
+                       </div>
+                        
+                    
+                        <!-- Other sections like Performance Polymers and Agri Products -->
+                    
+                        <h6 class="fs-13 mt-3 fw-semibold" >Role Summary:</h6>
+                        <div id="p_rs"></div>
+                    
+                        <!-- Additional role details -->
+                        <h6 class="fs-13 mt-3 fw-semibold">Roles and Responsibilities:</h6>
+                        <div id="p_rns"></div>
+                        
+                        <h6 class="fs-13 mt-3 fw-semibold">Key Performance Indicators:</h6>
+                       <div id="p_kpi">
+
+                       </div>
+                    
+                        <h6 class="fs-13 mt-3 fw-semibold">Educational Qualifications / Professional Experience:</h6>
+                        <div id="p_eq">
+
+                        </div>
+                    
+                        <h6 class="fs-13 mt-3">Candidate Requirements:</h6>
+                        <div id="p_can">
+
+                        </div>
+                    </div>
+                                    
+    </td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+      <!-- pdf work end -->
+
+
+
+  
+  <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+  <script src="/static/js/main_dataTable.js"></script>
+  <script src="/static/js/manage_jd.js"></script>
+  <script src="/static/cdn/printThis.js"></script>
+  <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+  <!-- <script>
+    $(document).ready(function(){
+      var datet=  $('.date').text()
+      var converted=  moment(datet).format("DD.MM.YYYY HH:mm")
+        console.log(converted)
+        })
+</script> -->
+</body>
+</html>
+
+

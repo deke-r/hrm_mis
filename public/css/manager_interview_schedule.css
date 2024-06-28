@@ -1,0 +1,175 @@
+.height_vh {
+    min-height: 92vh;
+    max-height: 300vh;
+    height: 100%;
+
+}
+
+.height_501 {
+    height: 420px;
+}
+
+.scroll {
+    overflow: auto;
+}
+
+.bg_green {
+    background-color: #00bf739f;
+}
+
+.bg_royal {
+    background-color: rgb(51, 70, 128);
+   
+}
+
+.on_hov a {
+    background-color: #494e56;
+}
+
+.on_hov a:hover {
+    background-color: #0c50a1;
+    transform: scale(1.03, 1.03);
+    transition: 1s all;
+}
+
+.table_bg tr th {
+    background-color: #0c50a1;
+    
+    color: white;
+
+    text-wrap: nowrap;
+    /* border: 1px solid white; */
+
+}
+
+.table_text_aling_middle tr th,
+td {
+    vertical-align: middle;
+    text-align: center !important;
+    font-size: 12px;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+h5 {
+    margin-bottom: 18px;
+    color: white;
+    background-color: #0c50a1;
+    padding: 8px;
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+/* Style for the labels */
+
+/* Style for the input fields */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    border-top: 4px solid #0c50a1 !important;
+    /* Blue border at the top */
+    box-shadow: none;
+    /* Remove default box shadow */
+}
+
+/* Style for the submit button */
+.btn-primary.btn {
+
+
+    border-radius: 6px;
+    background-color: #0c50a1;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0c50a1;
+}
+
+/* Optional: Add some spacing between elements */
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) !important;
+    font-size: 12px !important;
+
+
+}
+
+.form-control:focus {
+    border-top: 2px solid #0c50a1;
+    /* border-color:#007bff; */
+}
+
+.bg_blue {
+    /* background-color: #0c50a1; */
+    background-color: #0c4fa1ab;
+}
+
+.fs_13 {
+    font-size: 13px;
+}
+
+.inpfs_12 input {
+    font-size: 12px;
+}
+
+.textfs_12 textarea {
+    font-size: 12px;
+}
+
+.dataTables_length label {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.dataTables_length select {
+    padding: 0 4px;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.192);
+}
+
+.dataTables_filter label {
+    font-size: 12px;
+}
+
+.dataTables_filter input {
+    height: 31px
+}
+
+.dataTables_info {
+    font-size: 12px;
+}
+
+.dataTables_paginate a {
+    font-size: 12px;
+    padding: 2px 5px;
+}
+
+.dataTables_paginate li {
+    margin-top: 5px;
+    width: 20px;
+}
+
+.dataTables_paginate .pagination {
+    padding-top: 5px;
+}
+
+.header1 { 
+    position: sticky; 
+    top: 0; 
+    z-index: 1;
+    background-color: #0c50a1;
+    color: white; /* optional: change background color */
+}

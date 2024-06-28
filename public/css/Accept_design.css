@@ -1,0 +1,25 @@
+.h100{
+    height: 100vh !important;
+    background-image: url(/static/images/abs.jpg);
+    backdrop-filter: blur( 4px );
+
+}
+.bg_g{
+    background-color: #3cab3c;
+}
+.rd{
+    border-top-left-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
+    border-top: 5px solid #0473cf !important;
+    border-bottom: 5px solid #0473cf !important;
+   
+
+
+
+}
+
+.ax{
+ 
+    box-shadow:  9px 9px 7px #aaaaaa,
+                 -9px -9px 7px #ffffff;
+}

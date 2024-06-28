@@ -1,0 +1,382 @@
+  /* Add your custom CSS styles here */
+        /* Add specific styles for the table */
+     
+
+        .pdf table {
+            width: 100%;
+        
+            color: white; /* Text color */
+        }
+
+    .pdf table  th, .pdf table td {
+            border: 1px solid #0f0e0e;
+            padding: 2px;
+            text-align: left;
+        }
+        .logo{
+            width: 22%;
+            height:80px;
+         
+            
+        }
+       .image_logo{
+            padding: 30px;
+        }
+
+      
+        .job{
+            background-color: lightgray!important;
+            /* background-color: rgb(187, 187, 187) !important; */
+            color: #0c50a1 !important;
+        }
+
+
+        .content {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    /* margin: 20px auto;
+    max-width: 1200px; */
+}
+
+.content h4 {
+    color: #333;
+}
+
+.content p, .content li {
+    color: #666;
+    line-height: 1.6;
+    font-size: 12px;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+        /* Media Query for Mobile Screens */
+        @media screen and (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+
+            .logo {
+                width: 50%;
+                height: auto;
+            }
+
+            .image_logo {
+                padding: 10px;
+            }
+        }
+
+        @media print {
+            .container {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+          .pdf  table {
+                width: 100%;
+                font-size: 12px;
+            }
+
+            .logo {
+                width: 33%;
+                height: auto;
+           
+            }
+
+            .image_logo {
+                padding: 10px;
+            }
+
+            .content {
+                border: none;
+                max-width: 100%;
+            }
+        }
+
+    
+        /* Resetting default margins and paddings */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling form labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Styling form inputs */
+  
+
+        /* Form container styling */
+        /* .container-fluid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        } */
+
+  /* Styling for the containers */
+  /* .container {
+            padding: 10px;
+            margin: 10px 0;
+            box-shadow: 0 0 10px rgb(241, 240, 240); 
+            border: none; 
+        } */
+
+        /* Styling for the textarea */
+        #roleTextarea {
+            display: none;
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add box shadow */
+        }
+
+        /* Styling for the icon */
+        .fa-square-plus {
+            cursor: pointer;
+        }
+
+        /* Styling for the upload form */
+        #uploadForm {
+            display: none;
+        }
+
+        /* Styling for the upload button */
+        .upload {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add box shadow */
+        }
+
+   
+
+
+
+        .action{
+            background-color: #0c50a1; /* Blue color, you can change it to any color you prefer */
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+        }
+
+        .action:hover{
+            background-color: #1066c2;
+    transform: scale(1.070,1.070);
+
+        }
+
+  /* Styling the back button */
+.back{
+    /* background-color: #ff6347; */
+    background-color: rgba(218, 10, 10, 0.89);
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back:hover {
+    background-color: #ff4c3b; /* Darker shade of coral on hover */
+    transform: scale(1.070,1.070);
+
+}
+
+
+
+.manager input[type="text"]
+
+  {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px;
+    border-top: 2px solid #0c50a1; /* Set top border */
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.411) ;
+}
+
+.shad_dark{
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) ;
+}
+.f_13{
+    font-size: 13px !important;
+}
+
+.btn_border{
+    background-color: #1b0ca1e3;
+  
+    color: white;
+    border: none;
+
+}
+.btn_border:hover{
+    background-color: #0c50a1;
+    border: 1px solid rgb(3, 211, 3);
+    color: white;
+    transform: scale(1.020,1.020);
+
+}
+
+
+
+/* view jd  TABLE*/
+
+
+.height_501 {
+    height: 420px;
+}
+
+.scroll {
+    overflow: auto;
+}
+
+.bg_green {
+    background-color: #00bf739f;
+}
+
+.bg_royal {
+    background-color: rgb(51, 70, 128);
+    /* background-color: #003f91; */
+    /* background-color: #5da9e9; */
+}
+
+.on_hov a {
+    background-color: #494e56;
+    /* background-color: #08a780;; */
+    /* color: #0f0e0e; */
+
+
+}
+
+.on_hov a:hover {
+    background-color: #0c50a1;
+    transform: scale(1.03, 1.03);
+    /* border-bottom-right-radius: 25px;
+border-top-right-radius: 25px; */
+    transition: 1s all;
+}
+
+.table_bg tr th {
+    background-color: #0c50a1;
+   
+    color: white;
+
+    text-wrap: nowrap;
+    /* border: 1px solid white; */
+
+}
+
+.table_text_aling_middle tr th,
+.table_text_aling_middle tr td {
+    vertical-align: middle;
+    text-align: center !important;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.bgF9F9F9 {
+    /* background-color: #08a780; */
+    /* background-color: #aeaed1; */
+    /* background-color: rgb(51, 70, 128); */
+    /* background-color: #003f91; */
+    background-color: #1c1c35;
+
+
+
+}
+
+.thwidth {
+    width: 300px;
+
+}
+
+
+#address{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border-top: 2px solid #0c50a1; /* Set top border */
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.411) ;
+}
+
+#url{ 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+   
+    border-top: 2px solid #0c50a1; /* Set top border */
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.411) ;
+}
+
+
+#remarks{ 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+   
+    border-top: 2px solid #0c50a1; /* Set top border */
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.411) ;
+}
+
+
+
+
+
+.shadow {
+    padding: 30px;
+    border-radius: 15px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted shadow effect */
+    background-color: #f8f9fa;
+    /* Light background color */
+}
+
+.h5_mod{
+    margin-bottom: 18px;
+    color: white;
+    background-color: #0c50a1;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.f_11{
+    font-size: 11px !important;
+}
+
+.data button{
+    background-color: #1066c2;
+    color: white;
+    margin-top: 28px;
+}
+
+
+
+
+#level_app .f_13{
+    font-size: 13px;
+}
+
+#level_app .f_11{
+    font-size: 11px;
+}
+
+.btn_color{
+    background-color: #0c50a1;
+    color: white;
+}

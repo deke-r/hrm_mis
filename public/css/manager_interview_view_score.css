@@ -1,0 +1,470 @@
+.box {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+.h5_mod{
+    margin-bottom: 18px;
+    color: white;
+    background-color: #0c50a1;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+
+.table_1 thead  {
+    background-color: #0c50a1;
+    color: white;
+    text-wrap: nowrap;
+}
+
+
+.table_1 tr th,
+.table_1 tr td{
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.resume_icon{
+    font-size: 17px;
+}
+
+.resume_icon:hover{
+    cursor:pointer;
+}
+
+
+  
+
+  
+  /* Style for when dropdown is expanded */
+  #score:focus {
+    outline: none; /* Remove default focus style */
+    border-color: #66afe9; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6); /* Add a subtle shadow on focus */
+  }
+
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.height_vh{
+min-height: 92vh;
+max-height: 300vh;
+height: 100%;
+
+}
+h6 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style the table container */
+/* .table-container {
+    width: 100%;
+    overflow-x: auto; 
+}
+*/
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+background-color: #0c50a1; 
+/* Blue header background color */
+color: white; /* White text color */
+position: sticky;
+top: 0;
+}
+
+/* Adjust z-index to ensure the header stays above other content */
+th {
+    z-index: 1;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+
+
+
+
+
+
+
+.bg_royal{
+background-color: rgb(51, 70, 128);
+/* background-color: #003f91; */
+/* background-color: #5da9e9; */
+}
+.on_hov a{
+background-color:#494e56;
+color: white;
+
+
+}
+.on_hov a:hover{
+background-color:#0c50a1;
+transform: scale(1.03,1.03);
+/* border-bottom-right-radius: 25px;
+border-top-right-radius: 25px; */
+transition:1s all;
+color: white;
+
+}
+
+.dataTables_length label{
+font-size: 12px;
+margin-top: 10px;
+}
+.dataTables_length select{
+padding: 0 4px;
+box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.192);
+}
+.dataTables_filter label{
+font-size: 12px;
+}  
+.dataTables_filter input{
+height:31px
+}
+.dataTables_info{
+font-size: 12px;
+}
+.dataTables_paginate a {
+font-size: 12px;
+padding:2px 5px;
+}
+.dataTables_paginate li {
+margin-top: 5px;
+width:20px;
+}
+.dataTables_paginate .pagination {
+padding-top: 5px;
+}
+h5{
+font-size: 15px!important;
+margin-bottom: 18px;
+color: white;
+background-color: #0c50a1;
+padding: 8px;
+border-radius: 10px; /* Rounded corners */
+}
+.height_501{
+height:480px;
+}
+.scroll{
+overflow: auto;
+}
+
+.table_text_aling_middle tr th,td{
+vertical-align: middle;
+text-align: center!important;
+font-size: 12px;
+padding:10px;
+}
+.form-control {
+border-radius: 8px;
+border: 1px solid #ccc;
+border-top: 4px solid #0c50a1!important; /* Blue border at the top */
+box-shadow: none; /* Remove default box shadow */
+}
+input,textarea{
+
+
+font-size: 12px!important;
+
+
+}
+.form-control:focus{
+border-top: 2px solid #0c50a1;
+/* border-color:#007bff; */
+}
+.bg_blue{
+/* background-color: #0c50a1; */
+background-color: #0c4fa1ab;
+}
+
+
+
+/* Common button styles */
+#add_btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Styles for the "export_btn" class */
+  #add_btn {
+    background-color: #0c50a1; /* Blue color, you can change it as needed */
+    color: #fff; /* Text color */
+    font-size: 13px;
+  }
+  
+  /* Hover styles for the "export_btn" class */
+  #add_btn:hover {
+    background-color: #0c50a1; /* Darker shade of blue */
+  }
+  
+  
+#jd_table thead tr{
+    background-color: #0c50a1;
+    position: sticky !important;
+    top: 0px !important;
+  }
+  
+  /* .height_501 {
+    height: 230px !important;
+  } */
+  
+  #jd_table{
+    margin-top: 0px !important;
+  }
+
+
+
+
+
+
+
+
+
+  /* ----------------pdf css start-------------- */
+  /* ----------------pdf css start-------------- */
+  /* ----------------pdf css start-------------- */
+  /* ----------------pdf css start-------------- */
+  /* ----------------pdf css start-------------- */
+
+
+  .f_18{
+    font-size: 18px;
+  }
+
+  .f_16{
+    font-size: 16px;
+  }
+  .f_15{
+    font-size: 15px;
+  }
+  .f_14{
+    font-size: 14px;
+  }
+
+  .f_13{
+    font-size: 13px !important;
+  }
+
+  .f_12{
+    font-size: 12px;
+  }
+  .f_11{
+    font-size: 11px;
+  }
+
+  .f_10{
+    font-size: 10px;
+  }
+
+  .border_trans{
+    border: transparent;
+  }
+
+  .fw_700{
+    font-weight: 700;
+  }
+
+  .fw_900{
+    font-weight: 900;
+  }
+
+  .border_bottom_black{
+    border-bottom: 1px solid black;
+  }
+
+
+  .border_3{
+    border: 3px solid black;
+  }
+
+
+  .input_border{
+    border: 1px solid gray !important;
+  }
+  
+
+  .input_h{
+    height: 32px;
+  }
+
+  .input_rounded{
+    border-radius: 10px;
+  }
+
+  .questions_table th,
+  .questions_table thead,
+  .questions_table tbody,
+  .questions_table td,
+  .pdf_table_1 td,  
+  .pdf_table_1 tbody,
+  .pdf_table_1 thead
+
+  {
+    border: 3px solid black;
+  }
+
+  .questions_table .score_input{
+    vertical-align: middle;
+    width: 180px;
+  }
+
+  .questions_table td input{
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }  
+
+  #totalCell{
+    font-weight: bold;
+    text-align: center;
+  }
+  #percentageCell{
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #totalCell1{
+    font-weight: bold;
+    text-align: center;
+  }
+  #percentageCell1{
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #totalCell2{
+    font-weight: bold;
+    text-align: center;
+  }
+  #percentageCell2{
+    font-weight: bold;
+    text-align: center;
+  }
+  
+
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+
+  
+/* ////////////////////////////////////////////////// */
+
+
+
+    /* ----------------pdf css start-------------- */
+  /* ----------------pdf css start-------------- */
+  /* ----------------pdf css start-------------- */
+  /* ----------------pdf css start-------------- */
+  /* ----------------pdf css start-------------- */
+
+
+  /* .f_18{
+    font-size: 18px;
+  }
+
+  .f_16{
+    font-size: 16px;
+  }
+  .f_15{
+    font-size: 15px;
+  }
+  .f_14{
+    font-size: 14px;
+  }
+
+  .f_13{
+    font-size: 13px;
+  }
+
+  .f_12{
+    font-size: 12px;
+  }
+  .f_11{
+    font-size: 11px;
+  }
+
+  .f_10{
+    font-size: 10px;
+  }
+
+  .border_trans{
+    border: transparent;
+  }
+
+  .fw_700{
+    font-weight: 700;
+  }
+
+  .fw_900{
+    font-weight: 900;
+  }
+
+  .border_bottom_black{
+    border-bottom: 1px solid black;
+  }
+
+  .questions_table th,
+  .questions_table thead,
+  .questions_table tbody,
+  .questions_table td,
+  .pdf_table_1 td,  
+  .pdf_table_1 tbody,
+  .pdf_table_1 thead
+
+  {
+    border: 3px solid black;
+  }
+
+
+  .border_3{
+    border: 3px solid black;
+  } */
+
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+    /* ----------------pdf css end-------------- */
+
+  

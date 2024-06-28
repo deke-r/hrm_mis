@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM </title>
+
+    <!-- <link rel="stylesheet" href="/static/css/candidate_form.css"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+   
+
+    <!-- <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css"> -->
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="/static/css/candidate_sidebar.css">
+
+    <!-- <link rel="icon" href="/static/images/logo.png" > -->
+    <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css">
+    
+    <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+   
+    
+</head>
+<body>
+
+
+
+
+<div class="offcanvas  offcanvas-start p-0 show " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel"  data-bs-backdrop="false">
+    <div class="offcanvas-header px-0 py-2">
+     
+      <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Candidate </h6>
+
+    </div>
+    <div class="offcanvas-body px-0 pt-0 small">
+        <!-- <h6 class="offcanvas-title p-0 text-light text-center w-100" id="offcanvasWithBothOptionsLabel">Job Description</h6> -->
+        <button class="btn pos-end offbtn shadow-none border-0" id="offbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="fa-solid fa-angles-left rounded-end-3 text-light side_button fs-5 bg_bl  span_expand"></i>
+          </button>
+        <ul class="navbar-nav  bgF9F9F9 nav_side  mb-lg-0  rounded-2 on_hov pt-0">
+        
+          <li class="nav-item ">
+            <a class="nav-link ps-2 text-light" href="/cand_leave_dashboard"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Dashboard </a>
+          </li>
+            <li class="nav-item ">
+              <a class="nav-link ps-2 text-light" href="/candidate_documents"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Documents Upload </a>
+            </li>
+            <!-- <li class="nav-item ">
+              <a class="nav-link ps-2 text-light" href="/manage_request"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Request</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link ps-2 text-light" href="/view_request"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Request</a>
+            </li> -->
+
+            <li class="nav-item ">
+
+              <div class="dropdown">
+                <a class="nav-link ms-2 text-start text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-square-plus text-light"></i> <span class="ms-2">Manage Request</span>
+                </a>
+              
+                <ul class="dropdown-menu p-0" id="dpppd">
+                  <li><a class="dropdown-item" href="/manage_request">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="ms-2">  Leave Request  </span></a></li>
+                  <li><a class="dropdown-item" href="/view_request">
+                    <i class="fa-solid fa-eye"></i>
+                     <span class="ms-2">View Request  </span></a></li>
+                     <li><a class="dropdown-item" href="/wfh_request">
+                      <i class="fa-solid fa-plus"></i>
+                      <span class="ms-2">  Work From Home Request  </span></a></li>
+
+                      <li><a class="dropdown-item" href="/wfh_request_view">
+                        <i class="fa-solid fa-eye"></i>
+                         <span class="ms-2">View Work From Home Request  </span></a></li>
+                 
+                </ul>
+              </div>
+            </li>
+
+            <!-- <li class="nav-item ">
+
+              <div class="dropdown">
+                <a class="nav-link ms-2 text-start text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-square-plus text-light"></i> <span class="ms-2">Manage Assests</span>
+                </a>
+              
+                <ul class="dropdown-menu p-0" id="dpppd">
+                  <li><a class="dropdown-item" href="/request_assets">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="ms-2">  Request Assets </span></a></li>
+                  <li><a class="dropdown-item" href="/manage_assets">
+                    <i class="fa-solid fa-eye"></i>
+                     <span class="ms-2">View Assests  </span></a></li>
+                 
+                </ul>
+              </div>
+            </li> -->
+
+
+            <li class="nav-item ">
+
+              <div class="dropdown">
+                <a class="nav-link ms-2 text-start text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-square-plus text-light"></i> <span class="ms-2">Manage Assests</span>
+                </a>
+              
+                <ul class="dropdown-menu p-0" id="dpppd">
+                  <li><a class="dropdown-item" href="/request_assets">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="ms-2">  Request Assets </span></a>
+                  </li>
+                  <li><a class="dropdown-item" href="/view_request_assets">
+                    <i class="fa-solid fa-eye"></i>
+                    <span class="ms-2">  View Request Assets </span></a>
+                  </li>
+                  <li><a class="dropdown-item" href="/manage_assets">
+                    <i class="fa-solid fa-eye"></i>
+                     <span class="ms-2">View Assests  </span></a></li>
+                 
+                </ul>
+              </div>
+            </li>
+
+
+
+
+
+
+            <!-- <li class="nav-item ">
+              <a class="nav-link ps-2 text-light" href="/manage_assets"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Assests</a>
+            </li> -->
+            <li class="nav-item ">
+              <a class="nav-link ps-2 text-light" href="/resignation"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Resignation</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link ps-2 text-light" href="/change_pss"><i class="fa-solid fa-square-plus text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Edit Password</a>
+            </li>
+        
+            <!-- <li class="nav-item">
+              <a class="nav-link   ps-2 text-light" aria-current="page" href="/health_checkup"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Health Pre Checkup </i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  ps-2 text-light" aria-current="page" href="/candidate_documents"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Offer Letter </i></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link  ps-2 text-light" aria-current="page" href="/candidate_section"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Candidate View From </i></a>
+            </li>
+
+            <li class="nav-item" id="codeOfConductItem">
+              <a class="nav-link  ps-2 text-light" aria-current="page" href="/codeofconduct"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Code Of Conduct </i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  ps-2 text-light" aria-current="page" href="/arn_template"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;ArnTemplate </i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  ps-2 text-light" aria-current="page" href="/new_joining_form"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;NDA Form </i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  ps-2 text-light" aria-current="page" href="/candidate_pf_form11"><i class="fa-solid fa-list-check text-light"></i>&nbsp;&nbsp;&nbsp;&nbsp;Candidate PF Form11 </i></a>
+            </li> -->
+      
+        </ul>
+   
+    </div>
+    </div>
+
+
+
+     
+  
+     
+    <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+    <script src="/static/js/candidate_sidebar.js"></script>
+   
+    <script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script> 
+  
+    <!-- <script src="/static/cdn/datepicker/datepicker_cdn.js"></script> -->
+<!-- Bootstrap JS CDN (optional, for dropdowns etc.) -->
+<!-- <script src="/static/cdn/jquery/jquery3.7.1.js"></script> -->
+<!-- <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.js"></script> -->
+
+
+
+</body>
+</html>

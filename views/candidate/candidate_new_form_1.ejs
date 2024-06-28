@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/candidate_new_form.css">
+    <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css">
+    <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+</head>
+
+<body>
+
+
+    <div class="conatainer-fluid font_family " id="content-pdf">
+        <p class="text-center fw-bold">FORM 2 (REVISED)</p>
+        <p class="text-center mar_21 fw-bold">Nomination and Declaration form for Unexempted/Exempted Establishments</p>
+        <p class="text-center fw-bold">Declaration and Nomination Form under the Employees’ Provident Funds and
+            Employees’ Pension Scheme</p>
+        <p class="text-center mar_18 ">(Paragraphs 33 & 61(1) of the Employees Provident Fund Scheme, 1952 and Paragraph
+            18 of the Employees’ Pension
+            Scheme, 1995)</p>
+
+
+        <div class="conatainer mt-4">
+            <% for (let i=0; i < candidate.length; i++) {%>
+                <div class="row justify-content-center">
+
+                    <div class="col-md-8 col-8">
+                        <div class="conatainer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-8">1. Name (in BlockLetters)</div>
+                                        <div class="col-xl-6 col-md-4 text-end">:</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="" id="" class=" w-100 outline_1 border_buttom "
+                                        value="<%= candidate[i].candidate_name %>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center mt-2">
+
+                    <div class="col-md-8 col-8">
+                        <div class="conatainer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-8">2. Father’s/ Husband’s Name:</div>
+                                        <div class="col-xl-6 col-md-4 text-end">:</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="" id="" class=" w-100 outline_1 border_buttom "
+                                        value="<%= candidate[i].father_name %>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center mt-2">
+
+                    <div class="col-md-8 col-8">
+                        <div class="conatainer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-8">3. Date of Birth</div>
+                                        <div class="col-xl-6 col-md-4 text-end">:</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="" id="" class=" w-100 outline_1 border_buttom "
+                                        value="<%= candidate[i].date_of_birth %>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center mt-2">
+
+                    <div class="col-md-8">
+                        <div class="conatainer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-8">4. Sex</div>
+                                        <div class="col-xl-6 col-md-4 text-end">:</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="" id="" class=" w-100 outline_1 border_buttom "
+                                        value="<%= candidate[i].gender %>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center mt-2">
+
+                    <div class="col-md-8">
+                        <div class="conatainer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-8">5. Marital Status</div>
+                                        <div class="col-xl-6 col-md-4 text-end">:</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="" id="" class=" w-100 outline_1 border_buttom "
+                                        value="<%= candidate[i].marital_status %>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center mt-2">
+
+                    <div class="col-md-8">
+                        <div class="conatainer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-8">6. Account No.</div>
+                                        <div class="col-xl-6 col-md-4 text-end">:</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="" id="" class=" w-100 outline_1 border_buttom ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center mt-2">
+
+                    <div class="col-md-8">
+                        <div class="conatainer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-8">7. Address:</div>
+                                        <div class="col-xl-6 col-md-4 text-end">:</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div type="text" name="" id="" class=" w-100 outline_1 border_buttom "  value=""><%= candidate[i].addres %></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center mt-2">
+
+                    <div class="col-md-8">
+                        <div class="conatainer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-8">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-8">8. Date of Joining</div>
+                                        <div class="col-xl-6 col-md-4 text-end">:</div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="" id="" class=" w-100 outline_1 border_buttom ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <%}%>
+
+                    <% for (let i=0; i < nominees.length; i++) {%>
+
+                        <div class="conatainer-fluid mt-4">
+
+                            <p class="text-center fw-bold f_25">PART- A (EPF)</p>
+                            <p class="text-center f_18 mar_18">I hereby nominate the person(s)/ cancel the nomination
+                                made by me
+                                previously and nominate the person(s) mentioned <br>
+                                below to receive the amount standing to my credit in the Employees’ Provident Fund, in
+                                the event of
+                                my death.</p>
+
+                            <div class="px-3">
+
+                                <table class="table_border table">
+                                    <tr class="">
+                                        <th class="pad_20">Name of nominee/no minees</th>
+                                        <th class="pad_20"> Address</th>
+                                        <th class="pad_20">Nominee’s relationship with the member</th>
+                                        <th class="pad_20 width_112">Date of Birth</th>
+                                        <th class="pad_20">Total amount of share of accumulation in Provident Fund to be paid to each nominee
+                                        </th>
+                                        <th class="pad_20">If the nominee is a minor, name & relationship & address of the guardian
+                                who may receive the amount during the minority of nominee
+                                        </th>
+                                    </tr>
+                                    
+                                    <tbody>
+                                        <tr class="text-center">
+                                            
+                                            <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>
+                                            <th>4</th>
+                                            <th>5</th>
+                                            <th>6</th>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <td>
+                                                <%= nominees[i].nominee_name %>
+                                            </td>
+                                            <td>
+                                                <%= nominees[i].address %>
+                                            </td>
+                                            <td>
+                                                <%= nominees[i].nominee_relationship %>
+                                            </td>
+                                            <td>
+                                                <%= nominees[i].date_of_birth %>
+                                            </td>
+                                            <td>
+                                                <%= nominees[i].total_amount %>
+                                            </td>
+                                            <td>
+                                                <%= nominees[i].nominee_is_a_minor_and_relationship %>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                                <div class=" mt-3  text_center_1">
+                                    <div class="f_18  col-12 ">1. *Certified that I have no Family as defined in para
+                                        2(g) of the
+                                        Employees’ Provident Fund Scheme, 1952 and should I <br>
+                                        acquire a family hereafter the above nomination should be deemed as cancelled.
+                                        <div class="f_18 ">2. *Certified that my father/mother is /are dependent upon
+                                            me.</div>
+
+                                    </div>
+                                    <div class="row justify-content-center mt-2">
+
+                                        <div class="">
+                                            <div class="conatainer-fluid">
+
+
+                                                <div class="row">
+                                                    <div class=" col-md-8">* Strike out whichever is not applicable.
+                                                        <br>impression
+                                                        of the
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class=" text-center ">
+                                                            <img src="/hrm_documents/<%= candidate_id %>/image/<%= nominees[i].image %>"
+                                                                alt="" class="input_height_1">
+
+                                                            <p class="mx-4">Signature of the employer</p>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <%}%>
+        </div>
+
+        <div class="row justify-content-center mt-2">
+
+            <div class="">
+                <div class="conatainer">
+                    <div class="row">
+                        <div class="f_25 text-center fw-bold">
+                            PART B (EPS) (Para 18)
+                        </div>
+                        <div class=" text-center">I hereby furnish below particular of the members of my family who
+                            would be eligible to receive widow/ children pension in </div>
+
+                    </div>
+                    <!-- <div class="text-end pe-3"><button type="button" class="btn btn-primary" id="family_detl_btn">Add
+                            Row</button></div> -->
+                </div>
+            </div>
+        </div>
+        <% for (let i=0; i < member.length; i++) {%>
+
+            <div class="conatainer-fluid px-3 mt-4 justify-content-center ">
+                <table class="table table_border" id="family_detl_tbl">
+                    <thead>
+                        <tr class="text-center">
+                            <th class="pad_20" rowspan="2">S. No</th>
+                            <th class="pad_20" colspan="2">Name and Address of the family member</th>
+                            <th class="pad_20 " rowspan="2">Date of Birth</th>
+                            <th class="pad_20" colspan="2" rowspan="2">Relationship with member</th>
+                            <!-- <th rowspan="2"></th> -->
+                        </tr>
+                        <tr class="">
+                            <th class="pad_20 text-center">Name</th>
+                            <th class="pad_20 text-center">Address</th>
+
+
+                        </tr>
+                        <tr class="text-center">
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th colspan="2">5</th>
+                            <!-- <th></th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="text-center">
+                            <td>1</td>
+                            <td>
+                                <%= member[i].nominee_name %>
+                            </td>
+                            <td>
+                                <%= member[i].address %>
+                            </td>
+                            <td>
+                                <%= member[i].date_of_birth %>
+                            </td>
+                            <td colspan="2">
+                                <%= member[i].relationship_with_member %>
+                            </td>
+                            <!-- <td></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class=" mt-3  text_center_1">
+                    <div class="f_18  col-12 ">**Certified that I have no family as defined in para 2(vii) of Employees’
+                        Pension Scheme, 1995 and should I acquire a
+                        family <br> hereafter I shall furnish particulars thereon in the above form.
+                        I hereby nominate the following person for receiving the <br> monthly widow pension (admissible
+                        under para 162(a)(i) and
+                        (ii) in the event of my death without leaving any eligible family <br> member for receiving
+                        pension.
+                    </div>
+
+                </div>
+
+
+            </div>
+            <%}%>
+                <!-- <div class="text-end pe-3"><button type="button" class="btn btn-primary" id="family_detl_btn_1">Add
+                Row</button></div> -->
+                <div class="html2pdf__page-break"></div>
+
+                <div class="conatainer-fluid mx-3 justify-content-center mt-4">
+                    <% for (let i=0; i < employees.length; i++) {%>
+
+                        <div class="">
+                            <table class="table_border table " id="family_detl_tbl_1">
+                                <thead>
+                                    <tr class="">
+                                        <!-- <th class="pad_20" rowspan="2">S. No</th> -->
+                                        <th class=" text-center">Name and Address of the family member</th>
+                                        <th class=" text-center ">Date of Birth</th>
+                                        <th class=" text-center">Relationship with member</th>
+                                        <!-- <th></th> -->
+                                    </tr>
+
+                                    <tr class="text-center">
+                                        <th class="">1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <!-- <th></th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center">
+                                        <td>
+                                            <%= employees[i].name_and_address %>
+                                        </td>
+                                        <td>
+                                            <%= employees[i].date_of_birth %>
+                                        </td>
+                                        <td>
+                                            <%= employees[i].relationship_with_member %>
+                                        </td>
+                                        <!-- <td></td> -->
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="d-flex justify-content-end">
+                                <div class="col-md-4 col-12">
+                                    <img src="/hrm_documents/<%= candidate_id %>/image/<%= employees[i].image %>"
+                                        class="input_height_1 mar_left_52">
+                                    <p class="">Signature of the employer</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <%}%>
+
+                            <% for (let i=0; i < certificate.length; i++) {%>
+
+                                <div class="row justify-content-center mt-2">
+                                    <div class="">
+                                        <div class="conatainer-fluid">
+                                            <div class="row">
+                                                <div class=" col-md-8 mar_top_75">Date: <input type="text" name="" id=""
+                                                        class=" w-25 outline_1 border_buttom text-center"
+                                                        value="<%= certificate[i].dob %>">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                </div>
+
+                <div class="container-fluid mx-4">
+                    <p class="">**Strike out whichever is not applicable</p>
+                    <p class="text-center fw-bold f_18">CERTIFICATE BY EMPLOYER</p>
+                    <p class="">Certified that the above declaration and nomination has been signed/thumb impressed
+                        before me by
+                        Shri/Smt./Kum.
+                        <input type="text" name="" id="" class=" w-25 outline_1 border_buttom "
+                            value="<%= certificate[i].certificate_by_emp %>">employed in my establishment after he/she
+                        has read the entries/entries
+                        been read over to him/her by me and got confirmed by him/her
+                    </p>
+                    <div class="d-flex mt-4">
+                        <div class=" col-8 d-flex"> Place : &nbsp;
+                            <div class=" w-25 outline_1 border_buttom " value=""><%= certificate[i].place %></div>
+                        </div>&nbsp;
+                    <!-- <div class=" col-5 margin_100"></div> -->
+                        <div class="col-md-4 col-4 ">
+                            <input type="text" name="" id="" class=" w-75 outline_1 border_buttom " value="<%= certificate[i].place_1 %>"></div>
+                    </div>
+                    <p class=""></p>
+                    <div class=" d-flex mt-4 mx-5">
+                        <img src="/hrm_documents/<%= candidate_id %>/image/<%= certificate[i].image %>"
+                            class="input_height">
+                        <p class="mx-4">Signature of the employer or other Authorized Officers of <br>
+                            the Establishment</p>
+                    </div>
+                    <div class="mar_left_259 d-flex">Destination <input type="text" name="" id=""
+                            class=" w-25 outline_1 border_buttom mx-2" value="<%= certificate[i].destination %>"></div>
+                    <p class=" mt-5">Date the: <input type="text" name="" id="" class="text-center w-25 outline_1 border_buttom "
+                            value="<%= certificate[i].dob_1 %>"></p>
+                </div>
+                <%}%>
+
+
+    </div>
+
+    <div class="my-3 me-3 text-end">
+        <button type="button" class="btn btn-primary" id="pdf_generat">PDF Generat</button>
+    </div>
+
+
+    <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+    <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script>
+    <script src="/static/js/candidate_new_form_1.js"></script>
+    <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+    <script src="/static/cdn/html2pdf/html2pdf.js"></script>
+
+</body>
+
+</html>

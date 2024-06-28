@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRM </title>
+  <link rel="icon" href="/static/images/it.webp">
+  <link rel="stylesheet" href="/static/css/assign_assets.css">
+  <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+
+
+
+
+</head>
+
+<body>
+  <%-include('../common/header')%>
+
+  <%-include('../common/sidebar')%>
+
+  <div class="mt-5"></div>
+  <div class="container-fluid h-100 position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+      <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+    </button>
+    <div class="row dyn_row justify-content-end ">
+
+
+      <div class="col-xl-10 col-md-9 col-8 dyn_col">
+
+        <form method="POST" enctype="multipart/form-data">
+           <div class="container-fluid parentbox  my-4">
+            <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+              <div class="row bg_bck border-t">
+                <h5 class="text-light text-center f_16 mt-2">Assign Assets</h5>
+              </div>
+              <div class="row">
+                <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+              </div>
+              <div class="container-fluid parentbox my-4">
+                <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+                  <div class="row bg_r border-t pt-1 rounded-top-2">
+                    <!-- <h5 class="text-light text-center f_14 mt-2">Leave Request</h5> -->
+                  </div>
+                  <div class="row my-3 mt-4">
+                    <div class="col-md-4 my_cols" id="">
+                      <div id="fday">
+
+                        <h6 class="fw_bold f_13 ms-1 ">Candidate ID :</h6>
+                        <input type="text" id="candidate_id"  name="candidate_id" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="ID"  required>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 my_cols ">
+                      <h6 class="fw_bold f_13 ms-1 ">Candidate Name :</h6>
+                      <input type="text" id="candidate_name" disabled class="form-control  border-leftb box_sdw11 f_13 fw_600" placeholder="Candidate Name" name="c_name" >
+                    </div>
+
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1 ">Asset Type:</h6>
+                      <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="asset_type" aria-label="Default select example" name="asset_type" required>
+                        <option value="Laptop">Laptop</option>
+                        <option value="Charger">Charger</option>
+                        <option value="Mouse">Mouse</option>
+                        <option value="Dongle">Dongle</option>
+
+
+                      </select>
+                    </div>
+                    
+                  </div>
+
+                  <div id="dynamicContent"></div>
+                  <div class="row my-3 mt-4">
+
+                    <div class="col-md-4 my_cols ">
+                      <h6 class="fw_bold f_13 ms-1 ">Asset Brand:</h6>
+                      <input type="text" id="asset_brand" class="form-control  border-leftb box_sdw11 f_13 fw_600" placeholder="Brand" name="asset_brand" >
+                    </div>
+                   
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1 ">Asset Serial Number:</h6>
+                      <input type="text" id="asset_serial_no" class="form-control  border-leftb box_sdw11 f_13 fw_600" placeholder="Asset Serial Number" name="asset_serial_no" >
+
+                    </div>
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1 ">Condition At Assignment:</h6>
+                      <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="condition" aria-label="Default select example" name="condition" >
+                        <option value="" selected disabled>Select</option>
+                        <option value="Good">Good </option>
+                        <option value="Repaired">Repaired</option>
+                        <option value="New">New</option>
+
+                        
+                      </select>
+                    </div>
+                    
+                  </div>
+
+                  <div id="dynamicContent"></div>
+
+                  <div class="row my-3 mt-4">
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1">Assigned By:</h6>
+
+                      <input type="text" id="assigned_by" class="form-control  border-leftb box_sdw11 f_13 fw_600"  name="assigned_by" value="Manthan IT Solutions" readonly required>
+                    </div>
+                   
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1 ">Attachment Image:</h6>
+                      <input multiple  type="file" name="image" id="images" accept="image/*" class="form-control border-leftb box_sdw11 f_13 fw_600" />
+                    </div>
+                  </div>
+                  <div class="row my-3">
+                    <div class="col-md-12 d-flex justify-content-center   my_cols">
+                      <button class="btn bg_bck mt-4 text-nowrap text-light f_13 fw_600 submitExpense email" type="sumbit" id="sub_btn">Submit</button>
+                    </div>
+                  </div>
+
+                  <div class="loader-div d-none" id="loader-div">
+                    <div class="loader">
+                      <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="/static/js/main_dataTable.js"></script>
+  <script src="/static/js/assign_assets.js"></script>
+  <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+
+</body>
+
+</html>

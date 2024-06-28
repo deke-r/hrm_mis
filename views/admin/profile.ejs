@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp" >
+    <link rel="stylesheet" href="/static/css/profile.css"> <!-- Link to your external CSS file -->
+     <!-- Bootstrap CSS CDN -->
+ 
+</head>
+
+<body>
+    <!-- Include common header -->
+    <%-include('../common/header')%>
+    
+    <div class="container">
+        <div class="row justify-content-center profile-row">
+            <div class="col-md-6">
+                <div class="profile-card">
+                    <div class="avatar text-center">
+                        <%= firstLetter %>
+                    </div>
+                    <div class="user-name">
+                        <%= employee.EMP_NAME %>
+                    </div>
+                    <!-- Add other profile details here -->
+                    <div class="user-details mt-3">
+                        <p class="mb-1"><strong>Email:</strong> <%= employee.EMP_Email_ID %></p>
+                        <p class="mb-1"><strong>Phone:</strong> <%= employee.EMP_NUMBER %></p>
+                        <!-- Add more profile details as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

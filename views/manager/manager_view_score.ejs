@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM </title>
+    <link rel="icon" href="/static/images/it.webp">
+    <link rel="stylesheet" href="/static/css/manager_interview_view_score.css">
+
+    <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+  
+
+</head>
+
+<body>
+
+
+    <%-include('../common/header')%>
+    
+      <%-include('../common/sidebar')%>
+
+<div class="mt-5"></div>
+<div class="container-fluid h-100  position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+           </button>
+<div class="row dyn_row justify-content-end ">
+
+<div class="col-xl-10 col-md-9 col-8 dyn_col px-3  ps-4">
+
+    <div class="box">
+        <h5 class="text-center mt-3 text-light h5_mod" >Manager Interview Score</h5>
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <table class="table_1 table-bordered border-dark" id="table1">
+                <thead class="">
+                    <tr>
+                        <th>R_ID.</th>
+                        <th>Level</th>
+                        <th>JD ID</th>
+                        <th>Candidate Name</th>
+                        <th>Bussiness</th>
+                        <th>Dsignation</th>
+                        <th>Location</th>
+
+                      
+                        <th>Interview Date</th>
+                        <th>View Score</th>
+                     
+                      
+                    </tr>
+                    
+                </thead>
+                <tbody  class="" id="tbody_1">
+                    <% for(i=0; i<data1.length; i++){ %>
+                    <tr>
+                        <td><%= data1[i].r_id %></td>
+                        <td><%= data1[i].levels%></td>
+                        <td ><%= data1[i].jd_id %></td>                     
+                        <td ><%= data1[i].Candidate_Name %></td>
+                        <td><%= data1[i].division%></td>
+                        <td><%= data1[i].job_title%></td>
+                        <td><%= data1[i].location_hq%></td>                        
+                      
+                        <td><%= data1[i].score_dt%></td>
+
+
+
+
+                        <td><button value="view" id="score" class="button1"  data-rc_id="<%= data1[i].r_id %>" data-level="<%= data1[i].levels%>">   <i class="fa-solid fa-eye"></i></button></td>
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid py-2" style="display: none;" id="formContainer">
+    
+        <div class="row ">
+            <div class="col-4 text-center">
+                <img src="/static/images/logo_1.png" alt="" width="150px">
+            </div>
+            <div class="col-8 text-center pt-2">
+                <div class="f_18 fw_900">JUBILANT AGRI & CONSUMER PRODUCTS LTD.</div>
+                <div class="f_14 pb-4">Corporate Human Resource Development</div>
+                <div class="f_18 fw_700">Candidate Evaluation Form</div>
+            </div>
+            
+        </div>
+    
+        
+        
+    <!-- table -->
+    
+        <div class="row table-responsive" id="tbl_unique_02">
+                  
+        
+        
+    <!-- static -->
+        
+      
+        
+    </div>
+        
+        <!-- static -->
+        
+        <div class="row mt-4 f_13 border_3">
+            <div class="col-12">
+                This Assessment Sheet will Standardize the recording of information collected during the interview and will assist in Evaluating and Comparing different applicants, appearing for the interview.
+            </div>
+            <div class="col-12 fw-bold">
+                This sheet must be completed during or immediately following the interview.
+            </div>
+            <div class="col-12 fw-bold">
+                Please indicate your assessment on the basis of Ten(10) point Rating scale
+            </div>
+            <div class="col-12">
+                <span class="">
+                    --------------------------------- >
+                    </span>
+                    <br>
+                    <span >
+                        1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; 10
+                    </span>
+            </div>
+    
+        
+         <input type="hidden" value="" id="empconcet">
+         <input type="hidden" id="jd_id">
+         <input type="hidden" id="level">
+         <input type="hidden" id="r_id" value="" name="r_id">
+        
+      
+         
+          
+        </div>
+        
+        
+        </div>
+       
+<script src="/static/js/maanager_view_score.js"></script>
+    
+</body>
+</html>

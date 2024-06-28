@@ -1,0 +1,174 @@
+<!-- manage_employee_master.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp" >
+  <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+<link rel="stylesheet" href="/static/css/hr_view_employee.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css"> -->
+    <style>
+
+    </style>
+</head>
+<body>
+  <%-include('../common/header')%>
+  <%-include('../common/sidebar')%>
+  <div class="mt-5"></div>
+  <div class="container-fluid h-100 position-relative">
+      <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+     <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+        </button>
+  <div class="row dyn_row justify-content-end ">
+  <div class="col-xl-10 col-md-9 col-8 dyn_col ps-4"> 
+      <h5 class="text-center mt-3 text-light fs_16" >All Employee Record  </h5>
+      <div>
+
+
+        <form action="/employeetable" method="post" class="justify-content-end d-flex">
+          <button type="submit" class="btn px-3 add_btn h_39 " id="add_btn">
+           Export To Excel 
+          </button>
+        </form>
+          <table id="employeeTable" class="display  table_text_aling_middle table-bordered border-dark">
+              <thead class="bg_blue">
+                  <tr>
+                      <th>EMPLID</th>
+                      <th>Emp_Name</th>
+                      <th>COMPANY</th>
+                      <th>Comp_Name</th>
+                      <th>Vertical</th>
+                      <th>SubVertical</th>
+                      <th>POSITION</th>
+                      <th>Prefix</th>
+                      <th>FIRST_NAME</th>
+                      <th>MIDDLE_NAME</th>
+                      <th>LAST_NAME</th>
+                      <th>PAYROLL_STATUS</th>
+                      <th>BUSINESS_UNIT</th>
+                      <th>BU_Descr</th>
+                      <th>DEPTID</th>
+                      <th>Department</th>
+                      <th>CostCenterID</th>
+                      <th>EMP_FUNCTION</th>
+                      <th>SUB_FUNCTION</th>
+                      <th>BUSINESS</th>
+                      <th>PAYGROUP</th>
+                      <th>PAYGROUP_DESCR</th>
+                      <th>LOCATION_STATE</th>
+                      <th>LOCATION</th>
+                      <th>LOCATION_DESCR</th>
+                      <th>SEX</th>
+                      <th>BIRTHDATE</th>
+                      <th>QUALIFICATION</th>
+                      <th>Prev_Exp</th>
+                      <th>Jub_Exp</th>
+                      <th>Tot_Exp</th>
+                      <th>TERM_DATE</th>
+                      <th>HIRE_DATE</th>
+                      <th>Designation</th>
+                      <th>JOBCODE</th>
+                      <th>GRADE</th>
+                      <th>Supervisor_PositionID</th>
+                      <th>SUPERVISOR_ID</th>
+                      <th>SUPERVISOR_NAME</th>
+                      <th>Sup_EMAIL_ADDR</th>
+                      <th>L2_SUPERVISOR_ID</th>
+                      <th>L2_SUPRVISOR_NAME</th>
+                      <th>L2_POSITION_NBR</th>
+                      <th>L2_EMAIL</th>
+                      <th>Previous_EMPLOYER</th>
+                      <th>BLOOD_TYPE</th>
+                      <th>MAR_STATUS</th>
+                      <th>MARRIAGE_DATE</th>
+                      <th>PAN</th>
+                      <th>EmpBUSSINESS_EMAILID</th>
+                      <th>EmpPersonal_EMAILID</th>
+                      <th>BUS_PHONE</th>
+                      <th>HOME_PHONE</th>
+                      <th>EMERG_CNTCT</th>
+                      <th>ADDRESS</th>
+                      <th>FATHER_NAME</th>
+                  
+                  </tr>
+              </thead>
+              <tbody>
+                  <% data.forEach(employee => { %>
+                      <tr>
+                          <td><%= employee.EMPLID %></td>
+                          <td><%= employee.Emp_Name %></td>
+                          <td><%= employee.COMPANY %></td>
+                          <td><%= employee.Comp_Name %></td>
+                          <td><%= employee.Vertical %></td>
+                          <td><%= employee.SubVertical %></td>
+                          <td><%= employee.POSITION %></td>
+                          <td><%= employee.Prefix %></td>
+                          <td><%= employee.FIRST_NAME %></td>
+                          <td><%= employee.MIDDLE_NAME %></td>
+                          <td><%= employee.LAST_NAME %></td>
+                          <td><%= employee.PAYROLL_STATUS %></td>
+                          <td><%= employee.BUSINESS_UNIT %></td>
+                          <td><%= employee.BU_Descr %></td>
+                          <td><%= employee.DEPTID %></td>
+                          <td><%= employee.Department %></td>
+                          <td><%= employee.CostCenterID %></td>
+                          <td><%= employee.EMP_FUNCTION %></td>
+                          <td><%= employee.SUB_FUNCTION %></td>
+                          <td><%= employee.BUSINESS %></td>
+                          <td><%= employee.PAYGROUP %></td>
+                          <td><%= employee.PAYGROUP_DESCR %></td>
+                          <td><%= employee.LOCATION_STATE %></td>
+                          <td><%= employee.LOCATION %></td>
+                          <td><%= employee.LOCATION_DESCR %></td>
+                          <td><%= employee.SEX %></td>
+                          <td><%= employee.BIRTHDATE %></td>
+                          <td><%= employee.QUALIFICATION %></td>
+                          <td><%= employee.Prev_Exp %></td>
+                          <td><%= employee.Jub_Exp %></td>
+                          <td><%= employee.Tot_Exp %></td>
+                          <td><%= employee.TERM_DATE %></td>
+                          <td><%= employee.HIRE_DATE %></td>
+                          <td><%= employee.Designation %></td>
+                          <td><%= employee.JOBCODE %></td>
+                          <td><%= employee.GRADE %></td>
+                          <td><%= employee.Supervisor_PositionID %></td>
+                          <td><%= employee.SUPERVISOR_ID %></td>
+                          <td><%= employee.SUPERVISOR_NAME %></td>
+                          <td><%= employee.Sup_EMAIL_ADDR %></td>
+                          <td><%= employee.L2_SUPERVISOR_ID %></td>
+                          <td><%= employee.L2_SUPRVISOR_NAME %></td>
+                          <td><%= employee.L2_POSITION_NBR %></td>
+                          <td><%= employee.L2_EMAIL %></td>
+                          <td><%= employee.Previous_EMPLOYER %></td>
+                          <td><%= employee.BLOOD_TYPE %></td>
+                          <td><%= employee.MAR_STATUS %></td>
+                          <td><%= employee.MARRIAGE_DATE %></td>
+                          <td><%= employee.PAN %></td>
+                          <td><%= employee.EmpBUSSINESS_EMAILID %></td>
+                          <td><%= employee.EmpPersonal_EMAILID %></td>
+                          <td><%= employee.BUS_PHONE %></td>
+                          <td><%= employee.HOME_PHONE %></td>
+                          <td><%= employee.EMERG_CNTCT %></td>
+                          <td><%= employee.ADDRESS %></td>
+                          <td><%= employee.FATHER_NAME %></td>
+                          <!-- <td><a href="/edit/:<%= employee.EMPLID%>"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td> Edit button -->
+                      </tr>
+                  <% }); %>
+              </tbody>
+          </table>
+      </div>
+
+  </div>
+
+</div>
+  </div>
+
+
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="/static/js/main_dataTable.js"></script>
+<!-- <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> -->
+<script src="/static/js/hr_view_employee.js"></script>
+</body>
+</html>

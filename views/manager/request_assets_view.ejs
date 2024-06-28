@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp" >
+   
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+    <link rel="stylesheet" href="/static/css/request_assets_view.css">
+
+
+ 
+
+</head>
+<body>
+    <%-include('../common/header')%>
+    
+      <%-include('../common/sidebar')%>
+
+<!-------------------------------------------------------------------------------------------- start in this new  -->
+<div class="mt-5"></div>
+<div class="container-fluid h-100 position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+   <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+      </button>
+<div class="row dyn_row justify-content-end ">
+
+    <div class="col-xl-10 col-md-9 col-8 dyn_col px-3  ps-4">
+
+ 
+<!-------------- hidden inputs ------------->
+        <input type="text" id="assets_req_id" hidden>
+        <input type="text" id="cadidate_id" hidden>
+        <input type="text" id="candidate_name" hidden>
+<!-------------- hidden inputs ------------>
+
+        <h5 class="text-center mt-3 text-light fs_16" >Request Assets View</h5>
+            <div class="px-2">
+                <table class="w-100 table_text_aling_middle table-bordered border-dark table_bg" id="req_assets_table">
+                    <thead>
+                        <tr>
+                            <th>Assets <br> Request ID</th>
+                            <th>Candidate <br> ID</th>
+                            <th>Candidate <br> Name</th>
+                            <th>Assets <br> Type</th>
+                            <th>Mail-To</th>
+                            <th>Mail-CC</th>
+                            <th>Request Remarks</th>
+                            <th>Request Raised Date</th>
+                            <th>Reject Remarks</th>
+                            <th>Request Resolved Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                            <!-- <th></th> -->
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        
+                        <% for(let i=0; i<data1.length; i++){ %>
+
+                            <%if(data1[i].status=='Rejected'){%>
+                                <tr class="bg_red1">
+                                    <td><%= data1[i].assets_req_id%></td>
+                                    <td><%= data1[i].candidate_id%></td>
+                                    <td><%= data1[i].candidate_name%></td>
+                                    <td><%= data1[i].asset_type%></td>
+                                    <td><%= data1[i].mail_to%></td>
+                                    <td class="mail_cc_td "><%= data1[i].mail_cc%></td>
+                                    <td><%= data1[i].req_remarks%></td>
+                                    <td><%= data1[i].formated_req_date%></td>
+                                    <td><%= data1[i].reject_remarks%></td>
+                                    <td><%= data1[i].formated_req_resolved_date%></td>
+                                    <td class="fw-bold"><%= data1[i].status%></td>
+                                   
+                                    <td></td>
+                                </tr>
+
+                                
+                            <% }else if(data1[i].status=='Resolved'){%>
+                                <tr class="bg_green1">
+                                    <td><%= data1[i].assets_req_id%></td>
+                                    <td><%= data1[i].candidate_id%></td>
+                                    <td><%= data1[i].candidate_name%></td>
+                                    <td><%= data1[i].asset_type%></td>
+                                    <td><%= data1[i].mail_to%></td>
+                                    <td class="mail_cc_td "><%= data1[i].mail_cc%></td>
+                                    <td><%= data1[i].req_remarks%></td>
+                                    <td><%= data1[i].formated_req_date%></td>
+                                    <td><%= data1[i].reject_remarks%></td>
+                                    <td><%= data1[i].formated_req_resolved_date%></td>
+                                    <td class="fw-bold"><%= data1[i].status%></td>
+                                   
+                                    <td></td>
+                                </tr>
+
+                            <%}else{%>
+                                <tr >
+                                    <td><%= data1[i].assets_req_id%></td>
+                                    <td><%= data1[i].candidate_id%></td>
+                                    <td><%= data1[i].candidate_name%></td>
+                                    <td><%= data1[i].asset_type%></td>
+                                    <td><%= data1[i].mail_to%></td>
+                                    <td class="mail_cc_td "><%= data1[i].mail_cc%></td>
+                                    <td><%= data1[i].req_remarks%></td>
+                                    <td><%= data1[i].formated_req_date%></td>
+                                    <td><%= data1[i].reject_remarks%></td>
+                                    <td><%= data1[i].formated_req_resolved_date%></td>
+                                    <td class="fw-bold"><%= data1[i].status%></td>
+        
+                                    <% if(data1[i].status=='Open'){ %>
+                                    <td class="text-nowrap">
+                                        <button id="accecpt_btn" class="btn bg-success text-light fw-bold f_10" 
+                                            data-bs-toggle="modal" data-bs-target="#accecpt_modal" 
+                                            assets_req_id="<%= data1[i].assets_req_id%>"
+                                            cadidate_id="<%= data1[i].candidate_id%>"
+                                            candidate_name="<%= data1[i].candidate_name%>"
+                                            asset_type="<%= data1[i].asset_type%>" 
+                                            
+                                            >Accecpt
+                                        </button>
+        
+                                        <button id="reject_btn" class="btn bg-danger text-light fw-bold f_10"
+                                            data-bs-toggle="modal" data-bs-target="#reject_modal"
+                                            assets_req_id="<%= data1[i].assets_req_id%>" 
+                                            cadidate_id="<%= data1[i].candidate_id%>"
+                                            candidate_name="<%= data1[i].candidate_name%>"
+                                            asset_type="<%= data1[i].asset_type%>"                                 
+                                        >Reject</button>
+                                    </td>
+                                    <%}else{%>
+                                        <td></td>
+                                    <%}%>
+                                    
+                                </tr>
+                            <%}%> 
+                        
+                        <%}%>
+
+
+
+                    </tbody>
+    
+                </table>
+
+
+            </div>
+
+            
+
+
+
+<!-------------------------------------------------------- end this code here  -->
+
+  <!-- Accecpt Modal  start -->
+  <div class="modal fade" id="accecpt_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <h1 class="modal-title fs-5 " id="exampleModalLabel">Accecpt</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+                <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+                  <div class="row bg_r border-t pt-1 rounded-top-2">
+                  </div>
+                  <div class="row my-3 mt-4">
+                    <div class="col-md-4 my_cols" id="">
+            
+                        <h6 class="fw_bold f_13 ms-1 ">Candidate ID :</h6>
+                        <input type="text" id="candidate_id_modal" readonly name="candidate_id" class="form-control border-leftb box_sdw11 f_13 fw_600 border-top-0" placeholder="ID"  required>
+            
+                    </div>
+            
+                    <div class="col-md-4 my_cols ">
+                      <h6 class="fw_bold f_13 ms-1 ">Candidate Name :</h6>
+                      <input type="text" id="candidate_name_modal" readonly class="form-control  border-leftb box_sdw11 f_13 fw_600 border-top-0" placeholder="Candidate Name" name="c_name" >
+                    </div>
+            
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1 ">Asset Type:</h6>                    
+                      <input type="text" id="asset_type_modal" readonly class="form-control  border-leftb box_sdw11 f_13 fw_600 border-top-0" name="asset_type" >
+
+                    </div>
+                    
+                  </div>
+            
+                  <div class="row my-3 mt-4">
+            
+                    <div class="col-md-4 my_cols ">
+                      <h6 class="fw_bold f_13 ms-1 ">Asset Brand: <span class="fw-bold text-danger">*</span> </h6>
+                      <input type="text" id="asset_brand_modal" class="form-control  border-leftb box_sdw11 f_13 fw_600 border-top-0" placeholder="Brand" name="asset_brand" >
+                    </div>
+                   
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1 ">Asset Serial Number: <span class="fw-bold text-danger">*</span> </h6>
+                      <input type="text" id="asset_serial_no_modal" class="form-control  border-leftb box_sdw11 f_13 fw_600 border-top-0" placeholder="Asset Serial Number" name="asset_serial_no" >
+            
+                    </div>
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1 ">Condition At Assignment: <span class="fw-bold text-danger">*</span>  </h6>
+                      <select class="form-select border-leftb box_sdw11 f_13 fw_600 border-top-0" id="condition_modal" aria-label="Default select example" name="condition" >
+                        <option value="" selected disabled>Select</option>
+                        <option value="Good">Good </option>
+                        <option value="Repaired">Repaired</option>
+                        <option value="New">New</option>
+            
+                        
+                      </select>
+                    </div>
+                    
+                  </div>
+            
+            
+                  <div class="row my-3 mt-4">
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1">Assigned By:</h6>
+            
+                      <input type="text" id="assigned_by_modal" class="form-control  border-leftb box_sdw11 f_13 fw_600 border-top-0"  name="assigned_by" value="Manthan IT Solutions" readonly required >
+                    </div>
+                   
+                    <div class="col-md-4 my_cols">
+                      <h6 class="fw_bold f_13 ms-1 ">Attachment Image: </h6>
+                      <input  multiple type="file" name="image" id="images" accept="image/*" class="form-control border-leftb box_sdw11 f_13 fw_600 border-top-0" />
+                      <h6 class="fw_bold f_13 ms-1 mt-1 text-danger fw-bold">( You can upload maximum 5 images ) </h6>
+                    </div>
+                  </div>
+                  
+            
+            
+                </div>
+            
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="accecpt_submit_btn">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Accecpt Modal end -->
+
+
+  <!-- Accecpt Modal  start -->
+  <div class="modal fade" id="reject_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Reject</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+                <div class="row bg_r border-t pt-1 rounded-top-2">
+                </div>
+                <div class="row my-3 mt-4">
+                  <div class="col-md-6 my_cols" id="">
+          
+                      <h6 class="fw_bold f_13 ms-1 ">Reason For Reject: <span class="fw-bold text-danger">*</span></h6>
+                        <textarea name="" id="reason_for_rej" class="form-control border-leftb box_sdw11 f_13 fw_600 border-top-0" placeholder="Enter Remarks..."></textarea>
+                  </div>
+          
+                </div>
+          
+                
+          
+          
+          
+              </div>
+            
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="reject_submit_btn">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Accecpt Modal end -->
+
+   
+
+    </div>
+
+</div>
+</div>
+
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+<script src="/static/js/main_dataTable.js"></script>
+<script src="/static/js/request_assets_view.js"></script>
+
+
+
+
+
+</body>
+</html>

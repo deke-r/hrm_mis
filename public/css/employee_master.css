@@ -1,0 +1,305 @@
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+table,th{
+  font: 12px;
+}
+body {
+  background-color: #F7F7F2;
+}
+
+.employee-master h1 {
+  font-size: 20px;
+}
+
+
+.import-box {
+  margin-top: 50px;
+}
+
+table {
+  display: inline-block;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.table-box {
+  overflow: auto;
+}
+
+table thead tr th {
+  border: 1px solid black;
+}
+
+table thead {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+th,
+td {
+  border: 1px solid #c31f1f;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.select-file {
+  border-top: 2px solid #0437cf;
+  border-bottom: 2px solid #0437cf;
+  margin-top: 40px;
+  padding: 21px;
+  border-radius: 6px;
+
+}
+
+/* .container {
+  text-align: center;
+} */
+
+
+
+.button:hover {
+  background-color: #064a08;
+}
+
+.button {
+  display: inline-block;
+  background-color: #0d4b0f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px rgb(217, 246, 218);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+
+
+.csvfile-upload {
+  /* border-right:3px solid #5597f4a2;
+  border-left:3px solid #5597f4a2; */
+  border-radius: 20px;
+  border: 3px solid rgb(60, 104, 235);
+  padding: 10px;
+  /* height: 180px; */
+  box-shadow: 3px 3px 15px 8px rgba(0, 0, 0, 0.212);
+
+  /* background: #BFB7B6; */
+  /* background-color: #E0EFDA; */
+
+}
+
+.csvfile-upload p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Custom styles */
+.custom-upload-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1871d0d6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.file-input {
+  display: none;
+}
+
+/* .dropdown {
+  margin-bottom: 10px;
+} */
+
+.submit-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3572b2d6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.click {
+  text-decoration: none;
+}
+
+.click:hover {
+  text-decoration: underline;
+}
+
+
+.total {
+  color: royalblue;
+}
+
+/* Fixed header table style */
+/* table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 50px;
+
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  width: 170px;
+  background-color: #f2f2f2;
+  border: 1px #000000;
+}
+
+table thead tr th td {
+
+  border: 1px solid rgb(241, 42, 42);
+
+}
+
+ */
+
+.table-box1 {
+  border: 1px solid #092fa1;
+}
+
+.jdtr th {
+  width: 270px;
+}
+
+.height_vh{
+  min-height: 92vh;
+  max-height: 300vh;
+  height: 100%;
+
+}
+.select-filename {
+  font-weight: 650;
+  color: #1f79d9d6;
+}
+
+.inp_bor select {
+  border-top: 1px solid #1871d0d6;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.238);
+}
+
+.import {
+  color: #3572b2d6;
+}
+
+.thead_bg{
+background-color: #0c50a1 !important;
+}
+.tableth_13 tr th{
+font-size: 12px;
+background-color: #1871d0d6 !important;
+color: white;
+
+}
+
+.tabletd_12 tr td{
+font-size: 12px;
+
+
+
+}
+
+
+.bgF9F9F9{
+  /* background-color: #08a780; */
+/* background-color: #aeaed1; */
+/* background-color: rgb(51, 70, 128); */
+/* background-color: #003f91; */
+background-color: #1c1c35;
+
+
+
+}
+
+.bg_royal{
+background-color: rgb(51, 70, 128);
+/* background-color: #003f91; */
+/* background-color: #5da9e9; */
+}
+.on_hov a{
+  background-color:#494e56;
+  /* background-color: #08a780;; */
+  /* color: #0f0e0e; */
+  color: white;
+  
+ 
+}
+.on_hov a:hover{
+  background-color:#0c50a1 ;
+  transform: scale(1.03,1.03);
+  /* border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px; */
+  transition:1s all;
+  color: white;
+
+}
+
+.sticky_thead{
+position: sticky;
+top: 0%;
+}
+.class1{
+  position:relative;
+  z-index:-1;
+}
+.class2{
+  position:absolute;
+  top:0;
+  left: -0.1%;
+  z-index:3;
+  background-color:rgba(68, 63, 66, 0.822);
+}
+
+
+
+
+ /* Add the CSS for the search input here */
+ .search-container {
+  margin-top: 20px;
+   display: flex;
+   justify-content: flex-end; /* Align items to the right */
+}
+
+#searchInput {
+   padding: 4px;
+   width: 200px; /* Adjust width as needed */
+   box-sizing: border-box;
+   border-top: 3px solid royalblue;
+   border-radius: 4px;
+   font-size: 14px;
+}
+
+#searchInput:focus {
+   outline: none;
+   border-color: #007bff;
+}
+
+
+
+
+
+

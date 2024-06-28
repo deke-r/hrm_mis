@@ -1,0 +1,66 @@
+ /* profile.css */
+
+/* Reset default margin and padding */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set body font and background color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto; 
+    margin-top: 30px;/* Center the container */
+    padding: 0 15px; /* Add padding to the sides */
+}
+
+/* Style for the row containing profile card */
+.profile-row {
+ /* Light blue */
+    padding: 50px 0; /* Add padding for spacing */
+}
+
+/* Style for the profile card */
+.profile-card {
+    background-color: #4e51ead8; /* White */
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px rgba(64, 219, 79, 0.545);
+    padding: 30px;
+}
+
+/* Style for the avatar */
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #eff2f4d4; /* Gray */
+    color:#4e51ead8; /* White */
+    font-size: 60px;
+    line-height: 120px;
+    margin: 0 auto 20px auto;
+}
+
+/* Style for the user name */
+.user-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f0f4f8; /* Dark gray */
+}
+
+/* Style for user details */
+.user-details p {
+    font-size: 16px;
+    color: #f3f5f7; /* Dark gray */
+    margin-bottom: 5px;
+}
+
+/* Style for icons */
+.user-details i {
+    margin-right: 10px;
+}
+

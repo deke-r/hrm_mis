@@ -1,0 +1,169 @@
+.text_center {
+    text-align: center;
+}
+
+.mar_21 {
+    margin-top: -21px;
+}
+
+.mar_18 {
+    margin-top: -18px;
+}
+
+.f_18 {
+    font-size: 17px;
+}
+
+.font_family {
+    font-family: Cambria Math;
+}
+
+.f_25 {
+    font-size: 25px;
+}
+
+.table_border th,
+.table_border td {
+    border: 1px solid black;
+}
+
+.table_height {
+    height: 200px;
+}
+
+.table_width {
+    width: 68%;
+}
+
+.pad_20 {
+    padding: 0px 15px 15px 15px;
+}
+
+.input_height {
+    height: 50px;
+    border: 1px solid black;
+}
+
+.input_height_1 {
+    height: 50px;
+    /* width: 20%; */
+    border: 1px solid black;
+}
+
+
+.mar_left_259 {
+    margin-left: 259px;
+    margin-top: -16px;
+}
+
+.text_center_1 {
+    text-align: justify;
+}
+
+.add_btn {
+    margin-right: 115px;
+}
+
+@media only screen and (max-width: 768px) {
+    .add_btn {
+        margin-right: 36px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .mar_left_259 {
+        margin-left: 170px;
+    }
+}
+
+.img_height {
+    height: 60px;
+    width: 60px;
+}
+
+
+.mar_top_36 {
+    margin-top: -36px;
+}
+
+.mar_top_15 {
+    margin-top: -15px;
+}
+
+.over_flow_auto {
+    overflow-x: auto;
+}
+
+.border_buttom {
+    border-bottom: 1px dotted black;
+    border-top: 0px dotted black;
+    border-left: 0px dotted black;
+    border-right: 0px dotted black;
+}
+
+.outline_1 {
+    outline: transparent;
+}
+
+.margin_320 {
+    margin-left: -130px;
+}
+
+.mar_left_100 {
+    margin-left: 100px;
+}
+
+.margin_100 {
+    margin-left: 100px;
+}
+
+.form_control {
+    display: block;
+    width: 170px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* background-color: var(--bs-body-bg); */
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.mar_left_52 {
+    margin-left: 52px;
+}
+
+.width_112 {
+    width: 112px;
+}
+
+.mar_top_75 {
+    margin-top: -75px !important;
+}
+
+/* .input_border{
+    border-left: 3px solid #0c50a1 !important;
+    border-right: 3px solid #0c50a1 !important;
+    border-top: 1px solid #7e7e7e !important;
+    border-bottom: 1px solid #7e7e7e !important;
+} */
+
+.mar_left_52 {
+    margin-left: 52px;
+}
+
+.input_height_11 {
+    height: 50px;
+    /* width: 20%; */
+    border: 1px solid black;
+}
+
+.mar_top_75 {
+    margin-top: -35px !important;
+}

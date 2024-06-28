@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="icon" href="/static/images/it.webp" >
+   
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+    <link rel="stylesheet" href="/static/css/manager_requirement.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> -->
+
+ 
+
+</head>
+<body>
+    <%-include('../common/header')%>
+    
+      <%-include('../common/sidebar')%>
+
+<!-------------------------------------------------------------------------------------------- start in this new  -->
+<div class="mt-5"></div>
+<div class="container-fluid h-100 position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+   <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+      </button>
+<div class="row dyn_row justify-content-end ">
+
+<div class="col-xl-10 col-md-9 col-8 dyn_col px-3  ps-4">
+
+ 
+
+    <h5 class="text-center mt-3 text-light fs_16" >Manage JD </h5>
+<div class="px-2">
+<table class="w-100 table_text_aling_middle table-bordered border-dark" id="jd_table">
+    <thead class="table_bg">
+        <tr>
+            <!-- <th>S.No.</th> -->
+            <th>JD ID</th>
+            <th>Job Title</th>
+            <th>Function</th>
+            <th>Business</th>  
+            <th>Requirement</th>
+            <!-- <th>PDF</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        
+    <!-- <tr>		
+        
+        <td id="jid">ddd</td>
+        <td id="jtitle"></td>
+        
+        <td id="jfunc"></td>
+        <td id="jbuis"></td>
+        <td i><button class="px-2 py-1 rounded-2 border-0 text-white f_13 bg-primary requirement" >Raise Requirement</button></td>
+         <td>
+        <i class="fa-solid fa-file-pdf dwnld" ></i>
+            
+        </td>
+    </tr> -->
+    <%for(var i=0; i<data.length; i++){%>
+        <tr>
+
+
+            <td>
+                <%=data[i].prefix.concat(data[i].jd_id)%>
+            </td>
+            <td>
+                <%= data[i].job_title %>
+            </td>
+            <td>
+                <%= data[i].function %>
+            </td>
+            <td>
+                <%=data[i].business %>
+            </td>
+         
+            
+            
+
+            <td><button class="px-2 py-1 rounded-2 border-0 text-white f_13 Blu requirement" jd_id="<%= data[i].jd_id %>" jtitle="<%= data[i].job_title %>" func="<%= data[i].function %>" business="<%= data[i].business %>" about="<%= data[i].about_us %>" role_s="<%= data[i].role_summary %>" role_res="<%= data[i].role_nd_responsibilites %>" k_per="<%= data[i].key_performance %>" edu="<%= data[i].education_qualification %>">Raise Requirement</button></td>
+
+            <!-- <td><i class="fa-solid fa-file-pdf dwnld" jd_id ="<%=data[i].jd_id%>" bussniess="<%=data[i].business %>" job_ti="<%= data[i].job_title %>" func="<%= data[i].function %>" role_p="<%= data[i].role_summary %>" role_res_p="<%= data[i].role_nd_responsibilites %>" k_pe="<%= data[i].key_performance %>" ed="<%= data[i].education_qualification %>" ></i></td> -->
+           
+        </tr>
+        <%}%>
+ 
+    </tbody>
+</table>
+
+
+</div>
+
+<!-------------------------------------------------------- end this code here  -->
+
+        
+         
+            <div class="container-fluid  pasrent_div">
+
+     <div class="box   pdf px-2 d-none req_tab mt-4">
+    
+                                           
+    </td>
+            </tr>
+            <tr>
+                <td colspan="4" class=" py-3 border-0" >
+                    <div class="text-center">
+                        <button type="button" class="action shad_dark ms-3 px-3 py-1 rounded-2 border-0 btn-light mt-2 f_13 btn_bor px-4 shadow_high fw-semibold" onclick="showForm()">Action</button>
+                    <button id="cancelButton" class="back ms-3 shad_dark px-3 py-1 rounded-2 border-0 btn-light mt-2 f_13 btn_bor px-4 shadow_high fw-semibold">Cancel</button>
+                    </div>
+                    
+                </td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    
+    
+    <div class="box mt-4 " id="formContainer"  style="display: none; ">
+        
+     
+        <form action="" class=" row manager shad_dark rounded-2 gy-3 pb-3"  method="post">
+    
+            <div class=" col-xl-4 col-md-6 col-sm-12">
+            <label for="" class="f_13">Location State<sup class="text-danger">*</sup></label>
+     <input type="text" id="location_state" placeholder="Location State" required>
+            </div>
+            <div class=" col-xl-4 col-md-6 col-sm-12">
+            <label for="" class="f_13">Direct Reporting To<sup class="text-danger">*</sup></label>
+    
+                <input type="text" id="direct_reporting" placeholder="Direct Repoting To"> 
+            </div>
+           
+            <div class=" col-xl-4 col-md-6 col-sm-12">
+                <label for="" class="f_13">Indirect/Matrix<sup class="text-danger">*</sup></label>
+                <input type="text" id="indirect_matrix" placeholder="Indirect/Matrix">  
+            </div>
+         
+            <div class=" col-xl-4 col-md-6 col-sm-12">
+                <label for="" class="f_13">Location / HQ<sup class="text-danger">*</sup></label>
+                <input type="text" id="location_hq" placeholder="Location / HQ">
+            </div>
+          
+      
+        
+            
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <label for="divisionType" class="f_13" >Division<sup class="text-danger">*</sup></label>
+                <select   id="division" class="mt-0" name="division">
+                    <option  value="">Select Division</option>
+                    <% result.forEach(result => { %>
+                        <option value="<%= result.division_type%>"><%= result.division_type %></option>
+                    <% }) %>
+                    <!-- <option value="other">Other</option> -->
+                </select>
+                <!-- Input field for typing division if "Other" is selected -->
+                <!-- <input type="text" id="otherDivisionInput" name="otherDivision" style="display: none;" placeholder="Enter Other Division"> -->
+            </div>
+
+            <div class=" col-xl-4 col-md-6 col-sm-12">
+                <label for="" class="f_13">Team Size<sup class="text-danger">*</sup></label>
+                <input type="text" id="team_size" placeholder="Team Size">
+            </div>
+        </form>
+    
+      
+
+
+        
+        <div class="row  mt-4 gy-3 pb-3 rounded-2 shad_dark">
+            <div class="col-6">
+             <h6 class="f_13"> <b>Attached CV</b></h6>
+         
+            </div>
+
+           
+               <div class="col-6 text-end">
+                 <abbr title="can upload up to 3 resumes">    
+                   <button class="btn p-0 text-primary fs_13" id="dyn_input">
+                     <i class="fa-solid fa-file-circle-plus"></i>
+                   </button>
+                 </abbr>
+               </div>
+               <div class="col-6">
+                 <div class="row gy-3" id="add_file"></div>
+               </div>
+           
+           
+           <!-- PDF Modal -->
+           <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title">PDF Viewer</h5>
+                   
+                   <button type="button" class="btn-close text-danger " data-bs-dismiss="modal" aria-label="Close"></button>
+                 </div>
+                 <div class="modal-body">
+                   <iframe id="pdfViewer" src="" frameborder="0" style="width: 100%; height: 500px;"></iframe>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+</div>
+    
+        
+        <div class="row gy-3 mt-4 rounded-2 shad_dark">
+            <div class="col-6"> <label for="roleTextarea" class="f_13">Add Remarks</label></div>
+            <div class="col-6 text-end"><i class="fa-solid fa-square-plus fa-2xl " id="toggleRoleTextarea" ></i></div>
+            <div class="col-12">
+                <textarea id="roleTextarea" class=" px-3 py-1 form-control rounded-2 border-1 btn-light mt-2 fs_13 btn_bor px-4 shadow_high fw-semibold" cols="100" rows="6"  placeholder="Add Your Remarks" style="display: none;"></textarea>
+                <p class="f_13">Word count: <span id="wordCount">0</span>/500</p>
+            </div>
+          
+        </div>
+        
+    
+    
+    
+    
+    
+    <input type="hidden" name="jd_id"  id="input_jd_id2" value="">
+    <div class="row mt-3">
+        <div class="col-12 text-center"><button class="px-3 py-1 rounded-2 shad_dark text-white  f_13 btn_border" id="create">Submit</button></div>
+    
+    </div>
+    </div>
+
+</div>
+    
+<div class="container-fluid   pdf-fluid d-none mt-4" id="printpdf">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="4" class="text-center job  cent">JOB DESCRIPTION</th>
+        </tr>
+        <tr>
+            <th>Job Title:</th>
+            <th colspan="2"><b id="p_title"></b></th>
+            <div class="image">
+            <th rowspan="5" class="logo"><center><img src="/static/images/pdf_image.png" class="img-fluid image_logo" alt="" srcset=""></center></th>
+        </div>
+        </tr>
+        <!-- Add rows with data here -->
+        <!-- Example row -->
+        <tr>
+            <td>Department/Group:</td>
+            <td colspan="2" id="p_func"></td>
+        </tr>
+        <tr>
+            <td>Reporting to:</td>
+            <td colspan="2" id="Reporting"></td>
+        </tr>
+        <tr>
+            <td>Team Size:</td>
+            <td colspan="2" id="team_size1"></td>
+        </tr>
+        <tr>
+            <td>Location:</td>
+            <td colspan="2" id="Location"></td>
+        </tr>
+        <tr>
+            <th colspan="4" class="text-center job cent" style="text-align: center  !important;">ABOUT US</th>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <div class="content" >
+                    <!-- <h6 class="fs-13">Jubilant Agri and Consumer Products Limited (JACPL)</h6> -->
+                   <div id="#p_about">
+                    Jubilant Agri and Consumer Products Limited (JACPL) is a part of the <b>Jubilant Bhartia Group</b>–a global Conglomerate with strong presence in diverse sectors like Pharmaceuticals, Life Science, Food Services, Motor Works, Oil & Gas Consulting, Consumer & Agri Products and Performance Polymers. <br><br>
+
+                    <b>Jubilant Agri and Consumer Products Limited (JACPL)</b> is a unique and well diversified portfolio across Consumer Products, Agri and Performance Polymers like:
+
+                    <ul class="und_list">
+                        <li> <b>Consumer Products:</b>
+                            <ol type="a">
+                                <li><b>2nd largest Consumer Brand </b>in the <b>Wood Work Adhesives</b>  with a range of Premium Adhesives under popular brands like JivanJor and Vamicol. These brands have a strong National presence through a distribution network of over 300+ distributors and 10,000+ dealers</li>
+                                <li>
+                                    A significant player in <b>Wood Finishes and Wood Preservatives </b>category with its popular Charmwood brand. The company has also made strategic tie ups with Large Global players like Verinlegno Spa, Italy to offer a strong portfolio of Premium & Specialised Poly Urethane (PU) Paints under the brand Ultra Italia. 
+                                </li>
+                            </ol>
+                        </li>
+                        <li> <b></b>
+                            <ol type="a">
+                                <li><b>The largest manufacturer in India and 2nd largest globally of Performance Polymers </b>like VP Latex, supplying this key ingredient to leading Tyre manufacturers globally such as JK Tyres, SRF, Continental Tyres (USA) etc.</li>
+                                <li>
+                                   <b>2nd largest globally and only Indian manufacturer and Supplier of Food </b>like SPVA – a key ingredient in Chewing Gums; with supplies to leading global brands like Wrigleys, Mondelez, Perfetti Van Melle and others
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li>
+                           <b>Agri Products</b>- One of India’s leading producer of Agri Products like SSP (Single Super Phosphate), Fertilizers for Crop Nutrition & Crop Growth under its flagship brand RAMBAN; and also producer of Industrial Chemical (Sulphuric Acid).
+                        </li>
+
+                    </ul>
+
+                    The organisation has a strong Innovation Culture as its bedrock to support its ambition to deliver World Class products and services to its customers and consumers across the globe. Fully owned State of the art manufacturing facilities at Gajraula & Sahibabad in Uttar Pradesh, Kapasan in Rajasthan and Savli in Gujarat manufacture World class products <b>which are distributed across the country and exported to over 35+ countries.</b> <br><br>
+
+                    With a team of 1000 + dedicated and passionate professionals, JACPL is well poised to accelerate on the journey of building exciting businesses and brands, producing best in class products and <b>transforming itself to deliver exponential growth and stronger shareholder value.</b><br><br>
+                    
+                    <b>JACPL is a wholly owned subsidiary of Jubilant Industries Limited (JIL) and listed on BSE & NSE since Feb 14, 2011.</b>
+
+
+                   </div>
+                    
+                
+                    <!-- Other sections like Performance Polymers and Agri Products -->
+                
+                    <h6 class="fs-13 mt-3 fw-semibold" >Role Summary:</h6>
+                    <div id="p_r"></div>
+                
+                    <!-- Additional role details -->
+                    <h6 class="fs-13 mt-3 fw-semibold">Roles and Responsibilities:</h6>
+                    <div id="p_rn"></div>
+                    
+                    <h6 class="fs-13 mt-3 fw-semibold">Key Performance Indicators:</h6>
+                   <div id="p_kp">
+
+                   </div>
+                
+                    <h6 class="fs-13 mt-3 fw-semibold">Educational Qualifications / Professional Experience:</h6>
+                    <div id="p_e">
+
+                    </div>
+                
+                   
+                </div>
+                                
+</td>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+
+</div>
+
+</div>
+</div>
+<!-- <script src="/static/cdn/jquery/jquery3.7.1.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script> -->
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+<script src="/static/js/main_dataTable.js"></script>
+<script src="/static/js/manager_requirement.js"></script>
+
+
+
+
+
+</body>
+</html>

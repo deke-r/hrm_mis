@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/login.css">
+    <title>HRM</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="icon" href="/static/images/it.webp" >
+</head>
+<body class="add_bg position-relative">
+    <div class="container-fluid h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+
+            <div class="col-xl-3 col-md-4 col-sm-6 col-11 light_white rounded-4  blur_layer shadow_grey p-3 border_white">
+                <div class="row justify-content-center gy-2" method="post" action="/login" id="loginForm" >
+               
+                    <div class="col-8 text-center">
+                     <img src="/static/images/images-removebg-preview.png" alt="" class="img_l">
+                    </div>
+             
+                    <div class="col-12 rem_br_rad_end">
+                        <label for="type" class="form-label">Employee Type<sup class="text-danger">*</sup></label>
+                        <div class="d-flex rem_br_rad_end shadow_high">
+                            <i class="fa-solid fa-user px-2 pt-2 rounded-start-1 bg-dark text-light"></i>
+                            <select class="form-select form-select-sm fs_13 rounded-start-0 border-0" aria-label="Default select example" id="type" name="USER_TYPE">
+                                <option selected disabled>--Category--</option>
+                                <option value="0">ADMIN</option>
+                                <option value="1">HR</option>
+                                <option value="2">MANAGER</option>
+                                <option value="3">EMPLOYEE</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="box1" class="form-label">Employee-Id</label>
+                        <div class="d-flex rem_br_rad_end shadow_high">
+                            <i class="fa-solid fa-id-badge px-2 pt-2 rounded-start-1 bg-dark text-light"></i>
+                            <input type="text" class="form-control form-control-sm rounded-start-0 border-0 shadow-none" id="box1" placeholder="Enter employee id" name="EMP_CODE">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="box2" class="form-label">Password</label>
+                        <div class="d-flex rem_br_rad_end shadow_high">
+                            <i class="fa-solid fa-key px-2 pt-2 rounded-start-1 bg-dark text-light"></i>
+                            <input type="password" class="form-control form-control-sm shadow_high rounded-0 border-0 shadow-none" id="box2" placeholder="Enter password" name="PASSWORD">
+                            <i class="fa-solid fa-eye-slash bg-white rounded-end-1 p_3per" id="show"></i>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center text-light">
+                        <button type="submit" id="log" class="btn btn-light mt-2 fs_13 btn_bor px-4 shadow_high fw-semibold">Login</button>
+                    </div>
+                    <div class="col-12 text-end">
+                        <a class="text-primary" href="/candidate_forgot_password">Forgot password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="position-absolute pp">
+        <a href="/candidate_login">
+        <div class="btn   text-light">Candidate Login</div></a>
+
+    </div> -->
+
+    <!-- Include external JavaScript file -->
+    <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+    <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+    <!-- <script src="/static/cdn/sweetalert/js/sweetalert11.10.2.js"></script> -->
+    <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.js"></script>
+
+    <script src="/static/js/login.js"></script>
+  
+</body>
+</html>

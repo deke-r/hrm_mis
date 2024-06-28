@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Template</title>
+    <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/static/css/test_pdf.css"> -->
+    <link rel="stylesheet" href="/static/css/candidate_pf_form11_pdf.css">
+
+ 
+</head>
+<body>
+    <input type="text" value="<%= data1[0].candidate_id%>" hidden>
+
+    
+
+    <div class="table-responsive px-3" id="pdf_cont">
+        <table class="w-100 border_1  f_13 ">
+            <tbody>
+                <tr class="text-end">
+                    
+                    <td colspan="3" class="fw_bold ">New Form No.11- Declaration Form</td>
+
+                </tr>
+                <tr class="text-end">
+                    <td colspan="3" class="fw_bold  f_10">(To be retained by the employer for future reference)
+                    </td>
+                </tr>
+
+                <tr >
+                    <td class="text-center">
+                        <img src="/static/images/pf_icon.png" alt="" width="90px">
+                    </td>
+                    <td>
+                        <div class="fw_bold f_20">
+                            EMPLOYEES PROVIDENT FUND ORGANIZATION
+                        </div>
+                        <div class="f_14">
+                            Employees provident funds scheme, 1952 (paragraph 34 & 57) & Employees pension  scheme 1995 (paragraph 24)
+                        </div>
+                    </td>
+
+                    <td class="border_1 text-center ">
+                        <div>
+                            <span class="fw_bold pe-3">Emp Code:</span> <%= data1[0].emp_code%>
+                        </div>
+                        <div class="text-nowrap">
+                            <span class="fw_bold pe-3">Company:</span> <%= data1[0].company%>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td colspan="2" class="f_13 ">(Declaration by a person taking up employment in any establishment on which EPF Scheme, 1952 end /of EPS1995 is applicable)
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="3">
+                        <div class="px-4">
+                        <table class="border_1 w-100 table_border" id="table_1">
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="ps-2">Name of the member</td>
+                                    <td class="ps-2"><%= data1[0].candidate_name%></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="ps-2">Father’s Name (<input type="checkbox" disabled> ) Spouse’s Name (<input type="checkbox" disabled>)</td>
+                                    <td class="ps-2"><%= data1[0].father_spouse_name%></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="ps-2">Date of Birth (DD/MM/YYYY)</td>
+                                    <td class="ps-2"><%= data1[0].candidate_DOB_formated%></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="ps-2">Gender: ( male / Female /Transgender )</td>
+                                    <td class="ps-2"><%= data1[0].candidate_gender%></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="ps-2">Marital Status (Married /Unmarried /Widow/Divorce)</td>
+                                    <td class="ps-2"><%= data1[0].candidate_marital_status%></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">6</td>                                                                      
+                                    <td class="ps-2">(a) Email ID:</td>                                    
+                                    <td class="ps-2"><%= data1[0].candidate_email_id%></td>  
+                                </tr>
+                                
+                                <tr>
+                                    <td class="text-start ps-2">(b) Mobile No:</td>
+                                    <td class="ps-2"><%= data1[0].candidate_mobile_no%></td>
+                                </tr>
+                                <tr>
+                                    <td>7*</td>
+                                    <td class="ps-2">Whether earlier a member of Employees ‘provident Fund Scheme 1952	</td>
+                                    <td aria-disabled="true" class="pointer_events ps-2">
+                                        <% if(data1[0].member_of_epfs_1952=='Yes'){%>                                        
+                                        <input type="checkbox"  checked> <span>Yes</span>
+                                        <input type="checkbox" > <span>No</span>
+                                        <%}else{%>
+                                        <input type="checkbox"  > <span>Yes</span>
+                                        <input type="checkbox"  checked> <span>No</span>
+                                        <%}%>
+                                     </td>
+                                </tr>
+                                <tr>
+                                    <td>8*</td>
+                                    <td class="ps-2">Whether earlier a member of Employees ‘Pension Scheme ,1995</td>
+                                    <td aria-disabled="true" class="pointer_events ps-2">
+                                        <% if(data1[0].member_of_eps_1995=='Yes'){%>                                        
+                                            <input type="checkbox"  checked> <span>Yes</span>
+                                            <input type="checkbox" > <span>No</span>
+                                            <%}else{%>
+                                            <input type="checkbox"  > <span>Yes</span>
+                                            <input type="checkbox"  checked> <span>No</span>
+                                            <%}%>
+                                         </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="6">9</td>
+                                    <td colspan="2" class="text-center fw_bold f_14">
+                                        If response to any or both of (7) & (8) above is yes. MANDATORY FILL UP THE (COLUMN 9)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start fw_bold ps-4">
+                                        a) Universal Account Number(UAN)	
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].uan_no%></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        b) Previous PF a/c No	
+                                        <span>
+                                            <table class="d_inline_block">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>AD</td>
+                                                        <td>HYD</td>
+                                                        <td>EST.CODE</td>
+                                                        <td>EXTN</td>
+                                                        <td>PF NO.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </span>
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].pre_pf_acc_no%></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        c) Date of exit from previous employment (DD/MM/YYY)	
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].date_of_exit_from_prev_employment_formated%></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        d) Scheme Certificate No (if Issued )	
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].scheme_certificate_no%></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        e) Pension Payment Order (PPO)No (if Issued)	
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].pension_payment_order_no%></td>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="4">10</td>
+                                    <td class="text-start ps-4">
+                                        a) InternationalWorker:	
+                                    </td>
+                                    <td aria-disabled="true" class="pointer_events ps-2">
+                                        <% if(data1[0].international_worker=='Yes'){%>                                        
+                                            <input type="checkbox" checked> <span>Yes</span>
+                                            <input type="checkbox" > <span>No</span>
+                                            <%}else{%>
+                                            <input type="checkbox"  > <span>Yes</span>
+                                            <input type="checkbox"  checked> <span>No</span>
+                                        <%}%>                                         
+                                    </td>                                    
+                                </tr>
+                                
+
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        b) If Yes , State Country Of Origin (India /Name of Other Country)	
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].country_name%></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        c) Passport No	
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].passport_no%></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        d) Validity Of Passport <span class="fw_bold"> (DD/MM/YYY) to(DD/MM/YYY)</span>	
+                                    </td>
+                                    <td class="ps-2">(<%= data1[0].passport_issue_date_formated%> ) To (<%= data1[0].passport_expiry_date_formated%>)</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td rowspan="4">11</td>
+                                    <td colspan="2" class="text-center fw_bold f_14">
+                                        KYC Details: (attach Self attested copies of following KYCs) **
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        a) Bank Account No .& IFS code	
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].bank_acc_no%> & <%= data1[0].ifs_code%> </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        b) AADHAR Number (12 Digit)		
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].aaddhar_no%></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-start ps-4">
+                                        c) Permanent Account Number (PAN),If available	
+                                    </td>
+                                    <td class="ps-2"><%= data1[0].pan_no%></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        </div>
+                    </td>
+                </tr>
+
+
+
+                <!-- undertaking section ejs startL -->
+                <!-- undertaking section ejs startL -->
+                <tr>
+                    <td colspan="3">
+                        <div class="px-4">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" class="text-center fw_bold f_14 text-decoration-underline">UNDERTAKING</td>
+                                </tr>
+                                <tr>
+                                    <td class="vtrl_top width_34">1)</td>
+                                    <td>
+                                        Certified that the Particulars are true to the best of my Knowledge
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="vtrl_top width_34">2)</td>
+                                    <td >
+                                        I authorize EPFO to use my Aadhar for verification / e KYC purpose for service   delivery
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="vtrl_top width_34">3)</td>
+                                    <td >
+                                        Kindly transfer the funds and service details, if applicable if applicable, from the previous PF account as declared above to the present P.F Account (The Transfer Would be possible only if the identified KYC details approved by previous employer has  been verified by present employer)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td class="vtrl_top width_34">4)</td>
+                                    <td>
+                                        In case of changes In above details the same Will be intimate to employer at the earliest
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="px-4">
+                                        <table class="w-100">
+                                            <tbody>
+                                                <tr>
+                                                    <td >Date: <%= data1[0].undertaking_date_formated%></td>
+                                                    <td class="text-end"><img src="/hrm_documents/<%= data1[0].candidate_id%>/image/<%= data1[0].member_sign_img%>" alt="" width="200px" height="50px" class="border_1"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Place: <%= data1[0].undertaking_place%></td>
+                                                    <td class="fw_bold text-nowrap text-end">
+                                                        <span>Signature of Member</span>
+                                                    </td>                                    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                            </tbody>                            
+
+                        </table>
+                    </div>
+                    </td>
+                </tr>
+                <!-- undertaking section ejs end -->
+                <!-- undertaking section ejs end -->
+
+
+                <!-- declaration section ejs startL -->
+                <!-- declaration section ejs startL -->
+
+                <tr>
+                    <td colspan="3" >
+                        <div class="html2pdf__page-break"></div>
+                    <div class="px-4">
+                        <table class="w-100 ">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" class="text-center fw_bold f_14 text-decoration-underline">DECLARATION BY PRESENT EMPLOYER</td>
+                                </tr>
+                                <tr>
+                                    <td class="vtrl_top width_34">A)</td>
+                                    <td >
+                                    The member Mr./Ms./Mrs <%= data1[0].candidate_name%> has joined on <%= data1[0].candidate_joining_date_formated %> and has been allotted PF Number <%= data1[0].alloted_pf_no%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="vtrl_top width_34">B)</td>
+                                    <td colspan="2">
+                                        In case person was earlier not a member of EPF Scheme ,1952 and EPS,1995
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" >
+                                        • (Post allotment of UAN ) The UAN Allotted for the member is <%= data1[0].alloted_uan_no%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" >
+                                        • Please tick the Appropriate Option:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" >
+                                        • The KYC details of the above member in the UAN database
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" aria-disabled="true" class="pointer_events ps-4">
+                                        <% if(data1[0].declaration_b_checkbox=='checked-1'){ %>
+                                            <input type="checkbox"  checked > 
+                                            <span>Have not been uploaded</span>
+                                        <%}else{%>                                        
+                                            <input type="checkbox" > 
+                                            <span>Have not been uploaded</span>
+                                        <%}%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" aria-disabled="true" class="pointer_events ps-4">
+                                        <% if(data1[0].declaration_b_checkbox=='checked-2'){ %>
+                                            <input type="checkbox" checked > 
+                                            <span> Have been uploaded but not approved</span>
+                                        <%}else{%>                                        
+                                            <input type="checkbox" > 
+                                            <span> Have been uploaded but not approved</span>
+                                        <%}%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" aria-disabled="true" class="pointer_events ps-4">
+                                        <% if(data1[0].declaration_b_checkbox=='checked-3'){ %>
+                                            <input type="checkbox" checked > 
+                                            <span>  Have been uploaded and approved with DSC</span>
+                                        <%}else{%>                                        
+                                            <input type="checkbox" > 
+                                            <span>  Have been uploaded and approved with DSC</span>
+                                        <%}%> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="vtrl_top width_34">C)</td>
+                                    <td >
+                                        In case the person was earlier a member of EPF Scheme ,1952 and EPS, 1995:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        • The above PF account number /UAN of the member as mentioned in (a) above has been tagged with his /her UAN/previous member ID as declared by member
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        • Please Tick the Appropriate Option
+                                    </td>
+                                </tr>
+
+                                
+                                <tr>
+                                    <td colspan="2" aria-disabled="true" class="pointer_events ps-4">
+                                        <% if(data1[0].declaration_c_checkbox=='checked-1'){ %>
+                                            <input type="checkbox" checked > 
+                                            <span>
+                                                The KYC details of the above member in the UAN database have been approved with digital signature Certificate and transfer request has been generated on portal.
+                                            </span>
+                                        <%}else{%>                                        
+                                            <input type="checkbox" > 
+                                            <span>
+                                                The KYC details of the above member in the UAN database have been approved with digital signature Certificate and transfer request has been generated on portal.
+                                            </span>
+                                        <%}%>
+                                                                                
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan="2" aria-disabled="true" class="pointer_events ps-4">
+                                        <% if(data1[0].declaration_c_checkbox=='checked-2'){ %>
+                                            <input type="checkbox"  checked > 
+                                            <span>
+                                                As the DSC of establishment are not registered With EPFO the member has been informed to file physical claim (Form13) for transfer of funds from his previous establishment.
+                                            </span>
+                                        <%}else{%>                                        
+                                            <input type="checkbox" >                                             
+                                            <span>
+                                                As the DSC of establishment are not registered With EPFO the member has been informed to file physical claim (Form13) for transfer of funds from his previous establishment.
+                                            </span>
+                                        <%}%>
+                                        
+                                    </td>
+                                </tr>
+
+
+
+
+                                <tr>
+                                    <td colspan="2" class="px-4">
+                                        <table class="w-100">
+                                            <tbody>
+                                                <tr>
+                                                    <td >Date: <%= data1[0].undertaking_date_formated%></td>
+                                                    <td class="text-end">
+                                                        <img src="/hrm_documents/<%= data1[0].candidate_id%>/image/<%= data1[0].employer_sign_img %>" alt="" width="200px" height="50px" class="border_1">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td colspan="2" class="fw_bold text-nowrap text-end">
+                                                        <span>Signature of Employer With seal of Establishment</span>
+                                                    </td>                                    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+
+
+<!-- 
+
+
+                                    <td>Date: <%= data1[0].declaration_date_formated %></td>
+                                    <td class="text-end">
+                                        <img src="/static/image/<%= data1[0].employer_sign_img %>" alt="" width="200px" height="50px" class="border_1">
+                                    </td>                                    
+                                </tr>
+                                <tr>
+                                    
+                                    <td colspan="2" class="fw_bold text-nowrap text-end">
+                                        <span>Signature of Employer With seal of Establishment</span>
+                                    </td>                                     -->
+                                </tr>
+                            </tbody>                            
+
+                        </table>
+                    </div>
+                    </td>
+                </tr>
+                <!-- declaration section ejs end -->
+                <!-- declaration section ejs end -->
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center my-2">
+        <button id="generatePdfBtn" class="btn btn-primary fw_bold">Submit</button>
+    </div>
+
+
+<script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/candidate_pf_form11_pdf.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+
+    
+    </body>
+</html>
+
+
+
+<!-- <div class="html2pdf__page-break"></div> -->
+
+
+

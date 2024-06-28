@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/nomination_form_1.css">
+    <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css">
+</head>
+<body>
+    <% //-include('../common/candidate_common/candidate_header')%>
+        <% //-include('../common/candidate_common/candidate_sidebar')%>
+
+            <div class="conatainer-fluid  font_family" id="content-pdf">
+                <!-- <div class=""> -->
+                    <% for (let i = 0; i < nominee.length; i++) {%>
+
+                <div class="col-12">
+                    <h4 class="text-center fw-bold"><u>NOMINATION FOR SETTLEMENT OF UNPAID WAGES & OTHER DUES</u></h4>
+                    <h5 class="text-center"><u>(Not covered by separate nomination forms)</u></h5>
+                </div>
+                <div class=" mt-3 mx-5">
+                    <div class="d-flex">
+                    <div class="col-xl-12 f_18">1. Dr/ Mr/Ms:  <input type="text" name="" id="" class=" w-75 outline_1 border_buttom w-50 " value="<%= nominee[i].nomi_name %>"></div>
+                    <!-- <div class=" col-xl-10">
+                       
+                    </div> -->
+                    </div>
+                    <div class="mar_left_1 f_18"> I hereby nominate the person (s) mentioned below to receive the
+                        settlement of
+                        unpaid wages & other dues payable after my death.</div>
+
+                    <div class=" f_18">2. I hereby declare that the person (s) mentioned is/are a member (s) of my family.</div>
+
+                    <div class=" f_18">3. Nominations made here invalidates my previous nominations.</div>
+                </div>
+                <!-- </div> -->
+
+
+                <div class="cantainer-fluid font_family mt-3 mx-3">
+                    <h5 class="text-center fw-bold">NOMINEES(s)</h5>
+                    <div class="">
+                        <table class="table_border table">
+                            <thead>
+                                <th>Name in Full of Nominee</th>
+                                <th>Relationship with Employee</th>
+                                <th>DOB of Nominee</th>
+                                <th>Proportion by which the settlement will be shared</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><%= nominee[i].name_of_nomi %></td>
+                                    <td><%= nominee[i].employee %></td>
+                                    <td><%= nominee[i].dob_nomi %></td>
+                                    <td><%= nominee[i].settlement %></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+<%}%>
+
+<% for (let i = 0; i < settlement.length; i++) {%>
+
+                <div class="container-fluid font_family mt-5">
+                    <div class="div">
+                        <h5 class="fw-bold text-center border-dark border-bottom">STATEMENT</h5>
+                    </div>
+                    <div class="main_div mt-3">
+                        <div class="d-flex">
+                            <div class="col-4">1. &nbsp; Name of employee in full</div>
+                            <div class="col-8">:</div>
+                        </div>
+                       <input type="text" name="" id="" class=" w-25 outline_1 border_buttom w-50 mar_left_25" value="<%= settlement[i].employee_name %>">
+                    </div>
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">2. &nbsp;Sex</div>
+                            <div class="col-8">:</div>
+                        </div>
+                       <input type="text" name="" id="" class=" w-25 outline_1 border_buttom w-50 mar_left_25" value="<%= settlement[i].sex_1 %>">
+                    </div>
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">3. &nbsp; Religion</div>
+                            <div class="col-8">:</div>
+                        </div>
+                       <input type="text" name="" id="" class=" w-25 outline_1 border_buttom w-50 mar_left_25" value="<%= settlement[i].Religion_1 %>">
+                    </div>
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">4. &nbsp; Whether unmarried/ married/ widow/ widower</div>
+                            <div class="col-8">:</div>
+                        </div>
+                       <input type="text" name="" id="" class=" w-25 outline_1 border_buttom w-50 mar_left_25" value="<%= settlement[i].marital_status %>">
+                    </div>
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">5. &nbsp;Department/ Section where employed</div>
+                            <div class="col-8">:</div>
+                        </div>
+                       <input type="text" name="" id="" class=" w-25 outline_1 border_buttom w-50 mar_left_25" value="<%= settlement[i].department %>">
+                    </div>
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">6. &nbsp;Designation</div>
+                            <div class="col-8">:</div>
+                        </div>
+                       <input type="text" name="" id="" class=" w-25 outline_1 border_buttom w-50 mar_left_25" value="<%= settlement[i].Designation %>">
+                    </div>
+                    <div class="html2pdf__page-break"></div>
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">7. &nbsp;Date of appointment</div>
+                            <div class="col-8">:</div>
+                        </div>
+                       <input type="text" name="" id="" class=" w-25 outline_1 border_buttom w-50 mar_left_25" value="<%= settlement[i].dob_appointment %>">
+                    </div>
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">8. &nbsp;Permanent Address</div>
+                            <div class="col-8">:</div>
+                        </div>
+                       <input type="text" name="" id="" class=" w-25 outline_1 border_buttom w-50 mar_left_25" value="<%= settlement[i].permanent_address %>">
+                    </div>
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">9. &nbsp;Present Address</div>
+                            <div class="col-8">:</div>
+                        </div>
+                       <input type="text" name="" id="" class=" w-25 outline_1 border_buttom w-50 mar_left_25" value="<%= settlement[i].present_add %>">
+                    </div>
+
+                    <div class="container-fluid  mt-4">
+                        <div class="d-flex">
+                            <div class="col-8">
+                                <div class="">Place: <input type="text" name="" id="" class=" w-25 outline_1 border_buttom "value="<%= settlement[i].Place_1 %>">
+                                </div>
+                                <div class="">Date : <input type="text" name="" id="" class=" w-25 outline_1 border_buttom"value="<%= settlement[i].date_1 %>">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class=" text-center text-end">
+                                    <img src="/hrm_documents/<%= candidate_id %>/image/<%= settlement[i].image %>" name="" id="" class=" w-50 outline_1 border_buttom">
+                                    <p class="mx-4">(Signature of employee)</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <%}%>
+                        <p class="border-dark border-bottom"></p>
+
+                       
+                        <div class="mt-3">
+                            <h5 class="fw-bold text-center"><u>Declaration by Witnesses</u> </h5>
+                        </div>
+                        <div class="d-flex mt-3">
+                            <div class="col-8">Nomination signed before me (name in full & address)</div>
+                            <div class="col-4"><input type="text" name="" id="" class=" w-50 outline_1 border_buttom">
+                                <p class="mx-3">Signature of witness</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="col-8">
+                                <div class="">1.</div>
+                                <div class="">2.</div>
+                                <div class="">Date:</div>
+                                <div class="">Place:</div>
+                            </div>
+                            <div class="col-4">
+                                <div>1.</div>
+                                <div>2.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-3 me-3 text-end">
+                <button type="button" class="btn btn-primary" id="pdf_generat_1">PDF Generat</button>
+            </div>
+        
+      <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+      <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script>
+      <script src="/static/js/nomination_form_1.js"></script>
+      <script src="/static/cdn/html2pdf/html2pdf.js"></script>
+</body>  
+</html>

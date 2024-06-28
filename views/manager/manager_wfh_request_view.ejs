@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRM</title>
+  <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+  <link rel="stylesheet" href="/static/css/manager_view_request.css">
+  <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+  <link rel="icon" href="/static/images/images-removebg-preview.png" >
+
+</head>
+
+<body>
+    <%-include('../common/header')%>
+    
+      <%-include('../common/sidebar')%>
+
+ 
+      <div class="mt-5"></div>
+      <div class="container-fluid h-100 position-relative">
+          <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+         <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+            </button>
+      <div class="row dyn_row justify-content-end ">
+      
+      
+      <div class="col-xl-10 col-md-9 col-8 dyn_col">  
+
+
+            <div class="container-fluid parentbox  my-4">
+              <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+                <div class="row bg_bck border-t">
+                  <h5 class="text-light text-center f_16 mt-2">View Work From Home Request</h5>
+                </div>
+                <div class="row">
+                  <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+                </div>
+    
+    
+                <div class="container-fluid parentbox my-4">
+                  <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+                    <div class="row vbvb border-t">
+    
+                        <div class="table-responsive mt-4">
+                            <table class="table table-bordered table-responsive table-striped" id="view_table">
+                                <thead>
+                                    <tr class="text-center text-nowrap f_13 bg_b fw_600">
+                                        <th>Request Id</th>
+                                        <th>Requested Date</th>
+                                        <th>Date from</th>
+                                        <th>Date to</th>
+                                        <th>Dates On</th>
+                                        <th>No of Days</th>
+                                        <th>Leave Type</th>
+                                        <th>Status</th>
+                                        <th>Accpet/Reject By</th>
+                                        <th>Accept/Reject Date</th>
+                                        <th>Remarks</th>
+                                        <th>Action</th>
+
+    
+    
+                                    </tr>
+                                </thead>
+                                <tbody>
+    
+                                  
+                                  <% for (let i = 0; i < data.length; i++) { %>
+                                      <tr class="f_13 text-center text-nowrap">
+                                          <td><%= data[i].request_id %></td>
+                                          <td><%= data[i].leave_req_sent_date %></td>
+                                          <td><%= data[i].from_date %></td>
+                                          <td><%= data[i].to_date %></td>
+                                          <td><%= data[i].multi_date ? data[i].multi_date : 'N/A' %></td>
+                                          <td><%= data[i].no_of_days %></td>
+                                          <td><%= data[i].leave_type %></td>
+                                          <td class="<%= data[i].status === 'rejected' ? 'text-danger' : (data[i].status === 'approved' ? 'text-success' : '') %>">
+                                            <%= data[i].status %>
+                                        </td>
+                                        
+                                          <td><%= data[i].accept_reject_by %></td>
+                                          <td><%= data[i].accept_reject_date %></td>
+                                          <td>
+                                              <% if (data[i].remarks) { %>
+                                                  <%= data[i].remarks %>
+                                              <% } else { %>
+                                                  N/A
+                                              <% } %>
+                                          </td>
+                                          <td>
+                                            <% if (data[i].status === 'pending') { %>
+                                                <button class="btn btn-danger cancel-btn btn-sm " id="cancel" data-request-id="<%= data[i].request_id %>"><i class="fa-solid fa-xmark"></i></button>
+                                            <% } %>
+                                        </td> 
+                                      </tr>
+                                  <% } %>
+                                </tbody>
+                                
+                                
+                              
+                                
+                                
+                                
+                            </table>
+                        </div>
+                    </div>
+    
+    
+    
+                   
+    
+                </div>
+              </div>
+            </div>
+          </div>
+    
+    
+    
+        
+    
+    
+    </div>
+
+</div>
+
+</div>
+
+
+
+
+
+  <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+  <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+  <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+  <script src="/static/js/main_dataTable.js"></script>
+  <script src="/static/js/manager_wfh_request_view.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HRM</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="icon" href="/static/images/it.webp" >
+    <link href="/static/css/interview_manage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+
+   
+    <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+
+
+
+
+</head>
+    <%-include('../common/header')%>
+    <%-include('../common/sidebar')%>
+    <div class="mt-5"></div>
+    <div class="container-fluid h-100  position-relative">
+        <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+               </button>
+    <div class="row dyn_row justify-content-end ">
+
+<div class="col-xl-10 col-md-9 col-8 dyn_col   ">  
+    <h5 class="text-center mt-3 text-light h5_mod" >Recruitment Request </h5>
+    <div class="px-1">
+
+      <div class="container-fluid my-4">
+        <div class="row">
+            <div class="col-md-3   f_13 pt-0 pt-2">
+                <label for="" class="pb-1 ps-1">From </label>
+                <input type="text" class="form-control f_13" id="from_date" placeholder="Select From Date" readonly>
+            </div>
+            <div class="col-md-3 f_13 pt-0 pt-2">
+                <label for="" class="pb-1 ps-1">To </label>
+                <input type="text" class="form-control f_13" id="to_date" placeholder="Select End Date" readonly>
+            </div>
+            <div class="col-md-3 status f_13 pt-0 pt-2">
+                <label for="" class="pb-1 ps-1">Status</label>
+                <select name=""  class="form-select" id="status_filter">
+                    <option value="none">Select Status</option>
+                    <option value="Next Level">Next Level</option>
+                    <option value="Hold">Hold</option>
+                    <option value="Short Listed">Short Listed</option>
+                    <option value="Not Short Listed">Not Short Listed</option>
+                </select>
+            </div>
+            <div class="col-md-3 p-0 pt-3 d-flex justify-content-end align-items-end btn_style btn_style">
+                <button class="btn" id="search_btn">Search</button>
+                <button class="btn ms-3" id="reset_btn">Reset</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="px-2 border rounded-4 pb-4 table_1">
+    
+        <table class="w-100 table_text_aling_middle table-bordered border-dark" id="jd_table">
+            <thead class="btn_color">
+                <tr>
+                  <th>S.No.</th>
+                  <th>R_ID</th>
+                  <th>Level</th>
+                  <th>JD ID</th>
+                  <th>Emp_Name</th>
+                  <th>Interview Date</th>
+                  <th>Candidate Name</th>
+                  <th>Candidate Email</th>
+                  <th>Candidate Mobile</th>
+                  <th><span class="text-nowrap">Mode Of</span> <br>Interview </th>
+                  <th><span class="text-nowrap">Source Of</span> <br> Profile</th>
+  
+                  <th>Emp Score</th>
+  
+  
+  
+  
+                  <th>Status</th>
+                  <th>Save</th>
+                </tr>
+              </thead>
+              <tbody class="" id="tbody_1">
+  
+                <%for(var i=0; all_data.length>i;  i++){%>
+  
+                <tr>
+                  <td><%= i+1 %></td>
+                  <td><%=all_data[i].r_id%></td>
+                  <td><%=all_data[i].level%></td>
+                  <td><%=all_data[i].jdid%></td>
+                  <td><%=all_data[i].Emp_Name%></td>
+                  <td><%=all_data[i].Formated_Interview_Date%></td>
+                  <td><%=all_data[i].Candidate_Name%></td>
+                  <td><%=all_data[i].Candidate_email%></td>
+                  <td><%=all_data[i].Candidate_mobile%></td>
+                  <td><%=all_data[i].Mode_of_Interview%></td>
+                  <td><%=all_data[i].source_of_profile%></td>
+                  <td><%=all_data[i].score%></td>
+  
+
+  
+  
+  <!-- 
+                  <td><select name="status" id="status_id">
+                      <option value="Next Round">Next Round</option>
+                      <option value="Hold">Hold</option>
+                      <option value="Selected">Selected</option>
+                      <option value="Rejected">Rejected</option>
+                      <option value="Reopen">Reopen</option>
+                    </select></td> -->
+  
+                  <td>
+                      <select name="status" id="status_id" class="form-select "  >
+                          <% console.log(all_data[i].status,'ddddddddddddddd' )%>
+                          <option  value="<%= all_data[i].status%>"><%= all_data[i].status%></option>
+                          <option hidden value="Next Level" >Next Level</option>
+                          <option hidden value="Hold" >Hold</option>
+                          <option hidden value="Short Listed" >Short Listed</option>
+                          <option hidden value="Not Short Listed" >Not Short Listed</option>
+                        
+                      </select>
+                  </td>
+  
+                  <td><button type="submit" id="button">Save</button></td>
+                </tr>
+  
+                <%}%>
+              
+       
+  
+   
+      </tbody>
+        </table>
+    </div>
+     
+    </div>
+
+    
+<script src="/static/js/main_dataTable.js"></script>
+
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+
+<script src="/static/js/interview_manage.js"></script>
+<script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+
+
+
+</body>
+</html>

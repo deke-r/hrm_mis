@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRM</title>
+  <link rel="icon" href="/static/images/images-removebg-preview.png" >
+  <link rel="stylesheet" href="/static/css/admin_leave_dashboard.css">
+
+
+</head>
+
+<body>
+
+    <%-include('../common/sidebar')%>
+    <%-include('../common/header')%>
+  
+    <div class="mt_46"></div>
+    <div class="container-fluid h-100 position-relative">
+      <button class="pos offbtn border-0 p-0" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <i class="fa-solid fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl span_expand "></i>
+      </button>
+      <div class="row dyn_row justify-content-end ">
+  
+        <div class="col-xl-10 col-md-9 col-8 dyn_col px-3">
+
+          <div class="container-fluid parentbox  my-4">
+            <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+              <div class="row bg_bck border-t">
+                <marquee>
+                  <h5 class="text-light text-center f_16 mt-2">Welcome <span id="user_name"></span></h5>
+                </marquee>
+
+              </div>
+              <div class="row">
+                <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+              </div>
+
+
+              <div class="container-fluid parentbox my-4">
+                <div class="container-fluid  pb-3  border-t childbox bg-light">
+                    <div class="row my-4">
+                        
+                        <div class="col-lg-4">
+                            <div class="container my-3 vbvb bg-light rounded-2 newmp min-hh">
+                              <div class="row f_15 py-3  border-bottom fw_600">
+                                <span class="ms-2">Today's Attendence </span>
+                              </div>
+                              <div class="row  ">
+                                <div class="container ">
+                                  <div class="row my-4 py-1 mx-2 border-bottom">
+                                    <div class="d-flex justify-content-between">
+                                      <span class="f_14 fw_600">Total Employees</span>
+                                      <span class="f_14 fw_600" id="total_emp_count">0</span>
+                                    </div>
+      
+                                  </div>
+                                  <div class="row my-4 py-1 mx-2 border-bottom pointer" id="leave_div">
+                                    <div class="d-flex justify-content-between">
+                                      <span class="f_14 fw_600">Employees On leave</span>
+                                      <span class="f_14 fw_600" id="leave_emp_count">0</span>
+                                    </div>
+      
+      
+      
+                                  </div>
+                                  <div class="row my-4 py-1 mx-2 border-bottom">
+                                    <div class="d-flex justify-content-between">
+                                      <span class="f_14 fw_600">Present Employees</span>
+                                      <span class="f_14 fw_600" id="present_emp_count">0</span>
+                                    </div>
+      
+                                  </div>
+                                  
+      
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-lg-4">
+                            <div class="container my-3 vbvb bg-light rounded-2 newmp min-hh">
+                              <div class="row f_15 py-3  border-bottom fw_600">
+                                <span class="ms-2"> Celebration </span>
+                              </div>
+                              <div class="row h245">
+                             <div class="container-fluid " id="celeb"></div>
+                            </div>
+      
+                            </div>
+                          </div>
+                        
+                        <!-- <div class="col-lg-4">
+                          <div class="container my-3 vbvb bg-light rounded-2 newmp min-hh">
+                            <div class="row f_15 py-3  border-bottom fw_600">
+                              <span class="ms-2"> Today's Attendence</span>
+                            </div>
+                            <div class="row ">
+                              <div class="col-12 my-2 text-center f_13">
+                                No Task Pending
+    
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
+                        <div class="col-lg-4">
+                          <div class="container my-3 vbvb bg-light rounded-2 newmp min-hh">
+                            <div class="row f_15 py-3  border-bottom fw_600">
+                              <span class="ms-2"> Announcements </span>
+                            </div>
+                            <div class="row h245">
+                              <div class="container-fluid " id="announcement"></div>
+                             </div>
+                            
+                          </div>
+                        </div>
+
+    
+                      </div>
+
+
+                  <div class="row my-4">
+                    <div class="col-lg-4">
+                      <div class="container my-3 vbvb bg-light rounded-2 newmp min-hh">
+                        <div class="row f_15 py-3  border-bottom fw_600">
+                          <span class="ms-2"> Pending Task </span>
+                        </div>
+                        <div class="row ">
+                          <div class="col-12 my-2 text-center f_13">
+                            No Task Pending
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="container bg-light vbvb rounded-2 newmp min-hh my-3">
+                          <div class="row f_15 py-3  border-bottom fw_600">
+                            <span class="ms-2"> My Pending Requests </span>
+                          </div>
+                          <div class="row text-center f_13 ">
+                            <div class="col-12 my-2 text-center f_13">
+                              No Pending Requests
+  
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+  
+                   
+
+                  </div>
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+
+
+
+
+
+
+  <script src="/static/js/admin_leave_dashboard.js"></script>
+</body>
+
+</html>

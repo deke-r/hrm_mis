@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/manage_report.css">
+  <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+  <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+  <link rel="icon" href="/static/images/it.webp">
+  <!-- <link rel="icon" href="/static/images/images-removebg-preview.png"> -->
+
+</head>
+
+<body>
+
+  <%-include('../common/header')%>
+
+  <%-include('../common/sidebar')%>
+
+  <div class="mt-5"></div>
+  <div class="container-fluid h-100 position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+      <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+    </button>
+    <div class="row dyn_row justify-content-end ">
+
+
+      <div class="col-xl-10 col-md-9 col-8 dyn_col">
+                
+                
+                <form method="POST">
+
+        <div class="container-fluid parentbox  my-4">
+          <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+            <div class="row bg_bck border-t">
+              <h5 class="text-light text-center f_16 mt-2">View Requests</h5>
+            </div>
+            <div class="row">
+              <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+            </div>
+
+
+            <div class="container-fluid parentbox my-4">
+              <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+                <div class="row vbvb border-t">
+
+                    <div class="table-responsive mt-4">
+                        
+                      <table class="table table-bordered table-responsive table-striped" id="jd_table">
+                        <thead class="top_fix">
+                          <tr class="text-center text-nowrap f_13 bg_b fw_600">
+                            <th>Request ID</th>
+                            <th>Requested Date</th>
+                            <th>Candidate ID</th>
+                            <th>Candidate Name</th>
+                            <th>From Date</th>
+                            <th>To Date</th>
+                            <th>Multi Date</th>
+                            <th>No of Days</th>
+                            <th>Leave Type</th>
+                            <th>Day Type</th>
+                            <th>Half Day Type</th>
+                            <th>Mail To</th>
+                            <th>Mail CC</th>
+                            <th>Attachment</th>
+                            <th>Reason for Leave</th>
+                            <th>Status</th>
+                            <th>Accepted/Rejected Date</th>
+                            <th>Remarks</th>
+                            <th>Accepted/Rejected By</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% for (let i = 0; i < mg_data.length; i++) { %>
+                            <tr class="f_13 text-center text-nowrap">
+                              <td><%= mg_data[i].request_id %></td>
+                              <td><%= mg_data[i].leave_req_sent_date %></td>
+                              <td><%= mg_data[i].candidate_id %></td>
+                              <td><%= mg_data[i].candidate_name %></td>
+                              <td><%= mg_data[i].from_date %></td>
+                              <td><%= mg_data[i].to_date %></td>
+                              <td><%= mg_data[i].multi_date %></td>
+                              <td><%= mg_data[i].no_of_days %></td>
+                              <td><%= mg_data[i].leave_type %></td>
+                              <td><%= mg_data[i].day_type %></td>
+                              <td><%= mg_data[i].half_day_type %></td>
+                              <td><%= mg_data[i].mail_to %></td>
+                              <td><%= mg_data[i].mail_cc %></td>
+                              <td><%= mg_data[i].attachment %></td>
+                              <td class="">
+                                <textarea class="width_r" disabled rows="2" cols=""><%= mg_data[i].reason_for_leave %></textarea>
+                              </td>
+                              <td><%= mg_data[i].status %></td>
+                              <td><%= mg_data[i].accept_reject_date %></td>
+                              <td><%= mg_data[i].remarks %></td>
+                              <td><%= mg_data[i].accept_reject_by %></td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                      </table>
+                      
+                    </div>
+                </div>
+
+
+
+               
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    
+
+
+    </form>
+
+    <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <!-- <div class="modal-header modal_bg">
+          <button type="button" class="btn-close close_button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+        <div class="modal-body">
+            <img id="modalImage" src="" width="100%">
+        </div>
+        <!-- <div class="modal-footer modal_bg">
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+  </div>
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+  <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+  <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+  <script src="/static/js/main_dataTable.js"></script>
+  <script src="/static/js/view_ar_request.js"></script>
+</body>
+
+</html>

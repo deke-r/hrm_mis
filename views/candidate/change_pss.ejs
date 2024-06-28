@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRM</title>
+  <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/change_pss.css">
+  <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dubrox/Multiple-Dates-Picker-for-jQuery-UI@1.6.6/dist/jquery-ui.multidatespicker.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <link rel="icon" href="/static/images/images-removebg-preview.png" >
+
+ 
+  
+
+
+
+</head>
+
+<body>
+
+
+  <%-include('../common/candidate_common/candidate_sidebar')%>
+  <%-include('../common/candidate_common/candidate_header')%>
+
+  <div class="mt_46"></div>
+  <div class="container-fluid h-100 position-relative">
+      <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+        </button>
+        <div class="row dyn_row justify-content-end ">
+            
+            <div class="col-xl-10 col-md-9 col-8 dyn_col px-3">
+                
+                
+    <form method="POST">
+
+        <div class="container-fluid parentbox  my-4">
+          <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+            <div class="row bg_bck border-t">
+              <h5 class="text-light text-center f_16 mt-2">Edit Password</h5>
+            </div>
+            <div class="row">
+              <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+            </div>
+
+
+            <div class="container-fluid parentbox my-4">
+              <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+                <div class="row bg_r border-t pt-1 rounded-top-2">
+                  <!-- <h5 class="text-light text-center f_14 mt-2">Leave Request</h5> -->
+                </div>
+
+
+
+                
+
+
+            
+
+
+
+
+                <div class="row my-3">
+
+
+
+                  <div class="col-md-4 my_cols ">
+                    <h6 class="fw_bold f_13 ms-1 ">Current Password:</h6>
+                    <input type="text" id="cur_pass" class="form-control  border-leftb box_sdw11 f_13 fw_600" placeholder="" value="<%= pass[0].password %>" name="no_of_days" disabled required >
+
+
+                  </div>
+
+                  <div class="col-md-4 my_cols ">
+                    <h6 class="fw_bold f_13 ms-1 ">New Password:</h6>
+                    <input type="text" id="new_pass" class="form-control  border-leftb box_sdw11 f_13 fw_600" placeholder="New Password..." value="" name="no_of_days"  required >
+
+
+                  </div>
+
+                  <div class="col-md-4 my_cols ">
+                    <h6 class="fw_bold f_13 ms-1 ">Confirm Password:</h6>
+                    <input type="text" id="c_pass" class="form-control  border-leftb box_sdw11 f_13 fw_600" placeholder="Confirm Password..." value="" name="no_of_days"  required >
+
+
+                  </div>
+
+                 
+                  
+
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12 d-flex justify-content-end align-items-center">
+                        <div class="btn f_13 fw_600 text-light bg_b" id="change_pss">Save</div>
+                    </div>
+                </div>
+
+
+               
+
+               
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+    </form>
+
+      </div>
+
+
+
+    
+
+
+    </div>
+  </div>
+  
+
+
+
+
+
+  <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+
+
+  <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dubrox/Multiple-Dates-Picker-for-jQuery-UI@1.6.6/dist/jquery-ui.multidatespicker.js"></script>
+  <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+  <script src="/static/js/change_pss.js"></script>
+</body>
+
+</html>

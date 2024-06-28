@@ -1,0 +1,72 @@
+.font_family {
+    font-family: Cambria Math;
+}
+
+.text_justify{
+    text-align: justify;
+}
+
+.mar_left_0{
+    margin-left: -48px !important;
+}
+
+.f_18{
+    font-size: 18px;
+}
+
+.f_18{
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+    .f_18{
+        font-size: 17px;
+    }
+  }
+
+.border_width{
+    width: 64% !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .mar_right {
+       margin-right: -119px;
+    }
+  }
+
+@media only screen and (min-width: 1280px) {
+    .mar_left{
+        margin-left: 160px !important;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .border_width{
+        width: 80% !important;
+    }
+  }
+
+  .mar_left_1{
+    margin-left: 19px;
+  }
+
+.table_border th,
+.table_border td{
+    border: 1px solid black ;
+    padding: 10px;    
+}
+
+.mar_left_25{
+    margin-left: 25px;
+}
+
+.border_buttom{
+    border-bottom: 1px dotted black;
+    border-top: 0px dotted black;
+    border-left: 0px dotted black;
+    border-right: 0px dotted black;
+}
+
+.outline_1{
+    outline: transparent;
+}

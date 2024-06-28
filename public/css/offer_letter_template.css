@@ -1,0 +1,396 @@
+     /* html,body{
+    height: 100%;
+   } */
+
+   .height_vh{
+    min-height: 92vh;
+    max-height: 300vh;
+    height: 100%;
+
+  }
+.height_501{
+  height:300px;
+}
+.scroll{
+  overflow: auto;
+}
+
+.bg_green{
+    background-color: #00bf739f;
+  }
+.bg_royal{
+ background-color: rgb(51, 70, 128);
+ /* background-color: #003f91; */
+ /* background-color: #5da9e9; */
+}
+  .on_hov a{
+    background-color:#494e56;
+    /* background-color: #08a780;; */
+    /* color: #0f0e0e; */
+    
+   
+  }
+  .on_hov a:hover{
+    background-color:#0c50a1 ;
+    transform: scale(1.03,1.03);
+    /* border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px; */
+    transition:1s all;
+  }
+  .table_bg tr th{
+    background-color:#0c50a1 ;
+  
+    color: white;
+
+    text-wrap: nowrap;
+    /* border: 1px solid white; */
+    
+  }
+  .table_text_aling_middle tr th,td{
+    vertical-align: middle;
+    text-align: center!important;
+    font-size: 12px;
+    padding:10px;
+  }
+  
+  .bgF9F9F9{
+    /* background-color: #08a780; */
+  /* background-color: #aeaed1; */
+  /* background-color: rgb(51, 70, 128); */
+  /* background-color: #003f91; */
+  background-color: #1c1c35;
+
+
+
+  }
+  .thwidth{
+    width: 300px;
+    
+  }
+
+
+
+
+
+  .shadow {
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adjusted shadow effect */
+    background-color: #f8f9fa; /* Light background color */
+  }
+
+  /* Style for the headings */
+  
+  .fs_16{ font-size: 16px;}
+  .fs_14{ font-size: 14px;}
+  .form1 label{ font-size: 14px; }
+  .form1 textarea::placeholder{ font-size: 13px; }
+  .form1 input::placeholder{ font-size: 13px; }
+  .form1 input{ font-size: 13px; }
+
+  h5{
+    margin-bottom: 18px;
+    color: white;
+    background-color: #0c50a1;
+    padding: 8px;
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  /* Style for the labels */
+  label {
+    font-weight: bold;
+  }
+
+  /* Style for the input fields */
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    border-top: 4px solid #0c50a1!important; /* Blue border at the top */
+    box-shadow: none; /* Remove default box shadow */
+  }
+
+  /* Style for the submit button */
+  .btn-primary.btn {
+   
+   
+    border-radius: 6px;
+    background-color: #0c50a1;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #0c50a1;
+  }
+
+  /* Optional: Add some spacing between elements */
+  .mb-3 {
+    margin-bottom: 20px;
+  }
+  input,textarea{
+    
+box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514)!important ;
+font-size: 12px!important;
+
+
+  }
+  .form-control:focus{
+    border-top: 2px solid #0c50a1;
+    /* border-color:#007bff; */
+  }
+
+.bg_blue{
+/* background-color: #0c50a1; */
+background-color: #0c4fa1ab;
+}
+
+.fs_13{
+  font-size: 13px;
+}
+.inpfs_12 input{
+  font-size: 12px;
+}
+.textfs_12 textarea{
+  font-size: 12px;
+}
+.dataTables_length label{
+font-size: 12px;
+margin-top: 10px;
+}
+.dataTables_length select{
+  padding: 0 4px;
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.192);
+  }
+.dataTables_filter label{
+  font-size: 12px;
+}  
+.dataTables_filter input{
+  height:31px
+}
+.dataTables_info{
+  font-size: 12px;
+}
+.dataTables_paginate a {
+  font-size: 12px;
+  padding:2px 5px;
+}
+.dataTables_paginate li {
+margin-top: 5px;
+  width:20px;
+}
+.dataTables_paginate .pagination {
+ padding-top: 5px;
+}
+
+
+
+/* pdf styling */
+.pdf-fluid{
+  display: none;
+}
+.pdf table {
+  width: 100%;
+  background-color: rgb(243, 149, 25);
+  color: white; /* Text color */
+}
+.cent  th{
+  text-align: center!important;
+}
+.pdf table  th, .pdf table td {
+  border: 1px solid #0f0e0e;
+  padding: 2px;
+  text-align: left!important;
+}
+.logo{
+  width: 22%;
+  height:80px;
+
+  
+}
+.image_logo{
+  padding: 30px;
+}
+
+
+.job{
+  background-color: lightgray!important;
+  /* background-color: rgb(187, 187, 187) !important; */
+  color: #0c50a1 !important;
+}
+
+
+.content {
+font-family: Arial, sans-serif;
+padding: 10px;
+/* margin: 20px auto;
+max-width: 1200px; */
+}
+
+.content h4 {
+color: #333;
+}
+
+.content p, .content li {
+color: #666;
+line-height: 1.6;
+font-size: 12px;
+}
+
+.content ul {
+list-style-type: disc;
+margin-left: 20px;
+}
+
+/* Media Query for Mobile Screens */
+@media screen and (max-width: 768px) {
+  table {
+      width: 100%;
+  }
+
+  .logo {
+      width: 50%;
+      height: auto;
+  }
+
+  .image_logo {
+      padding: 10px;
+  }
+}
+
+@media print {
+  .pdf-fluid {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      display: block;
+  }
+.cent  th{
+  text-align: center;
+}
+.pdf  table {
+      width: 100%;
+      font-size: 12px;
+  }
+
+  .logo {
+      width: 33%;
+      height: auto;
+ 
+  }
+
+  .image_logo {
+      padding: 10px;
+  }
+
+  .content {
+      border: none;
+      max-width: 100%;
+  }
+}
+
+
+
+/* pdf styling ends */
+
+
+#submit_btn {
+  width: 50px;
+  padding: 4px; /* Adjust padding as needed */
+  font-size: 13px; /* Adjust font size as needed */
+  border: none; /* Remove border */
+  border-radius: 6px; /* Rounded corners */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Text color */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+
+#STATUS {
+  width: 100px; /* Adjust width as needed */
+  padding:5px;
+  font-size: 13px; /* Adjust font size as needed */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 6px; /* Rounded corners */
+  background-color: #fff; /* Background color */
+  color: #333; /* Text color */
+}
+
+#STATUS option {
+  padding: 5px;
+}
+
+/* Style for when dropdown is expanded */
+#STATUS:focus {
+  outline: none; /* Remove default focus style */
+  border-color: #66afe9; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.6); /* Add a subtle shadow on focus */
+}
+
+
+
+
+
+.active_style{
+  background-color:  #40a829 !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+.in_active_style{
+  background-color: #e62020 !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+
+
+.status .form-select {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  border-top: 4px solid #0c50a1!important; /* Blue border at the top */
+  box-shadow: none; /* Remove default box shadow */
+  font-size: 13px;
+}
+
+.btn_style button{
+  background-color: #4169E1;
+  color: white ;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.btn_style button:hover{
+  background-color: #4169E1;
+  color: white;
+  
+}
+
+.table_bg tr{
+  position: sticky !important;
+  top: 0px !important;
+}
+
+/* .height_501 {
+  height: 230px !important;
+} */
+
+#jd_table{
+  margin-top: 0px !important;
+} 
+
+.border-none{
+  border: 0px !important;
+}
+.t_b{
+  color: #3a4285 !important;
+}
+
+.b_t{
+  border-top:1px solid #3a4285 !important;
+  border-bottom: 0px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+
+
+}

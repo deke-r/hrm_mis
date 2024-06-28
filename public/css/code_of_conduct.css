@@ -1,0 +1,70 @@
+.car-coc{
+    /* width: 100vw; */
+    height: 90vh;
+}
+@media (max-width:768px) {
+    .car-coc{
+        /* width: 100vw; */
+        height: 80vh;
+        /* height: auto; */
+
+        overflow: scroll !important;
+    }
+}
+.c1{
+    border-top: 5px solid #0473cf !important;
+    border-bottom: 2px solid #0473cf;
+ 
+
+}
+
+.bg_b{background-color: #0473cf !important;}
+.deker{
+    background-color: #0473cf;
+    border-radius: 10px;
+}
+.br{
+    border-right: 0.5px solid lightgray !important;
+}
+.f_11{font-size: 9px !important;}
+.f_10{font-size: 8px !important;}
+.tl thead tr{
+    line-height: 2px !important;
+}
+.tl tbody tr{
+    line-height: 2px !important;
+}
+.f_13{font-size: 13px !important;}
+.f_12{font-size: 12px !important;}
+.f_12b{font-size: 12px !important; font-weight: 600 !important;}
+
+.brdra{
+    border-bottom: 1px dotted gray !important;
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-radius: 0px !important;
+
+}
+.brdra:focus{box-shadow: none !important;}
+
+
+.newmp2{
+    border-radius: 1px;
+    background-color: white;
+    border-radius: 1px;
+    box-shadow:  5px 5px 12px #afafaf,
+                 -5px -5px 12px #ffffff;
+}
+
+.box_sdw10{-webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
+.box_sdw11{-webkit-box-shadow: rgba(0, 0, 0, 0.15) 2.2px 2.2px 2.6px;box-shadow: rgba(0, 0, 0, 0.15) 2.2px 2.2px 2.6px;}
+
+.newmp{
+    background: #e0e0e0;
+    -webkit-box-shadow:  16px 16px 32px #969696,
+                 -16px -16px 32px #ffffff;
+            box-shadow:  16px 16px 32px #969696,
+                 -16px -16px 32px #ffffff;
+                 
+    }

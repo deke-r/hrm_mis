@@ -1,0 +1,194 @@
+/* Custom CSS for mixed color nav bar */
+/* .navbar-custom {
+    background-image: linear-gradient(to right, #c9d6ff, #96b5ff, #5e8aff, #3269f2, #4773ec, #697dee, #5555e2);
+  } */
+  /* Adjust text color for better contrast */
+  .navbar-custom .navbar-nav .nav-link {
+    color: #fff; /* white text color */
+  }
+
+
+
+ 
+  /* Style for container holding the three divs */
+  /* .container {
+    display: flex; 
+    justify-content: space-between; 
+  } */
+
+  /* Style for each individual div */
+  .box {
+    width: 30%; /* 30% width to fit three divs in one row */
+    background-size: cover; /* Ensure background image covers the entire div */
+    background-position: center; /* Center the background image */
+    height: 200px; /* Set height for the divs */
+  }
+
+  /* Background images for the divs */
+
+
+
+
+
+  /* 
+    .container-fluid.hold {
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+/* 
+  .row {
+    width: 100%;
+  } */
+
+  /* .col {
+      width: 80%;
+      height: 140px;
+    padding: 20px;
+    margin: 20px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+  } */
+
+  /* Define background colors for each div */
+  #div1 {
+    background-image:  url('/static/images/emp_07-removebg-preview.png');
+    background-color: #dab221fb;
+    /* background-color: #5a9a6c; */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 70px 0;
+
+border-radius: 10px;
+  color: white;
+  box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) ;
+  }
+
+  #div2 {
+    background-image:  url('/static/images/cloud-uploading-icon-technology-graphic-removebg-preview.png');
+    background-color: #0882b6ab;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 70px 0;
+
+  border-radius: 10px;
+    color: white;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) ;
+  }
+
+  #div3 {
+    background-image:url('/static/images/admin_nobg.png');
+background-color:#5a9a6c ;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 70px 0;
+
+  border-radius: 10px;
+    color: white;;
+  
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) ;
+  }
+
+  #div4 {
+    
+    background-image: url('/static/images/jd_01-removebg-preview.png');
+    background-color: #0751a1b4;
+    background-position: center;
+    background-size: contain;
+    padding: 70px 0;
+    background-repeat: no-repeat;
+  border-radius: 10px;
+    color: white;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514) ;
+  }
+
+  .onhov:hover{
+    transform: scale(1.05,1.05);
+    transition: 0.8s all;
+  }
+  
+  .onhov:hover h6{
+    /* background-color: #0c50a1;
+    padding: 2px 0px; */
+    transform: scale(1.05,1.05);
+    transition: 0.8s all;
+  }
+  
+ /* Media query for laptops */
+ /* @media screen and (min-width: 992px) and (max-width: 1199px) {
+  .col {
+    width: 85%;
+
+  }
+}
+ */
+
+
+/* Media query for mobile devices */
+/* @media screen and (max-width: 767px) {
+  .col {
+     width: 95%;
+
+  }
+  .row{
+      margin-top:180px ;
+    }
+
+} */
+
+ /* Media query for mobile devices */
+/* @media screen and (max-width: 400px) {
+  .col {
+     width: 100%;
+  
+   
+  }
+  .row{
+    margin-top: 380px;
+  }
+
+
+} */
+
+
+
+
+
+/* ------------------------------------------------------- */
+/* ------------------------------------------------------- */
+/* ------------------------------------------------------- */
+/* ------------------------------------------------------- */
+
+.fs_32{font-size: 32px;}
+
+/* .shadow_1{
+  box-shadow: inset gray 0px 0px 60px -12px;
+} */
+
+
+.newmp{
+  /* background: #e0e0e0;-webkit-box-shadow:  16px 16px 32px #969696,-16px -16px 32px #ffffff; */
+  box-shadow:  16px 16px 32px #969696,-16px -16px 32px #ffffff;
+}
+
+
+.top_border_red{
+  border-top: 4px solid red; 
+}
+
+.height_120{
+  height: 120px;
+}
+
+.mt_60{margin-top:60px;}
+
+.pointer{cursor:pointer}
+/* ------------------------------------------------------- */
+/* ------------------------------------------------------- */
+/* ------------------------------------------------------- */

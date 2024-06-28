@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HRM</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="icon" href="/static/images/it.webp">
+    <link href="/static/css/interview_manage_view.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> -->
+
+
+
+</head>
+<body>
+    <%-include('../common/header')%>
+    <%-include('../common/sidebar')%>
+    <div class="mt-5"></div>
+    <div class="container-fluid h-100  position-relative">
+        <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+               </button>
+    <div class="row dyn_row justify-content-end ">
+
+<div class="col-xl-10 col-md-9 col-8 dyn_col   ">  
+    <h5 class="text-center mt-3 text-light h5_mod" >View Interview Manage </h5>
+    <div class="px-1 ">
+    
+        <table class="w-100 table_text_aling_middle table-bordered border-dark " id="jd_table">
+            <thead class="btn_color  header-table ">
+        <tr>
+          
+         
+            <th>R.ID</th>
+            <th>JD ID</th>
+            <th>Level</th>
+          
+            <th>Emp Name</th>
+      
+            <th>Candidate Name</th>
+            <th>Bussiness</th>
+            <th>Designation</th>
+            <th>Location</th>
+          
+            <th>Interview Date</th>
+
+ 
+          
+        </tr>
+    </thead>
+    <tbody class="" id="tbody_1">
+
+        <%for(var i=0; all_data.length>i;  i++){%>
+           
+            <tr>
+               
+
+                <td><%=all_data[i].r_id%></td>
+                <td ><%=all_data[i].jdid%></td>
+                <td><%=all_data[i].level%></td>
+              
+                <td><%=all_data[i].Emp_Name%></td>
+              
+                <td><%=all_data[i].Candidate_Name%></td>
+                <td><%=all_data[i].division%></td>
+                <td><%=all_data[i].job_title%></td>
+                <td><%=all_data[i].location_hq%></td>
+                <td><%=all_data[i].Interview_Date%></td>
+             
+
+              
+               
+
+           
+          
+            </tr>
+      
+      <%}%>
+            
+     
+
+ 
+    </tbody>
+        </table>
+    
+     
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="/static/js/interview_view_manage.js"></script>
+<script src="/static/js/main_dataTable.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+#jubl_logo{
+    width: 170px;
+    height: 150px;
+}
+
+.candidate_image_div{
+    width: 120px;
+    height: 120px;
+    border: 1px solid lightgray;
+    /* background-color: #e6ecff; */
+    cursor: pointer;
+    border-radius:10px ;
+}
+    
+
+.f_20{
+    font-size: 20px;
+}
+
+.f_16{
+    font-size: 16px;
+}
+
+.f_13{
+    font-size: 13px;
+}
+
+.bg_color1{
+    background-color: #0c50a1;
+}
+
+.input_border{
+    border: 1px solid gray;
+}
+
+
+.fw_500{
+    font-weight: 500;
+}
+
+.fw_600{
+    font-weight: 600;
+}
+
+.input_style{
+    border: 1px solid gray;
+    height: 31px;
+    width: 100%;
+    border-radius: 5px;
+    padding-left:10px ;
+    padding-right: 10px;
+    border-left:4px solid #0c50a1 ;
+    outline: transparent; 
+
+}
+
+
+.textarea_style{
+    border: 1px solid gray;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    padding-left:10px ;
+    padding-right: 10px;
+    border-left:4px solid #0c50a1 ;
+    outline: transparent; 
+}
+
+
+
+.textarea_style2{
+    border: 1px solid gray;
+    height: 100px;
+    width: 100%;
+    border-radius: 5px;
+    padding-left:10px ;
+    padding-right: 10px;
+    border-left:4px solid #0c50a1 ;
+    outline: transparent; 
+
+}
+
+.select_style{
+    border: 1px solid gray;
+    height: 31px;
+    width: 100%;
+    border-radius: 5px;
+    padding-left:5px ;
+    padding-right: 5px;
+    border-left:4px solid #0c50a1 ;
+    outline: transparent; 
+
+}
+
+.table_border th,
+.table_border td{
+    border: 1px solid black ;    
+}
+
+table th{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#family_detl_tbl td input,
+#academic_record_tbl td input,
+#job_related_tbl td input,
+#employment_detl_tbl td input,
+#person_refer_tbl td input{
+    border: 1px solid gray;
+    height: 31px;
+    width: 100%;
+    border-radius: 5px;
+    padding-left:5px ;
+    padding-right: 5px;
+    border-left:4px solid #0c50a1 ;
+    outline: transparent; 
+
+}
+
+#language_tbl td, 
+#family_detl_tbl td,
+#academic_record_tbl td,
+#job_related_tbl td,
+#employment_detl_tbl td,
+#person_refer_tbl td{
+    padding:8px;
+}
+
+.mt_100{ margin-top: 100px; }
+

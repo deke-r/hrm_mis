@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp">
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+    <link rel="stylesheet" href="/static/css/terminate_temp.css">
+</head>
+<body>
+
+
+    <%-include('../common/header')%>
+    <%-include('../common/sidebar')%>
+
+ 
+    <div class="mt-5"></div>
+    <div class="container-fluid h-100 position-relative">
+        <button class=" pos offbtn  p-0 " type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i
+                class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+        </button>
+        <div class="row dyn_row justify-content-end ">
+
+            <div class="col-xl-10 col-md-9 col-8 dyn_col px-3">
+
+
+                <h5 class="text-center mt-3 text-light h5_mod" >Termination Template</h5>
+                <div class="px-1 table-responsive">
+                
+                    <table class="w-100 table_text_aling_middle table-bordered border-dark" id="jd_table">
+                <thead class="table_bg">
+                    <tr>
+                        <th>Candidate Id</th>
+                        <th>JD ID</th>
+                        <th>Candidate Name</th>
+                        <th>Candidate Email</th>
+                        <th>Candidate mobile</th>
+                      
+                        <th>Generate</th>
+                       
+            
+                    </tr>
+                </thead>
+                <tbody id="abcd">
+            
+                    <%for(var i=0; all_data.length>i;  i++){%>
+                       
+                        <tr>
+                            <td><%=all_data[i].candidate_id%></td>
+                            <td><%=all_data[i].jd_id%></td>
+                            <td><%=all_data[i].candidate_name%></td>
+                            <td id="candidate_email"><%=all_data[i].candidate_email%></td>
+                            <td><%=all_data[i].candidate_mobile%></td>
+                           
+                          
+                           
+                          
+                            <td><i class="fa-solid fa-eye view_req"  id="button"  candidate_id="<%=all_data[i].candidate_id%>" candidate_name="<%=all_data[i].candidate_name%>"
+></i></td>
+                           
+                                <!-- <td><i class="fa-solid fa-file-pdf dwnld" ></i></td> -->
+                                <!-- <td><i class="fa fa-trash text-danger delete" r_id="<%=all_data[i].r_id%>"  level="<%=all_data[i].level%>" ></i></td> -->
+                        </tr>
+                  
+                  <%}%>
+                        
+                  <input type="hidden" id="input_jd_id_1" value="" name="candidate_id">
+                  <input type="hidden" id="level_val" value="" name="candidate_email">
+               
+             
+                </tbody>
+                    </table>
+                
+                 
+                </div>
+   
+    <div id="form_cont">
+        <!-- <div class="container position-relative  p-0 my-5 mx-0 box_sdw10" hidden>
+                    <div onClick="this.contentEditable='true';" class="  border-dark p-4">
+          <pre class="f_14 fw_600" id="pre"> Hi Sonu,
+
+ 
+
+            Greetings from JACPL!!
+            
+            Going forward with your employment, we request you to get your Pre Employment Health Check done.
+             
+            Given below is a list of tests that are mandatory to be conducted.
+            
+                       
+            
+            General Body Health
+            
+            - Complete Blood Count & ESR
+            - Urine
+            - ABC Grouping & Rh Typing
+            - X-ray Chest
+            - General Physical Examination (with Basic Eye, Basic Ear & Basic Dental Check-up, Height, Weight & BP)
+            
+            <p class="text-wrap">
+                Diabetes Panel
+
+                - Fasting Blood Sugar
+                Cardiac Risk Profile
+                
+                - Cardio Vascular System (ECG) & Total Cholestrol
+                
+                Fitness Certificate
+                - Fitness Certificate from authorized MBBS doctor.  </p>
+            <p class="text-wrap">
+    
+Please note that we need a doctor prescription which mentions your fitness status for the same.
+
+Please make sure to get these done before your joining and confirm us.
+<br>
+Regards!
+
+          
+            </pre>
+      </div>
+      
+
+      <div class="row bgbm"></div>
+      <div class="top-left"></div>
+      <div class="top-right"></div>
+      <div class="bottom-left"></div>
+      <div class="border-center"></div>
+      
+      <div class="bottom-right"></div>
+      <div class="text-center">
+      
+        <button type="button" id="health_send" class="btn btn-primary mb-3">Send Mail</button>
+    </div>
+        </div> -->
+    </div>
+      
+      </div>
+    </div>
+
+    <div class="loader-div d-none" id="loader-div">
+        <div class="loader">
+            <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+        </div>
+    </div>
+
+<script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+      <script src="/static/js/terminate_temp.js"></script>
+      <script src="/static/js/main_dataTable.js"></script>
+      <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+</body>
+</html>

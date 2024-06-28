@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/candidate_new_form.css">
+    <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css">
+  <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+</head>
+
+<body>
+
+    <%-include('../common/candidate_common/candidate_header')%>
+    <%-include('../common/candidate_common/candidate_sidebar')%>
+
+    <div class="mt-5"></div>
+    <div class="container-fluid h-100 position-relative">
+        <button class=" pos offbtn border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+       <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+          </button>
+    <div class="row dyn_row justify-content-end">
+    
+    
+    <div class="col-xl-12 col-md-9 col-8 dyn_col"> 
+    <div class="conatainer-fluid font_family mt-3">
+        <div class="row justify-content-end m-auto">
+            <div class="col-xl-10 col-md-9 col-8 dyn_col px-3">
+                <div class="container-fluid my-4 border border-dark">
+        <p class="text-center fw-bold">FORM 2 (REVISED)</p>
+        <p class="text-center mar_21 fw-bold">Nomination and Declaration form for Unexempted/Exempted Establishments</p>
+        <p class="text-center fw-bold">Declaration and Nomination Form under the Employees’ Provident Funds and
+            Employees’ Pension Scheme</p>
+        <p class="text-center mar_18 ">(Paragraphs 33 & 61(1) of the Employees Provident Fund Scheme, 1952 and Paragraph
+            18 of the Employees’ Pension
+            Scheme, 1995)</p>
+
+        <div class="conatainer mt-4">
+            <form>
+             <div class="row justify-content-center">
+             <% for (let i = 0; i < candidate.length; i++) {%>   
+                <!-- <div class="">
+                    <input type="text" name=""id="candidate_id" value="501  " class="form-control" hidden>
+                </div> -->
+                <div class="col-md-8 col-8">
+                    <div class="conatainer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-8">1. Name (in BlockLetters)</div>
+                                    <div class="col-xl-6 col-md-4 text-end">:</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <% if(candidate[i].candidate_name) {%>
+                                <input type="text" name="name" id="id_1" class="form-control input_border" value="<%= candidate[i].candidate_name %>" disabled>
+                                <% } else{%>
+                                    <input type="text" name="name" id="id_1" class="form-control input_border" value="">
+                                    <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center mt-2">
+
+                <div class="col-md-8 col-8">
+                    <div class="conatainer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-8">2. Father’s/ Husband’s Name:</div>
+                                    <div class="col-xl-6 col-md-4 text-end">:</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <% if(candidate[i].father_name) {%>
+
+                                <input type="text" name="Father_name" id="id_2" class="form-control input_border"value="<%= candidate[i].father_name %>" disabled>
+                                <% } else{%>
+                                    <input type="text" name="Father_name" id="id_2" class="form-control input_border"value="">
+                                    <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center mt-2">
+
+                <div class="col-md-8 col-8">
+                    <div class="conatainer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-8">3. Date of Birth</div>
+                                    <div class="col-xl-6 col-md-4 text-end">:</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <% if(candidate[i].date_of_birth) {%>
+
+                                <input type="text" name="dob" id="id_3" class="form-control datepicker1 input_border " value="<%= candidate[i].date_of_birth %>" disabled>
+                                <% } else{%>
+                                    <input type="text" name="dob" id="id_3" class="form-control datepicker1 input_border " value="">
+                                    <%}%>
+                                <!-- <input type="text" name="dob" id="id_3" class="form-control"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center mt-2">
+
+                <div class="col-md-8">
+                    <div class="conatainer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-8">4. Sex</div>
+                                    <div class="col-xl-6 col-md-4 text-end">:</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <% if(candidate[i].gender) {%>
+
+                                <input type="text" name="sex_1" id="id_4" class="form-control input_border" value="<%= candidate[i].gender %>" disabled>
+                                <% } else{%>
+                                    <input type="text" name="sex_1" id="id_4" class="form-control input_border" value="<%= candidate[i].gender %>">
+                                    <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center mt-2">
+
+                <div class="col-md-8">
+                    <div class="conatainer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-8">5. Marital Status</div>
+                                    <div class="col-xl-6 col-md-4 text-end">:</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <% if(candidate[i].gender) {%>
+
+                                <input type="text" name="marital_status" id="id_5" class="form-control input_border" value="<%= candidate[i].marital_status %>" disabled>
+                                <% } else{%>
+                                    <input type="text" name="marital_status" id="id_5" class="form-control input_border" value="">
+                                    <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center mt-2">
+
+                <div class="col-md-8">
+                    <div class="conatainer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-8">6. Account No.</div>
+                                    <div class="col-xl-6 col-md-4 text-end">:</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <% if(candidate[i]) {%>
+
+                                <input type="text" name="account_no" id="id_6" class="form-control input_border" disabled>
+                                <% } else{%>
+                                    <input type="text" name="account_no" id="id_6" class="form-control input_border">
+                                    <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center mt-2">
+                <div class="col-md-8">
+                    <div class="conatainer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-8">7. Address:</div>
+                                    <div class="col-xl-6 col-md-4 text-end">:</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <% if(candidate[i].addres) {%>
+
+                                <textarea type="text" name="address" id="id_7" class="form-control input_border" disabled><%= candidate[i].addres %>
+                                </textarea>
+                                <% } else{%>
+                                    <textarea type="text" name="address" id="id_7" class="form-control input_border">
+                                    </textarea>
+                                    <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-2">
+                <div class="col-md-8">
+                    <div class="conatainer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-8">8. Date of Joining</div>
+                                    <div class="col-xl-6 col-md-4 text-end">:</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <% if(candidate[i]) {%>
+
+                                <input type="text" name="dob_joining" id="id_8" class="form-control datepicker1 input_border" disabled>
+                                <% } else{%>
+                                    <input type="text" name="dob_joining" id="id_8" class="form-control datepicker1 input_border">
+                                    <%}%>
+                                <!-- <input type="text" name="dob_joining" id="id_8" class="form-control"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<%}%>
+
+<% for (let i=0; i < nominees.length; i++) {%>
+
+            <div class="conatainer-fluid mt-4">
+
+                <p class="text-center fw-bold f_25">PART- A (EPF)</p>
+                <p class="text-center f_18 mar_18">I hereby nominate the person(s)/ cancel the nomination made by me
+                    previously and nominate the person(s) mentioned <br>
+                    below to receive the amount standing to my credit in the Employees’ Provident Fund, in the event of
+                    my death.</p>
+
+                <div class="px-3">
+
+                    <table class="table_border table">
+                        <tr class="">
+                            <th class="pad_20">Name of nominee/no minees</th>
+                            <th class="pad_20"> Address</th>
+                            <th class="pad_20">Nominee’s relationship with the member</th>
+                            <th class="pad_20">Date of Birth</th>
+                            <th class="pad_20">Total amount of share of accumulation in Provident Fund to be paid to
+                                each nominee</th>
+                            <th class="pad_20">If the nominee is a minor, name & relationship & address of the guardian
+                                who may receive the amount during the minority of nominee</th>
+                        </tr>
+                        <tbody>
+                            <tr class="text-center">
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                            </tr>
+                            <tr class="text-center">                           
+                                <th>
+                                <% if(nominees[i].nominee_name) {%>
+
+                                    <input type="text" name="name_1" id="nominee_name" class="form-control input_border" value="<%= nominees[i].nominee_name %>" disabled>
+                                    <% } else{%>
+                                        <input type="text" name="name_1" id="nominee_name" class="form-control input_border" value="">
+                                        <%}%>
+                                </th>
+                                <th>
+                                <% if(nominees[i].address) {%>
+
+                                    <input type="text" name="name_2" id="address_1" class="form-control input_border" value="<%= nominees[i].address %>" disabled>
+                                    <% } else{%>
+                                        <input type="text" name="name_2" id="address_1" class="form-control input_border" value="">
+                                        <%}%>
+
+                                </th>
+                                <th>
+                                <% if(nominees[i].nominee_relationship) {%>
+
+                                    <input type="text" name="name_3" id="nomi_relationship" class="form-control input_border" value="<%= nominees[i].nominee_relationship %>" disabled>
+                                    <% } else{%>
+                                        <input type="text" name="name_3" id="nomi_relationship" class="form-control input_border" value="">
+                                        <%}%>
+
+                                </th>
+                                <th>
+                                <% if(nominees[i].date_of_birth) {%>
+
+                                    <input type="text" name="name_4" id="date_of_birth" class="form_control input_border datepicker1" value="<%= nominees[i].date_of_birth %>" placeholder="Enter Date Of Birth...." disabled>
+                                    <% } else{%>
+                                        <input type="text" name="name_4" id="date_of_birth" class="form_control input_border datepicker1" value="" placeholder="Enter Date Of Birth....">
+                                        <%}%>
+                                </th>
+                                <th>
+                                <% if(nominees[i].total_amount) {%>
+
+                                    <input type="text" name="name_5" id="total_amount" class="form-control input_border" value="<%= nominees[i].total_amount %>" disabled>
+                                    <% } else{%>
+                                        <input type="text" name="name_5" id="total_amount" class="form-control input_border" value="">
+                                        <%}%>
+                                </th>
+                                <th>
+                                <% if(nominees[i].nominee_is_a_minor_and_relationship) {%>
+
+                                    <input type="text" name="name_6" id="minor_nominee" class="form-control input_border" value="<%= nominees[i].nominee_is_a_minor_and_relationship %>" disabled>
+                                    <% } else{%>
+                                        <input type="text" name="name_6" id="minor_nominee" class="form-control input_border" value="">
+                                        <%}%>
+                                </th>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div class=" mt-3  text_center_1">
+                        <div class="f_18  col-12 ">1. *Certified that I have no Family as defined in para 2(g) of the
+                            Employees’ Provident Fund Scheme, 1952 and should I <br>
+                            acquire a family hereafter the above nomination should be deemed as cancelled.
+                            <div class="f_18 ">2. *Certified that my father/mother is /are dependent upon me.</div>
+
+                        </div>
+                        <div class="row justify-content-center mt-2">
+
+                            <div class="">
+                                <div class="conatainer-fluid">
+
+
+                                    <div class="row">
+                                        <div class=" col-md-8">* Strike out whichever is not applicable. <br>impression
+                                            of the </div>
+
+                                        <div class="col-md-4">
+                                <% if(nominees[i].image) {%>
+
+                                            <input type="file" hidden id="emp_sign_input" name="emp_sign_input" disabled>
+                                    <% } else{%>
+                                        <%}%>
+                                            <div class=" text-center ">
+                                                <div class="input_height_11" id="emp_sign_box" >
+                                                    <img src="/hrm_documents/<%= candidate_id %>/image/<%= nominees[i].image %>"  alt=""  id="emp_sign_img" class="h-100">
+                                                </div>
+                                                <p class="mx-4">Signature of the employer</p>
+                                                 
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary" id="saveButton">Submit</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <%}%>
+        <div class="row justify-content-center mt-2">
+
+            <div class="">
+                <div class="conatainer">
+                    <div class="row">
+                        <div class="f_25 text-center fw-bold">
+                            PART B (EPS) (Para 18)
+                        </div>
+                        <div class=" text-center">I hereby furnish below particular of the members of my family who
+                            would be eligible to receive widow/ children pension in </div>
+
+                    </div>
+                    <div class="text-end pe-3"><button type="button" class="btn btn-primary" id="family_detl_btn">Add
+                            Row</button></div>
+                </div>
+            </div>
+        </div>
+        <% for (let i=0; i < member.length; i++) {%>
+
+
+        <div class="conatainer-fluid px-3 mt-4 justify-content-center ">
+            <table class="table table_border" id="family_detl_tbl">
+                <thead>
+                    <tr class="text-center">
+                        <th class="pad_20" rowspan="2">S. No</th>
+                        <th class="pad_20" colspan="2">Name and Address of the family member</th>
+                        <th class="pad_20" rowspan="2">Date of
+                            Birth</th>
+                        <th class="pad_20" colspan="2" rowspan="2">Relationship with member</th>
+                        <th rowspan="2"></th>
+                    </tr>
+                    <tr class="">
+                        <th class="pad_20 text-center">Name</th>
+                        <th class="pad_20 text-center">Address</th>
+
+
+                    </tr>
+                    <tr class="text-center">
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th colspan="2">5</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="text-center">
+                        <td>1</td>
+                        <td>
+                            <% if(member[i].nominee_name) {%>
+
+                            <input type="text" name="name_and_address" id="name_1" value="<%= member[i].nominee_name %>"  class="form-control input_border" disabled>
+                            <% } else{%>
+                                <input type="text" name="name_and_address" id="name_1" value=""  class="form-control input_border">
+                                <%}%>
+                        </td>
+
+                        <td>
+                            <% if(member[i].address) {%>
+
+                            <input type="text" name="relationship" id="address_2" value="<%= member[i].address %>" class="form-control input_border" disabled>
+                            <% } else{%>
+                                <input type="text" name="relationship" id="address_2" value="" class="form-control input_border">
+                                <%}%>
+                            </td>
+                        <td>
+                            <% if(member[i].date_of_birth) {%>
+
+                            <input type="text" id="dob" name="dob_1" class="form-control datepicker1 input_border" value="<%= member[i].date_of_birth %>" placeholder="Enter Date Of Birth...." disabled>
+                            <% } else{%>
+                                <input type="text" id="dob" name="dob_1" class="form-control datepicker1 input_border" value="" placeholder="Enter Date Of Birth....">
+                                <%}%>
+                        </td>
+
+                        <td colspan="2">
+                            <% if(member[i].relationship_with_member) {%>
+
+                            <input type="text" name="Address_1" id="rwm" value="<%= member[i].relationship_with_member %>" class="form-control input_border" disabled>
+                            <% } else{%>
+                                <input type="text" name="Address_1" id="rwm" value="" class="form-control input_border">
+                        <%}%>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class=" mt-3  text_center_1">
+                <div class="f_18  col-12 ">**Certified that I have no family as defined in para 2(vii) of Employees’
+                    Pension Scheme, 1995 and should I acquire a
+                    family <br> hereafter I shall furnish particulars thereon in the above form.
+                    I hereby nominate the following person for receiving the <br> monthly widow pension (admissible
+                    under para 162(a)(i) and
+                    (ii) in the event of my death without leaving any eligible family <br> member for receiving pension.
+                </div>
+
+            </div>
+
+
+        </div>
+        <%}%>
+        <div class="text-end pe-3"><button type="button" class="btn btn-primary" id="family_detl_btn_1">Add
+                Row</button></div>
+        <div class="conatainer-fluid mx-3 justify-content-center mt-4">
+                    <% for (let i=0; i < employees.length; i++) {%>
+
+            <div class="">
+                <table class="table_border table " id="family_detl_tbl_1">
+                    <thead>
+                        <tr class="">
+                            <!-- <th class="pad_20" rowspan="2">S. No</th> -->
+                            <th class="pad_20 text-center">Name and Address of the family member</th>
+                            <th class="pad_20 text-center">Date of
+                                Birth</th>
+                            <th class="pad_20 text-center">Relationship with member</th>
+                            <th></th>
+                        </tr>
+
+                        <tr class="text-center">
+                            <th class="">1</th>
+                            <th id="">2</th>
+                            <th id="">3</th>
+                            <th id=""></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr class="text-center table_width">
+                            <td><input type="text" name="name_a" id="Name_address" class="form-control input_border"></td>
+        
+                <td><input type="text" id="dob1" name="name_b" class="form-control input_border datepicker1" placeholder="Enter Date Of Birth...."></td>
+                <td><input type="text" name="name_c"  id="rwm1" class="form-control input_border"></td>
+                <td><i class="fa-solid fa-trash-can text-danger" id="delete_btn"></i></td>
+        </tr> -->
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-end">
+                    <% if(employees[i].image) {%>
+
+                    <input type="file" hidden id="emp_sign_input2" name="emp_sign_input2" disabled>
+                    <% } else{%>
+                    <input type="file" hidden id="emp_sign_input2" name="emp_sign_input2">
+
+                        <%}%>
+
+                    <div class="col-md-4 col-12 input_height_11 text-center" id="emp_sign_box2">
+                        <img src="/hrm_documents/<%= candidate_id %>/image/<%= employees[i].image %>" class="input_height_1" id="emp_sign_img2">
+                        <p class="">Signature of the employer</p>
+                    </div>
+
+                </div>
+          
+            </div>
+            <%}%>
+
+            <% for (let i=0; i < certificate.length; i++) {%>
+
+            <div class="row justify-content-center mt-2">
+                <div class="">
+                    <div class="conatainer-fluid">
+                        <div class="row">
+                            <div class=" col-md-8 mar_top_75">Date: 
+                    <% if(certificate[i].dob) {%>
+
+                                <input type="text" name="date_1" id="date_0" class="w-25 outline_1 border_buttom datepicker1" value="<%= certificate[i].dob %>" disabled>
+                    <% } else{%>
+                        <input type="text" name="date_1" id="date_0" class="w-25 outline_1 border_buttom datepicker1" value="">
+                                <%}%>
+                            </div>
+<!--                             
+                            <div class="col-md-4">
+                                <input type="file" hidden id="emp_sign_input2" name="emp_sign_input2">
+                                <div class=" text-center ">
+                                    <div class="input_height_11" id="emp_sign_box2" >
+                                        <img src=""  alt="" hidden id="emp_sign_img2" class="h-100">
+                                    </div>
+                                    <p class="mx-4">Signature of the employer</p>
+                                     
+                                </div>
+
+                            </div> -->
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container justify-content-center mt-4">
+            <p class="">**Strike out whichever is not applicable</p>
+            <p class="text-center fw-bold f_18">CERTIFICATE BY EMPLOYER</p>
+            <p class="">Certified that the above declaration and nomination has been signed/thumb impressed before me by
+                Shri/Smt./Kum.
+                <% if(certificate[i].certificate_by_emp) {%>
+
+                <input type="text" name="Certificate" id="Certificate_1" class=" w-25 outline_1 border_buttom" value="<%= certificate[i].certificate_by_emp %>" disabled>
+                <% } else{%>
+                    
+                <input type="text" name="Certificate" id="Certificate_1" class=" w-25 outline_1 border_buttom" value="">
+                    <%}%>
+
+                employed in my establishment after he/she has read the entries/entries
+                been read over to him/her by me and got confirmed by him/her</p>
+            <div class="d-flex mt-4">
+                <div class=" col-4"> Place :</div>
+                 <div class="col-md-4 margin_320">
+                <% if(certificate[i].place) {%>
+
+                    <input type="text" name="place" id="place" class="form-control input_border" value="<%= certificate[i].place %>" disabled>
+                <% } else{%>
+                    <input type="text" name="place" id="place" class="form-control input_border" value="">
+                    <%}%>
+                </div>&nbsp;
+                <div class=" col-4 margin_100">
+                <% if(certificate[i].place_1) {%>
+
+                    <input type="text" name="place_1" id="place_1" class="form-control input_border" value="<%= certificate[i].place_1 %>" disabled>
+                <% } else{%>
+                    <input type="text" name="place_1" id="place_1" class="form-control input_border" value="">
+                    <%}%>
+
+                </div>
+            </div>
+            <p class=""></p>
+
+            
+
+            <div class=" d-flex mt-4 mx-5">
+                <% if(certificate[i].image) {%>
+
+                <input type="file" hidden id="employer_sign_input" name="employer_sign_input" disabled>
+                <% } else{%>
+                <input type="file" hidden id="employer_sign_input" name="employer_sign_input">
+                    
+                    <%}%>
+                <div class="input_height_1" id="employer_sign_box" >
+                    <img src="/hrm_documents/<%= candidate_id %>/image/<%= certificate[i].image %>" name="employer_sign_img" alt=""  id="employer_sign_img" class="h-100 text-center">
+                </div>
+                <p class="mx-4">Signature of the employer or other Authorized Officers of <br>
+                    the Establishment</p>
+            </div>
+            <div class="mar_left_259 d-flex mt-2">Destination 
+                <% if(certificate[i].destination) {%>
+
+                <input type="text" name="Destination_1" id="Destination_1" class="form-control mx-2 input_border w-50" value="<%= certificate[i].destination %>" disabled>
+                <% } else{%>
+                    <input type="text" name="Destination_1" id="Destination_1" class="form-control mx-2 input_border" value="">
+                    <%}%>
+
+            </div>
+            <p class=" mt-5">Date the:   
+                <% if(certificate[i].dob_1) {%>
+                
+                <input type="text" name="date_2" id="date_2" class=" outline_1 border_buttom datepicker1 text-center" value="<%= certificate[i].dob_1 %>" disabled>
+                <% } else{%>
+                    <input type="text" name="date_2" id="date_2" class=" outline_1 border_buttom datepicker1 text-center" value="">
+                    <%}%>
+            </p>
+        </div>
+       <%}%>
+<div class="text-end mb-1">
+    <!-- <a href=""> -->
+            <button type="submit" class="btn btn-primary " id="submitdata">Submit</button>
+            <!-- </a> -->
+        </div>
+        </form>
+        
+</div>
+
+
+        <!-- <div class="text-end py-3 pe-3"><button type="button" class="btn btn-success" id="submitdata">Submit</button></div> -->
+        </div>
+        </div>
+        </div>
+        </div></div></div>
+    
+
+    <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+    <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/candidate_new_form.js"></script>
+    <script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script>
+    <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+    <!-- <script src="/public/cdn/sweetalert2/sweetalert2.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

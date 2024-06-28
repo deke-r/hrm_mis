@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp" >
+  <!-- <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="/static/css/manager_create_jd.css">
+</head>
+<body class="dyn_height">
+    <%-include('../common/header')%>
+   
+
+    <div class="mt-5"></div>
+    <div class="container-fluid h-100 position-relative">
+        <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+       <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+          </button>
+    <div class="row dyn_row justify-content-end ">
+    <!-- <div class="col-xl-2 col-md-3 col-sm-5 height_vh bgF9F9F9 px-0  text-white ">
+        <h6 class=" mb-0 text-center text-light py-2 bg_royal rounded-pills">JD</h6>
+        <ul class="navbar-nav   mb-lg-0  rounded-2 on_hov pt-0">
+            <li class="nav-item ">
+                <a class="nav-link text-center" href="/jobDescription"><i class="fa-solid fa-square-plus"></i> JD Creation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  text-center" aria-current="page" href="/view_job_description"><i class="fa-solid fa-list-check"></i>  Manage JD</i></a>
+              </li>
+       </ul>
+   
+       </div> -->
+
+    <div class="col-xl-10 col-md-9 col-8 dyn_col   ps-4">  
+
+        <div class="row g-3 justify-content-center form1">
+            <div class="col-12 shadow pt-1">
+                <h5 class="text-center fs_16 text-white mt-3">JD Creation</h5>
+                <div>
+                    <div class="row mb-3">
+                        <!-- <div class="col-md-3">
+                            <label for="jdid">JdId:</label>
+                            <input type="text" class="form-control" id="jdid" placeholder="" readonly name="jdid">
+                        </div> -->
+                        <div class="col-md-4">
+                            <label for="Job_title">Job Title</label>
+                            <input type="text" class="form-control" id="Job_title" placeholder="Enter Job Title" name="job_tittle">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="function">Department/Group</label>
+                            <input type="text" class="form-control" id="function" placeholder="Enter Function" name="function">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="business">Business</label>
+                            <input type="text" class="form-control" id="Business" placeholder="Enter Business" name="business">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="aboutUs">About Us</label>
+                            <textarea rows="3" type="text" class="form-control" id="aboutUs" placeholder="Enter About Us" name="aboutUs"></textarea>
+                        </div>
+                    
+                  
+                        <div class="col">
+                            <label for="role">Role Summary</label>
+                            <textarea rows="3" type="text" class="form-control" id="role" placeholder="Enter Role Summary" name="Summary"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="role_responsibility">Role and Responsibility</label>
+                            <textarea rows="3" type="text" class="form-control" id="responsibility" placeholder="Enter Responsibility" name="responsibility"></textarea>
+                        </div>
+                  
+                        <div class="col">
+                            <label for="key_performance">Key Performance</label>
+                            <textarea rows="3" type="text" class="form-control" id="key_performance" placeholder="Enter Key Performance" name="key_performance"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="Qualification">Qualification</label>
+                            <textarea  class="form-control" id="Qualification" placeholder="Enter Qualification" name="qualification"></textarea>
+                        </div>
+               
+                        <div class="col-md-6 mt-4 text-xl-end text-md-center text-center">
+                            <button type="submit" id="create" class="btn btn-primary submit">Submit</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+<!-- <script src="/static/cdn/jquery/jquery3.7.1.js"></script> -->
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+<script src="/static/js/manager_create_jd.js"></script>
+
+
+</body>
+</html>

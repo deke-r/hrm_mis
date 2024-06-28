@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <link rel="icon" href="/static/images/it.webp" >
+   
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+    <link rel="stylesheet" href="/static/css/view_request_assets.css">
+
+
+ 
+
+</head>
+<body>
+    
+  <%-include('../common/candidate_common/candidate_sidebar')%>
+  <%-include('../common/candidate_common/candidate_header')%>
+
+
+                
+<!-------------------------------------------------------------------------------------------- start in this new  -->
+<div class="mt-5"></div>
+<div class="container-fluid h-100 position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+   <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+      </button>
+<div class="row dyn_row justify-content-end ">
+
+    <div class="col-xl-10 col-md-9 col-8 dyn_col px-3  ps-4">
+
+ 
+        <h5 class="text-center mt-3 text-light fs_16" >Request Assets View</h5>
+            <div class="px-2">
+                <table class="w-100 table_text_aling_middle table-bordered border-dark table_bg" id="view_req_assets_tbl">
+                    <thead>
+                        <tr>
+                            <th>Assets Request <br>ID</th>
+                            <th>Asset Type</th>
+                            <th>Mail To</th>
+                            <th>Mail CC</th>
+                            <th>Request Remarks</th>
+                            <th>Request Date</th>
+                            <th>Reject Remarks</th>
+                            <th>Request Resolved <br> Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+
+                        <% for(let i=0; i<data1.length; i++){ %>
+                        
+                            <% if(data1[i].status=='Resolved'){ %>
+                            <tr class="bg_green1">
+                                <td><%= data1[i].assets_req_id %></td>
+                                <td><%= data1[i].asset_type %></td>
+                                <td><%= data1[i].mail_to %></td>
+                                <td><%= data1[i].mail_cc %></td>
+                                <td><%= data1[i].req_remarks %></td>
+                                <td><%= data1[i].req_date %></td>
+                                <td><%= data1[i].reject_remarks %></td>
+                                <td><%= data1[i].req_resolved_date %></td>
+                                <td><%= data1[i].status %></td>
+                                
+                            </tr>
+                            <%}else if(data1[i].status=='Rejected'){%>
+                                <tr class="bg_red1" >
+                                    <td><%= data1[i].assets_req_id %></td>
+                                    <td><%= data1[i].asset_type %></td>
+                                    <td><%= data1[i].mail_to %></td>
+                                    <td><%= data1[i].mail_cc %></td>
+                                    <td><%= data1[i].req_remarks %></td>
+                                    <td><%= data1[i].req_date %></td>
+                                    <td><%= data1[i].reject_remarks %></td>
+                                    <td><%= data1[i].req_resolved_date %></td>
+                                    <td><%= data1[i].status %></td>
+                                    
+                                </tr>    
+                            <%}else{%>
+                                <tr>
+                                    <td><%= data1[i].assets_req_id %></td>
+                                    <td><%= data1[i].asset_type %></td>
+                                    <td><%= data1[i].mail_to %></td>
+                                    <td><%= data1[i].mail_cc %></td>
+                                    <td><%= data1[i].req_remarks %></td>
+                                    <td><%= data1[i].req_date %></td>
+                                    <td><%= data1[i].reject_remarks %></td>
+                                    <td><%= data1[i].req_resolved_date %></td>
+                                    <td><%= data1[i].status %></td>
+                                    
+                                </tr>
+                            <%}%>
+
+                        <%}%>
+                    </tbody>
+    
+                </table>
+
+
+            </div>
+
+            
+
+
+
+
+    </div>
+
+</div>
+</div>
+
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+<script src="/static/js/main_dataTable.js"></script>
+<script src="/static/js/view_request_assets.js"></script>
+
+
+
+
+
+</body>
+</html>

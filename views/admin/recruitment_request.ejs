@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HRM</title>
+
+    <link rel="icon" href="/static/images/it.webp">
+    <link href="/static/css/recruitment_request.css" rel="stylesheet">
+   
+</head>
+<body>
+    <%-include('../common/header')%>
+    <%-include('../common/sidebar')%>
+<div class="mt-5"></div>
+<div class="container-fluid h-100 position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+   <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+      </button>
+<div class="row dyn_row justify-content-end ">
+
+
+<div class="col-xl-10 col-md-9 col-8 dyn_col   ">  
+    <h5 class="text-center mt-3 text-light h5_mod" >Recruitment Request </h5>
+    <div class="px-1 table-responsive">
+    
+        <table class="w-100 table_text_aling_middle table-bordered border-dark" id="jd_table">
+    <thead class="table_bg">
+        <tr>
+            <!-- <th>S.No.</th> -->
+            <th>R ID</th>
+            <th>JD ID</th>
+            <th>Level</th>
+            <th>Job Title</th>
+            <th>Function</th>
+            <th>Business</th>
+            <th>Status</th>
+            <th>Requirement</th>
+            <th>View</th>
+            <th>PDF</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody id="abcd">
+
+        <%for(var i=0; all_data.length>i;  i++){%>
+           
+            <tr>
+                <td><%=all_data[i].r_id%></td>
+                <td><%="MIS".concat(all_data[i].jd_id)%></td>
+                <td><%=all_data[i].level%></td>
+                <td><%=all_data[i].job_title%></td>
+                <td><%=all_data[i].function%></td>
+                <td><%=all_data[i].business%></td>
+                <td>open</td>
+                <td>Recruitment raised</td>
+              
+                <td><i class="fa-solid fa-eye view_req" 
+                    r_id="<%=all_data[i].r_id%>"
+                    id="eyes_icon" jd_id="<%=all_data[i].prefix.concat(all_data[i].jd_id)%>" jtitle="<%=all_data[i].job_title%>" func="<%=all_data[i].function%>"   business="<%=all_data[i].business%>" about="<%=all_data[i].about_us%>" role_s="<%=all_data[i].role_summary%>" role_res="<%=all_data[i].role_nd_responsibilites%>"
+                    k_per="<%=all_data[i].key_performance%>" edu="<%=all_data[i].education_qualification%>" lstate="<%=all_data[i].location_state%>" l_hq="<%=all_data[i].location_hq%>" d_rep="<%=all_data[i].direct_reporting%>" ind_mat="<%all_data[i].indirect_matrix%>" t_size="<%=all_data[i].team_size%>" divi="<%=all_data[i].division%>"
+                    refe="<%=all_data[i].reference %>"></i></td>
+               
+                    <td><i class="fa-solid fa-file-pdf dwnld" ></i></td>
+                    <td><i class="fa fa-trash text-danger delete" r_id="<%=all_data[i].r_id%>"  level="<%=all_data[i].level %>" ></i></td>
+            </tr>
+      
+      <%}%>
+            
+      <input type="hidden" id="input_jd_id_1" value="" name="jd_id">
+      <input type="hidden" id="input_r_id_1" value="" name="r_id">
+      <input type="hidden" id="level_val" value="" name="level">
+   
+ 
+    </tbody>
+        </table>
+    
+     
+    </div>
+
+<div class="container-fluid pdf  mt-3 req_tab d-none" id="printpdf">
+
+    <table class="table  table-sm">
+        <thead  >
+        <tr >
+            <th colspan="4" class="text-center job ">JOB DESCRIPTION</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr >
+
+            <th class="f_13 align-middle">Job Title:</th>
+            <th colspan="2" class="f_13 align-middle" id="p_title"></th>
+            
+            <div class="image">
+            <th rowspan="5" class="logo"><center><img src="/static/images/images-removebg-preview.png" class="img-fluid image_logo" alt="" srcset=""></center></th>
+        </div>
+        </tr>
+        <!-- Add rows with data here -->
+        <!-- Example row -->
+        <tr>
+            <td class="f_13 align-middle">Department/Group:</td>
+            <td colspan="2" id="p_func" class="f_13 align-middle"></td>
+        </tr>
+        <tr>
+            <td class="f_13 align-middle">Reporting to:</td>
+            <td colspan="2" class="f_13 align-middle" id="d_rept"></td>
+        </tr>
+        <tr>
+            <td class="f_13 align-middle">Team Size:</td>
+            <td colspan="2" class="f_13 align-middle" id="team_s"></td>
+        </tr>
+        <tr>
+            <td class="f_13 align-middle">Location:</td>
+            <td colspan="2" class="f_13 align-middle" id="loc_s"></td>
+        </tr>
+
+        <tr>
+            <td colspan="4">
+                <div class="content">
+                   
+                
+                    <!-- Other sections like Performance Polymers and Agri Products -->
+
+                    <h6 class="f_13 mt-3 fw-semibold " >Role Summary:</h6>
+                    <div id="p_rs" class="f_13"></div>
+                
+                    <!-- Additional role details -->
+                    <h6 class="f_13 mt-3 fw-semibold ">Roles and Responsibilities:</h6>
+                    <div id="p_rns" class="f_13"></div>
+                    
+                    <h6 class="f_13 mt-3 fw-semibold">Key Performance Indicators:</h6>
+                   <div id="p_kpi" class="f_13">
+
+                   </div>
+                
+                    <h6 class="f_13 mt-3 fw-semibold">Educational Qualifications / Professional Experience:</h6>
+                    <div id="p_eq" class="f_13">
+
+                    </div>
+<!--                 
+                    <h6 class="f_13 mt-3 fw-semibold">Candidate Requirements:</h6>
+                    <div id="p_can" class="f_13">
+
+                    </div> -->
+
+                    <h6 class="f_13 mt-3 fw-semibold">Add On Role & Responsibility / Requirement:</h6>
+                    <div id="p_add_on" class="f_13">
+
+                    </div>
+
+                    <h6 class="f_13 mt-3 fw-semibold">Reference Resume /CV:</h6>
+                    <div class="container-fluid pdf mt-3 req_tab" id="pdf-container1">
+                      
+
+                        <!-- PDF content will be inserted here -->
+                    </div>
+                    <div class="container-fluid pdf mt-3 req_tab" id="pdf-container2">
+                    
+                        <!-- PDF content will be loaded here -->
+                    </div>
+                    <div class="container-fluid pdf mt-3 req_tab" id="pdf-container3">
+                    
+                        <!-- PDF content will be loaded here -->
+                    </div>
+                    </div>
+                </div>
+                                                
+</td>
+        </tr>
+
+
+        </tbody>
+    </table>
+
+
+
+<!-- <div class="col-12 text-center"><button class="px-3 py-1 rounded-2 shad_dark text-white  f_13 btn_border">Submit</button></div> -->
+
+</div>
+
+
+
+
+<div class="row " id="upload_res_div">
+
+</div>
+<div class="container-fluid d-none" id="assign_interview_div">
+    <div class="row shadow rounded-2 ">
+        <div class="col-12"><b>Assign Interview </b> <span class="f_11">(Max 5 level 3 manager and 2 HR)</span></div>
+        <div class="col-12 mb-3 text-end "><span class="btn border shadow rounded-2 f_12 " id="add_level_1">Add Level-1</span></div>
+        <div class="col-12" id="level_app_1"></div>
+
+        <div class="col-12 mb-3 text-end "><span class="btn border shadow rounded-2 f_12 " id="add_level">Add Level-2 to 5</span></div>
+        <div class="col-12" id="level_app">
+ 
+        </div>
+    
+
+  
+</div>
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
+
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+
+<script src="/static/js/recruitment_request.js"></script>
+
+
+
+</body>
+</html>

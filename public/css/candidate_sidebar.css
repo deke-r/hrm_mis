@@ -1,0 +1,98 @@
+.pos{
+    position: absolute;
+    top: 50%;
+    left:-0.5%;
+
+   }
+.offcanvas-header{
+    background-color: #2e2e2d!important;
+}
+
+.offcanvas-body,.bg_bl{
+    background-color: #737b88 !important;
+}
+.offcanvas{
+height:calc(100% - 49.2px)!important;
+margin-top:49.2px!important ;
+width:16.66%!important;
+position: relative;
+box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514);
+background-color:#123a75!important ;
+}
+.pos-end{
+    position: absolute;
+    top:45%;
+    left: 89%;
+}
+
+.bgF9F9F9 .nav-item{
+    background-color: #494e56 !important;
+}
+/* .pos:hover{
+    position: absolute;
+    top: 49%;
+    left:0%;
+    transition: all 0.8s;
+
+} */
+.span_expand{
+    padding-top: 31px;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom:31px ;
+    background-color: #123a75;
+}
+.side_button:hover{
+ 
+    /* transform: scale(1.1,1.2); */
+    transition: all 0.8s;
+}
+
+.left_nav{
+    background-color: #123a75;
+    position: fixed!important;
+    left: 0!important;
+    height: 100%!important;
+    top: 49.2px!important;
+
+}
+.left_nav:hover{
+    background-color: #123a75;
+    position: fixed!important;
+    left: 0%!important;
+    height: 100%!important;
+    top: 49.2px!important;
+ 
+}
+
+@media only screen and (max-width:1999px)and(min-width:768px){
+    .offcanvas{
+        width: 33.33%!important;
+    }
+}
+@media only screen and (max-width:768px){
+    .offcanvas{
+        width: 33.33%!important;
+    }
+}
+@media only screen and (max-width:576px)and (min-width:200px){
+    .offcanvas{
+        width:50% !important;
+    }
+}
+
+
+.pos{
+    position: fixed;
+}
+
+.mt_46{
+    margin-top: 46px;
+}
+
+
+#dpppd .dropdown-item{
+    background-color: #494e56 !important;
+    color: white;
+    font-size: 14px !important;
+}

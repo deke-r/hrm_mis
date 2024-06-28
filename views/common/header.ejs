@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>HRM</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="icon" href="/static/images/logo.png" >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="/static/css/sidebar.css">
+
+  <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css">
+  
+<link rel="stylesheet" href="/static/css/header.css">
+</head>
+<body>
+<%console.log(role)%>
+<nav class="navbar navbar-expand-lg change_width navbar-custom p-0 fixed-top i-white">
+  <div class="container-fluid pb-0 pt-1">
+    <%if(role=='ADMIN'){%>
+
+    <a class="navbar-brand  p-0 " href="/dashboard_admin"><img src="/static/images/images-removebg-preview.png" alt="" class=" rounded-2 bor" width="50px" height="45.5px" ></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav   mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%= role %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/dashboard_admin"><i class="fa-solid fa-house"></i></a>
+        </li>
+
+        <!-- <li class="nav-item ms-2 me-2">
+          <a class="nav-link active position-relative " aria-current="page" href="#"><i class="fa-solid fa-bell "> 
+             
+        </i><span class="noti  translate-middle fs_10 badge rounded-circle  p_1  bg-danger">
+       1
+          
+          </span></a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end hov pt-0 pb-0">
+            <li class="p-0"><a class="dropdown-item" href="/profile/<%=EMP_CODE%>"><i class="fa-solid fa-address-card me-2"></i>Profile</a></li>
+            <li class="p-0"><a class="dropdown-item" href="/changePassword"><i class="fa-solid fa-key me-1" ></i> Change Password</a></li>
+            <li class="p-0"><a class="dropdown-item" id="logoutBtn" href="#staticBackdrop" data-bs-toggle="modal" data-bs-backdrop="false" > <i class="fa-solid fa-right-from-bracket me-1"></i> Logout</a></li>
+          </ul>
+        </li>
+  
+    </div>
+
+    <%}else if(role=='MANAGER'){%>
+      <a class="navbar-brand  p-0" href="/manager_dashboard"><img src="/static/images/images-removebg-preview.png" alt="" class="rounded-2 bor"  width="50px" height="45.5px" ></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav   mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><%= role %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/manager_dashboard"><i class="fa-solid fa-house"></i></a>
+          </li>
+  
+          <!-- <li class="nav-item ms-2 me-2">
+            <a class="nav-link active position-relative " aria-current="page" href="#"><i class="fa-solid fa-bell "> 
+               
+          </i><span class="noti  translate-middle fs_10 badge rounded-circle  p_1  bg-danger">
+         1
+            
+            </span></a>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end hov pt-0 pb-0">
+              <li class="p-0"><a class="dropdown-item" href="/profile/<%=EMP_CODE%>"><i class="fa-solid fa-address-card me-2"></i>Profile</a></li>
+              <li class="p-0"><a class="dropdown-item" href="/changePassword_manager"><i class="fa-solid fa-key me-1" ></i> Change Password</a></li>
+              <li class="p-0"><a class="dropdown-item" id="logoutBtn" href="#staticBackdrop" data-bs-toggle="modal" data-bs-backdrop="false" > <i class="fa-solid fa-right-from-bracket me-1"></i> Logout</a></li>
+            </ul>
+          </li>
+    
+      </div>
+
+
+
+
+      <%}else if(role=='candidate'){%>
+        <a class="navbar-brand  p-0 " href="/manager_dashboard"><img src="/static/images/images-removebg-preview.png" alt="" class=" rounded-2 bor"  width="50px" height="45.5px" ></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav   mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= role %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/candidate_dashboard"><i class="fa-solid fa-house"></i></a>
+            </li>
+    
+            <!-- <li class="nav-item ms-2 me-2">
+              <a class="nav-link active position-relative " aria-current="page" href="#"><i class="fa-solid fa-bell "> 
+                 
+            </i><span class="noti  translate-middle fs_10 badge rounded-circle  p_1  bg-danger">
+           1
+              
+              </span></a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end hov pt-0 pb-0">
+                <li class="p-0"><a class="dropdown-item" href="/profile/<%=EMP_CODE%>"><i class="fa-solid fa-address-card me-2"></i>Profile</a></li>
+                <li class="p-0"><a class="dropdown-item" href="/changePassword_manager"><i class="fa-solid fa-key me-1" ></i> Change Password</a></li>
+                <li class="p-0"><a class="dropdown-item" id="logoutBtn" href="#staticBackdrop" data-bs-toggle="modal" data-bs-backdrop="false" > <i class="fa-solid fa-right-from-bracket me-1"></i> Logout</a></li>
+              </ul>
+            </li>
+      
+        </div>
+  
+
+    
+      <%}else if(role=='HR'){%>
+        <a class="navbar-brand  p-0 " href="/dashboard_admin"><img src="/static/images/images-removebg-preview.png" alt="" class=" rounded-2 bor" width="50px" height="45.5px" ></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav   mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= role %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/dashboard_admin"><i class="fa-solid fa-house"></i></a>
+            </li>
+    
+            <!-- <li class="nav-item ms-2 me-2">
+              <a class="nav-link active position-relative " aria-current="page" href="#"><i class="fa-solid fa-bell "> 
+                 
+            </i><span class="noti  translate-middle fs_10 badge rounded-circle  p_1  bg-danger">
+           1
+              
+              </span></a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end hov pt-0 pb-0">
+                <li class="p-0"><a class="dropdown-item" href="/profile/<%=EMP_CODE%>"><i class="fa-solid fa-address-card me-2"></i>Profile</a></li>
+                <li class="p-0"><a class="dropdown-item" href="/changePassword"><i class="fa-solid fa-key me-1" ></i> Change Password</a></li>
+                <li class="p-0"><a class="dropdown-item" id="logoutBtn" href="#staticBackdrop" data-bs-toggle="modal" data-bs-backdrop="false" > <i class="fa-solid fa-right-from-bracket me-1"></i> Logout</a></li>
+              </ul>
+            </li>
+      
+        </div>
+    
+  
+       
+        <%}else if(role=='HR_ASSOCIATE'){%>
+          <a class="navbar-brand  p-0 " href="/dashboard_admin"><img src="/static/images/images-removebg-preview.png" alt="" class=" rounded-2 bor" width="70px" ></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav   mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#"><%= role %></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/dashboard_admin"><i class="fa-solid fa-house"></i></a>
+              </li>
+      
+              <!-- <li class="nav-item ms-2 me-2">
+                <a class="nav-link active position-relative " aria-current="page" href="#"><i class="fa-solid fa-bell "> 
+                   
+              </i><span class="noti  translate-middle fs_10 badge rounded-circle  p_1  bg-danger">
+             1
+                
+                </span></a>
+              </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-user"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end hov pt-0 pb-0">
+                  <li class="p-0"><a class="dropdown-item" href="/profile/<%=EMP_CODE%>"><i class="fa-solid fa-address-card me-2"></i>Profile</a></li>
+                  <li class="p-0"><a class="dropdown-item" href="/changePassword"><i class="fa-solid fa-key me-1" ></i> Change Password</a></li>
+                  <li class="p-0"><a class="dropdown-item" id="logoutBtn" href="#staticBackdrop" data-bs-toggle="modal" data-bs-backdrop="false" > <i class="fa-solid fa-right-from-bracket me-1"></i> Logout</a></li>
+                </ul>
+              </li>
+        
+          </div>
+      
+    
+          <%}%>
+  </div>
+
+
+  <!-- Modal -->
+
+</nav>
+
+  
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="staticBackdropLabel">Logout</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       Are You Sure You want to Logout?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+<!-- Bootstrap JS CDN (optional, for dropdowns etc.) -->
+<!-- <script src="/static/cdn/jquery/jquery3.7.1.js"></script> -->
+<script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script>
+<script src="/static/js/header.js"></script>
+
+
+</body>
+</html>

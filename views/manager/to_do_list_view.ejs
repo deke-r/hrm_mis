@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM </title>
+    <link rel="icon" href="/static/images/it.webp" >
+    <link rel="stylesheet" href="/static/css/to_do_list_view.css">
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+    
+
+    
+
+</head>
+<body>
+    <%-include('../common/header')%>
+    
+      <%-include('../common/sidebar')%>
+
+      <div class="mt-5"></div>
+      <div class="container-fluid h-100 position-relative">
+          <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+         <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+            </button>
+      <div class="row dyn_row justify-content-end ">
+      
+      
+      <div class="col-xl-10 col-md-9 col-8 dyn_col">  
+
+          <!-- <div class="mt-3 header_sty" >Candidate Details</div> -->
+          
+          <div class="container-fluid mt-3  ">
+            <div class="container-fluid  shadow1  pb-2 bg_color1"  >
+                <div class="row bg_bck text-light  rounded-top-2 ">
+                    <h4 class=" text-center f_16 mt-2 ">Candidate Details</h4>
+                </div>
+
+                <div class="row my-2 mx-2 row_border_sty py-1 f_13">
+                    <input type="hidden" value="<%= data1[0].candidate_email %>" id="cand_email">
+                    
+                    <div class="col-md-4">
+                        <span class="fw-bold ">Request ID:</span>
+                        <span id="request_id"><%= data1[0].request_id %></span>
+                    </div>    
+
+                    <div class="col-md-4">
+                        <span class="fw-bold ">Candidate ID:</span>
+                        <span id="candidate_id"><%= data1[0].candidate_id %></span>
+                    </div>                                        
+                    
+                    <div class="col-md-4">
+                        <span class="fw-bold ">Name:</span> 
+                        <span id="candidate_name"><%= data1[0].candidate_name %></span>
+                    </div>    
+                    
+                </div>
+
+                <div class="row mb-2 mx-2 row_border_sty py-1 f_13">
+
+                    <div class="col-md-4">
+                        <span class="fw-bold ">From Date:</span> 
+                        <span><%= data1[0].from_date_formated %></span>
+                    </div>    
+                    <div class="col-md-4">
+                        <span class="fw-bold ">To Date:</span>
+                        <span><%= data1[0].to_date_formated %></span>
+                    </div>    
+                    <div class="col-md-4">
+                        <span class="fw-bold ">Number of Days:</span>
+                        <span><%= data1[0].no_of_days %></span>
+                    </div>    
+                </div>
+                
+
+                <% if (data1.length > 0 && data1[0].multi_date) { %>
+                    <div class="row mb-2 mx-2 row_border_sty py-1 f_13">
+                        <div class="col-md-12">
+                            <span class="fw-bold">Multi Dates:</span>
+                            <% const multiDates = data1[0].multi_date.split(',').map(date => {
+                                const [datePart, dayType] = date.trim().split(':');
+                                const d = new Date(datePart);
+                                if (isNaN(d)) return '';
+                                const day = String(d.getDate()).padStart(2, '0');
+                                const month = String(d.getMonth() + 1).padStart(2, '0');
+                                const year = String(d.getFullYear()).slice(-2); // Use last two digits of the year
+                                return `${day}-${month}-${year} [${dayType.trim()}]`;
+                            }).join(', '); %>
+                            <span><%= multiDates %></span>
+                        </div>
+                    </div>
+                <% } %>
+                
+                
+                
+
+                <div class="row mb-2 mx-2 row_border_sty py-1 f_13">
+
+                    <div class="col-md-4">
+                        <span class="fw-bold ">Type of Leave:</span>
+                        <span><%= data1[0].leave_type %></span>
+                    </div>    
+
+                    <div class="col-md-4">
+                        <span class="fw-bold ">Day Type:</span>
+                        <span><%= data1[0].day_type %></span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fw-bold ">Half Day Type:</span>
+                        <span><%= data1[0].half_day_type %></span>
+                    </div>    
+                </div>
+                
+                <div class="row mb-2 mx-2 row_border_sty py-1 f_13">
+
+                   
+
+                    <% if (data1.length > 0 && data1[0].attachment) { %>
+                        <div class="col-md-4">
+                            <span class="fw-bold">Attachment:</span>
+                            <span class="align-middle">
+                                <img src="/static/images/view.png" id="imf" alt=""   class="file_icon_css">
+                            </span>
+                    
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary d-none" id="imf_modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Launch demo modal
+                            </button>
+                    
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body d-flex justify-content-center align-items-center">
+                                            
+                                                <img src="/static/<%=data1[0].attachment%>" class="" height="100%" width="100%" alt="">
+                                                <!-- <iframe src="/static/<%=data1[0].attachment%>" class="iframe" ></iframe> -->
+                                                <!-- <iframe src="/static/document.pdf" class="iframe" ></iframe> -->
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                    
+                </div>
+
+                <div class="row mb-2 mx-2 row_border_sty py-1 f_13">
+
+                    <div class="col-md-12 ">
+                        <div class="fw-bold">
+                            Reason For Leave:
+                        </div>
+                        
+                        <textarea name="" id="txta" rows="3" class="mt-2 mb-2 w-100 bg-light form-control f_13 fw_600  box_sdw11" disabled><%= data1[0].reason_for_leave %></textarea>
+
+                    </div>    
+                                            
+                    </div>
+                </div>
+
+            <div class="container-fluid mt-2 rounded-top-2  shadow1   pb-2 mt-3 bg_color1"  >
+                <div class="row bg_bck text-light  rounded-top-2 ">
+                    <h4 class=" text-center f_16 mt-2 ">Manage Approval</h4>
+                </div>
+                <div class="row my-2 mx-2 row_border_sty  pt-1 pb-3 f_13 ">
+                    <div class="col-md-12">
+                        <label for="" class="fw-bold">Remarks:</label>
+                        
+                        <textarea name="" rows="3" id="remarks" class="mt-2  form-control f_13 fw_600  box_sdw11" placeholder="Enter Remarks..."></textarea>
+                    </div>    
+                    
+                    <div class="col-12  text-center mt-3 ">
+                        <button class="btn bg_b f_13 w_75 text-light fw_600 text-center" id="approved_id">Approve</button>
+                        <button class="btn bg_r f_13 fw_600  text-light w_75 f_13 ms-3 text-center" id="reject_id">Reject</button>
+                    </div>    
+                                            
+                </div>
+
+            </div>
+
+            <div class="loader-div d-none" id="loader-div">
+                <div class="loader">
+                    <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+                </div>
+            </div>
+
+          </div>
+       
+    </div>
+
+</div>
+
+</div>
+
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+<script src="/static/js/to_do_list_view.js"></script>
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+
+</body>
+</html>

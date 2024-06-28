@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/nomination_form.css">
+    <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/cdn/fontawesome/fontawesome6.5.1.css">
+    <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+</head>
+<body>
+    <%-include('../common/candidate_common/candidate_header')%>
+        <%-include('../common/candidate_common/candidate_sidebar')%>
+
+        <div class="mt-5"></div>
+        <div class="container-fluid h-100 position-relative">
+            <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+           <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+              </button>
+        <div class="row dyn_row justify-content-end ">
+        
+        
+        <div class="col-xl-10 col-md-9 col-8 dyn_col"> 
+            <div class="conatainer-fluid border font_family mt-5">
+                <form id="nominationForm">
+                <div class="col-sm-8 col-xl-10 mar_left_0">
+                    <input type="text" name="" id="candidate_id" value="5" class="form-control w-75" hidden>
+                </div>
+                <div class="row justify-content-end m-auto">
+                    <!-- <div class="col-xl-10 col-md-9 col-8 dyn_col px-3"> -->
+                        <div class="conatainer-fluid my-4">
+                    <% for (let i = 0; i < nominee.length; i++) {%>
+
+                <div class="col-12">
+                    <h4 class="text-center fw-bold"><u>NOMINATION FOR SETTLEMENT OF UNPAID WAGES & OTHER DUES</u></h4>
+                    <h5 class="text-center"><u>(Not covered by separate nomination forms)</u></h5>
+                </div>
+                <div class=" mt-3 mar_left">
+                    <div class="d-flex">
+                    <div class="col-xl-12 f_18">1. Dr/ Mr/Ms: 
+                        <% if(nominee[i].nomi_name) { %>
+
+                        <input type="text" name="emp_name" id="emp_name" class="form-control w-75" value="<%= nominee[i].nomi_name %>" disabled>
+                        <% } else{%>
+                            <input type="text" name="emp_name" id="emp_name" class="form-control w-75" value="">
+                            <%}%>
+                    </div>
+                    <!-- <div class="col-sm-8 col-xl-10 mar_left_0">
+                        
+                    </div> -->
+                    </div>
+                    <div class="mar_left_1 f_18"> I hereby nominate the person (s) mentioned below to receive the
+                        settlement of
+                        unpaid <br> wages & other dues payable after my death.</div>
+
+                    <div class=" f_18">2. I hereby declare that the person (s) mentioned is/are a member (s) of my
+                        family.</div>
+
+                    <div class=" f_18">3. Nominations made here invalidates my previous nominations.</div>
+                </div>
+                <!-- </div> -->
+
+
+                <div class="conatainer-fluid font_family mt-3">
+                    <h5 class="text-center fw-bold">NOMINEES(s)</h5>
+                    <div class=" d-flex justify-content-center mx-3">
+                        <table class="table_border">
+                            <thead>
+                                <th>Name in Full of Nominee</th>
+                                <th>Relationship with Employee</th>
+                                <th>DOB of Nominee</th>
+                                <th>Proportion by which the settlement will be shared</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                        <% if(nominee[i].name_of_nomi) { %>
+                                        <input type="text" name="nominee_name" id="nominee_name" class="form-control" value="<%= nominee[i].name_of_nomi %>" disabled>
+                        <%} else{%>
+                                         <input type="text" name="nominee_name" id="nominee_name" class="form-control" value="">
+                            <%}%>
+                                    </td>
+                                    <td>
+                        <% if(nominee[i].employee) { %>
+
+                                        <input type="text" name="nomi_relationship" id="nomi_relationship" class="form-control" value="<%= nominee[i].employee %>" disabled>
+                        <%} else{%>
+                                        <input type="text" name="nomi_relationship" id="nomi_relationship" class="form-control" value="">  
+                            <%}%>
+                                    </td>
+                                    <td>
+                        <% if(nominee[i].dob_nomi) { %>
+
+                                        <input type="text" name="dob_nimonee" id="dob_nimonee" value="<%= nominee[i].dob_nomi %>" placeholder="Enter Date Of Birth...." class="form-control datepicker1" disabled>
+                                        <%} else{%>
+                                            <input type="text" name="dob_nimonee" id="dob_nimonee" value="" placeholder="Enter Date Of Birth...." class="form-control datepicker1" >
+                                            <%}%>
+                                    </td>
+                                    <td>
+                        <% if(nominee[i].dob_nomi) { %>
+
+                                        <input type="text" name="settlement" id="settlement" class="form-control" value="<%= nominee[i].settlement %>" disabled>
+                                        <%} else{%>
+                                            <input type="text" name="settlement" id="settlement" class="form-control" value="">
+                                            <%}%>
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                    <td><input type="date" name="" id="" class="form-control"></td>
+                                    <td><input type="text" name="" id="" class="form-control"></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <%}%>
+
+<% for (let i = 0; i < settlement.length; i++) {%>
+
+                 <div class="container font_family mt-5">
+                    <div class="div">
+                        <h5 class="fw-bold text-center border-dark border-bottom">STATEMENT</h5>
+                    </div>
+                    <div class="main_div mt-3">
+                        <div class="d-flex">
+                            <div class="col-4">1. &nbsp; Name of employee in full</div>
+                            <div class="col-8">:</div>
+                        </div>
+                        <% if(settlement[i].employee_name) { %>
+
+                             <input type="text" name="employee_name" id="employee_name" class="form-control w-50 mar_left_25" value="<%= settlement[i].employee_name %>" disabled>
+                            <% } else{%>
+                                <input type="text" name="employee_name" id="employee_name" class="form-control w-50 mar_left_25" value="">
+                                <%}%>
+
+                    </div> 
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">2. &nbsp;Sex</div>
+                            <div class="col-8">:</div>
+                        </div>
+                        <% if(settlement[i].sex_1) { %>
+
+                             <input type="text" name="sex_1" id="sex_1" class="form-control w-50 mar_left_25" value="<%= settlement[i].sex_1 %>" disabled>
+                            <% } else{%>
+                                <input type="text" name="sex_1" id="sex_1" class="form-control w-50 mar_left_25" value="">
+                           <%}%>
+                    </div> 
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">3. &nbsp; Religion</div>
+                            <div class="col-8">:</div>
+                        </div>
+                        <% if(settlement[i].Religion_1) { %>
+
+                             <input type="text" name="Religion_1" id="Religion_1" class="form-control w-50 mar_left_25" value="<%= settlement[i].Religion_1 %>" disabled>
+                            <% } else{%>
+                                
+                             <input type="text" name="Religion_1" id="Religion_1" class="form-control w-50 mar_left_25" value="">
+                        <%}%>
+                    </div> 
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">4. &nbsp; Whether unmarried/ married/ widow/ widower</div>
+                            <div class="col-8">:</div>
+                        </div>
+                        <% if(settlement[i].marital_status) { %>
+
+                            <input type="text" name="marital_status" id="marital_status" class="form-control w-50 mar_left_25" value="<%= settlement[i].marital_status %>" disabled>
+                            <% } else{%>
+                                <input type="text" name="marital_status" id="marital_status" class="form-control w-50 mar_left_25" value="">
+                                <%}%>
+                    </div> 
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">5. &nbsp;Department/ Section where employed</div>
+                            <div class="col-8">:</div>
+                        </div>
+                        <% if(settlement[i].department) { %>
+
+                             <input type="text" name="Department" id="Department" class="form-control w-50 mar_left_25" value="<%= settlement[i].department %>" disabled>
+                             <% } else{%>
+                                
+                             <input type="text" name="Department" id="Department" class="form-control w-50 mar_left_25" value="">
+                             <%}%>
+                    </div> 
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">6. &nbsp;Designation</div>
+                            <div class="col-8">:</div>
+                        </div>
+                        <% if(settlement[i].Designation) { %>
+
+                            <input type="text" name="Designation" id="Designation" class="form-control w-50 mar_left_25" value="<%= settlement[i].Designation %>" disabled>
+
+                    <% } else{%>
+                             <input type="text" name="Designation" id="Designation" class="form-control w-50 mar_left_25" value="">
+                             <%}%>
+                    </div> 
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">7. &nbsp;Date of appointment</div>
+                            <div class="col-8">:</div>
+                        </div>
+                        <% if(settlement[i].dob_appointment) { %>
+                            <input type="text" name="dob_appointment" id="dob_appointment" class="form-control w-50 mar_left_25 datepicker1" value="<%= settlement[i].dob_appointment %>" disabled >
+                            
+                    <% } else{%>
+                        <input type="text" name="dob_appointment" id="dob_appointment" class="form-control w-50 mar_left_25 datepicker1">
+
+                        <%}%>
+
+                    </div> 
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">8. &nbsp;Permanent Address</div>
+                            <div class="col-8">:</div>
+                        </div>
+                        <% if(settlement[i].permanent_address) { %>
+
+                            <input type="text" name="permanent_address" id="permanent_address" class="form-control w-50 mar_left_25" value="<%= settlement[i].permanent_address %>" disabled>
+                            <% } else{%>
+                                <input type="text" name="permanent_address" id="permanent_address" class="form-control w-50 mar_left_25" value="">
+                                <%}%>
+                    </div> 
+
+                    <div class="main_div">
+                        <div class="d-flex">
+                            <div class="col-4">9. &nbsp;Present Address</div>
+                            <div class="col-8">:</div>
+                        </div>
+                        <% if(settlement[i].present_add) { %>
+
+                             <input type="text" name="present_add" id="present_add" class="form-control w-50 mar_left_25" value="<%= settlement[i].present_add %>" disabled>
+                            <% } else{%>
+                                <input type="text" name="present_add" id="present_add" class="form-control w-50 mar_left_25" value="" >
+                                <%}%>
+                    </div> 
+
+                    <div class="container mt-4">
+                        <div class="d-flex">
+                            <div class="col-8">
+                                <div class="">Place: 
+                        <% if(settlement[i].Place_1) { %>
+
+                                    <input type="text" name="Place_1" id="Place_1" class=" w-25 outline_1 border_buttom " value="<%= settlement[i].Place_1 %>" disabled>
+                            <% } else{%>
+                                <input type="text" name="Place_1" id="Place_1" class=" w-25 outline_1 border_buttom " value="">
+                                <%}%>
+
+
+                                <div class="d-flex">Date : 
+                        <% if(settlement[i].date_1) { %>
+
+                                    <input type="text" name="date_1" id="date_1"class="form_control datepicker1 out line_1 border_buttom "  value="<%= settlement[i].date_1 %>" disabled>
+                            <% } else{%>
+                                <input type="text" name="date_1" id="date_1"class="form_control datepicker1 out line_1 border_buttom "  value="">
+                                <%}%>
+                                </div>
+    
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                        <% if(settlement[i].image) { %>
+
+                                <input type="file" hidden id="emp_sign_input_1" name="emp_sign_input_1" disabled>
+                            <% } else{%>
+                                <input type="file" hidden id="emp_sign_input_1" name="emp_sign_input_1">
+                                <%}%>
+
+                                <div class=" text-center ">
+                                    <div class="input_height_1" id="emp_sign_box_1" >
+                                        <img src="/hrm_documents/<%= candidate_id %>/image/<%= settlement[i].image %>" alt=""  id="emp_sign_img_1" class="h-100">
+                                    </div>
+                                    <p class="mx-4">Signature of the employer</p>
+                                     
+                                </div>
+
+                            </div>
+                        </div>
+<%}%>
+                        <p class="border-dark border-bottom"></p>
+                        <div class="my-3 me-3 text-end">
+                            <button type="submit" class="btn btn-primary" id="submitdata">Submit</button>
+                         </div>
+</div>
+</div>
+</div>
+<!-- </div> -->
+</div></form></div>
+</div></div></div>
+                        <!-- <div class="mt-3">
+                            <h5 class="fw-bold text-center"><u>Declaration by Witnesses</u> </h5>
+                        </div>
+                        <div class="d-flex mt-3">
+                            <div class="col-8">Nomination signed before me (name in full & address)</div>
+                            <div class="col-md-4">
+                                <input type="file" hidden id="emp_sign_input_2">
+                                <div class=" text-center ">
+                                    <div class="input_height_1" id="emp_sign_box_2" >
+                                        <img src="" alt="" hidden id="emp_sign_img_2" class="h-100">
+                                    </div>
+                                    <p class="mx-4">Signature of the employer</p>
+                                     
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="col-8">
+                                <div class="">1.</div>
+                                <div class="">2.</div>
+                                <div class="">Date:</div>
+                                <div class="">Place:</div>
+                            </div>
+                            <div class="col-4">
+                                <div>1.</div>
+                                <div>2.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="my-3 me-3 text-end">
+                   <button type="submit" class="btn btn-success " id="submitdata">Submit</button>
+                </div>
+                
+            </div> -->
+
+      <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+      <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script>
+      <script src="/static/js/nomination_form.js"></script>
+      <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>  
+</html>

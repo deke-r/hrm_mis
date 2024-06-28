@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="icon" href="/static/images/logo.png" >
+ 
+    <link rel="stylesheet" href="/static/css/profile.css"> <!-- Link to your external CSS file -->
+     <!-- Bootstrap CSS CDN -->
+ 
+</head>
+
+<body>
+    <!-- Include common header -->
+    <%-include('common/header')%>
+    
+    <!-- <div class="container">
+        <div class="row justify-content-center profile-row">
+            <div class="col-md-6">
+                <div class="profile-card">
+                    <div class="avatar text-center">
+                        <%= firstLetter %>
+                    </div>
+                    <div class="user-name">
+                        <%= employee.EMP_name %>
+                    </div>
+                    <!-- Add other profile details here -->
+                    <!-- <div class="user-details mt-3">
+                        <p class="mb-1"><strong>Email:</strong> <%= employee.emp_email %></p>
+                        <p class="mb-1"><strong>Phone:</strong> <%= employee.HOME_PHONE %></p>
+                         Add more profile details as needed -->
+                    <!-- </div>
+                </div>
+            </div>
+        </div>  -->
+    <!-- </div> -->
+
+
+
+    <div class="container">
+        <div class="row justify-content-center profile-row">
+            <div class="col-md-6">
+                <div class="profile-card">
+                    <div class="avatar text-center">
+                        <%= firstLetter %>
+                    </div>
+                 
+                    <!-- Common profile details -->
+                    <div class="user-details mt-3">
+                        <% if (userType === '0' || userType === '1') { %>
+                            <div class="user-name">
+                      
+                                <center>  <%= employee.EMP_NAME %></center> </div>
+                            <p class="mb-1"><strong>Role: </strong> <%= role %></p>
+                            <p class="mb-1"><strong>Name: </strong> <%= employee.EMP_NAME %></p>
+                            <p class="mb-1"><strong>Email: </strong> <%= employee.EMP_Email_ID %></p>
+                            <p class="mb-1"><strong>Phone: </strong> <%= employee.EMP_NUMBER %></p>
+                            <!-- Add more common profile details here -->
+                        <% } else if (userType === '2') { %>
+                            <!-- Specific details for employee_master -->
+                            <div class="user-name">   <center>  <%= employee.EMP_NAME %></center> </div>
+                            <p class="mb-1"><strong>Role: </strong> <%= role %></p>
+                            <p class="mb-1"><strong>Name: </strong> <%= employee.Emp_Name %></p>
+                            <p class="mb-1"><strong>Email: </strong> <%= employee.emp_email %></p>
+                            <p class="mb-1"><strong>Phone: </strong> <%= employee.HOME_PHONE %></p>
+                            <!-- Add more details specific to employee_master -->
+                        <% } else if (userType === '3') { %>
+                            <!-- Specific details for candidate_login -->
+                            <div class="user-name">   <center>  <%= employee.candidate_name %></center> </div>
+                            <p class="mb-1"><strong>Role:</strong> <%= role %></p>
+                            <p class="mb-1"><strong>Name:</strong> <%= employee.candidate_name %></p>
+                            <p class="mb-1"><strong>Email:</strong> <%= employee.candidate_email %></p>
+                            <p class="mb-1"><strong>Phone:</strong> <%= employee.candidate_mobile %></p>
+                            
+                            <!-- Add more details specific to candidate_login -->
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

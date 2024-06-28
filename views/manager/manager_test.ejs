@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Table</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+
+<h2>Dynamic Table</h2>
+
+<button onclick="createRow()">Create Row</button>
+<button onclick="showTable()">Show Table</button>
+
+<table id="dataTable">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+</table>
+
+<br>
+<br>
+
+<button onclick="showAllData()">Show All Data</button>
+
+<table id="allData" style="display: none;">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+</table>
+
+<script>
+    function createRow() {
+        var table = document.getElementById("dataTable");
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = '<input type="text" name="name">';
+        cell2.innerHTML = '<input type="text" name="age">';
+    }
+
+    function showTable() {
+        var table = document.getElementById("dataTable");
+        table.style.display = "block";
+    }
+
+    function showAllData() {
+        var dataTable = document.getElementById("dataTable");
+        var allData = document.getElementById("allData");
+
+        // Clear previous data
+        allData.innerHTML = "<tr><th>Name</th><th>Age</th></tr>";
+
+        // Loop through each row in the data table and add it to the "All Data" table
+        for (var i = 1; i < dataTable.rows.length; i++) {
+            var name = dataTable.rows[i].cells[0].getElementsByTagName("input")[0].value;
+            var age = dataTable.rows[i].cells[1].getElementsByTagName("input")[0].value;
+            var newRow = allData.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = name;
+            cell2.innerHTML = age;
+        }
+
+        // Show the "All Data" table
+        allData.style.display = "block";
+    }
+</script>
+
+</body>
+</htm

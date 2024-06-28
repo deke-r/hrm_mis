@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM </title>
+    <!-- <link rel="stylesheet" href="/static/css/candidate_requirement_doc.css"> -->
+    <link rel="stylesheet" href="/static/css/candidate_form.css">
+<link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> -->
+    
+  
+ 
+  
+    <!-- Bootstrap CSS CDN -->
+
+    <link rel="icon" href="/static/images/logo.png" >
+</head>
+<body>
+
+  
+  <%-include('../common/candidate_common/candidate_sidebar')%>
+  <%-include('../common/candidate_common/candidate_header')%>
+
+
+  <div class="mt_46"></div>
+  <div class="container-fluid h-100 position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+   <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+      </button>
+<div class="row dyn_row justify-content-end ">
+
+<div class="col-xl-10 col-md-9 col-8 dyn_col px-3" >
+
+    
+  
+    <div class="container-fluid my-4">
+      
+      <!-- form header ejs start  -->
+      <div class="row ">
+        <div class="col-md-3 d-flex justify-content-center justify-content-md-start" id="jubl_logo_div">
+          <img src="/static/images/images-removebg-preview.png" alt=""   id="jubl_logo">
+        </div>
+  
+        <div class="col-md-6 d-flex  justify-content-center align-items-center " >
+          <div class="row text-center">
+              <div class="col-12 f_20 fw-bold">
+  
+                  MANTHAN IT SOLUTIONS
+              </div>
+              <div class="col-12 f_16 fw-bold mt-4 text-decoration-underline">
+                  APPLICATION FOR EMPLOYMENT
+              </div>
+          </div>
+  
+          </div>
+  
+        
+  
+        <div class="col-md-3 p-3 ">
+          <div class="row   ">
+            <div class="col-12 p-0 d-flex justify-content-center justify-content-md-end">
+              <div class="candidate_image_div " >
+                <img src="/static/images/user_icon3.png" alt="" class="w-100 h-100 p-3" id="candidate_image">
+                <input type="file" id="candidate_image_input" hidden>
+              </div>
+            </div>
+            <div class="col-12  text-center text-md-end fw-bold f_13">
+              Upload Image
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- form header ejs end  -->
+  
+      <div class="row mt-5 f_13">
+  
+        <div class="container-fluid">
+  
+  
+          <div class="row">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-12">
+                  <span class="fw-bold f_13 text-decoration-underline">Position Applied for:</span>
+                  <span>
+                  </span>
+                </div>
+              </div>
+  
+              <div class="row mt-2">
+                <div class="col-12 ">
+                  <div class="row">
+                    <div class="fw_600 f_13">
+                      Name (IN BLOCK LETTERS) :-
+                    </div>
+                    <div class="col-md-4">
+                      <input type="text" class="input_style f_13" placeholder="Enter Your First Name" id="first_name">
+                    </div>
+                    <div class="col-md-4  ">
+                      <input type="text" class="input_style f_13" placeholder="Enter Your Middle Name" id="middle_name">
+                    </div>
+                    <div class="col-md-4  ">
+                      <input type="text" class="input_style f_13" placeholder="Enter Your Last Name" id="last_name">
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+  
+              <div class="row mt-2">
+                <div class="col-12 ">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="fw_600 f_13">Communication Address</div>
+                      <textarea name=""  class="textarea_style" id="communication_addrs" placeholder="Enter Your Communication address..."></textarea>
+                  </div>
+  
+                    <div class="col-md-4">
+                      <div class="fw_600 f_13">Permanent Address</div>
+                      <textarea name="" class="textarea_style" id="permanent_addrs" placeholder="Enter Your Permanent Address..."></textarea>
+                      <input type="checkbox" id="address_same_as" > 
+                      <span>Same as communication address</span>
+                    </div>
+  
+                    <div class="col-md-4">
+                      <div class="fw_600 f_13">Pin Code</div>
+                      <input type="text" class="input_style f_13" placeholder="Enter Your Pin Code..." id="pin_code">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row mt-2">
+                <div class="col-12 ">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <div class="fw_600 f_13">Mobile No.</div>
+                          <input type="number" class="input_style f_13" id="mobile_no" placeholder="Enter Your Mobile No...."  >
+                      </div>
+  
+                      <div class="col-md-4">
+                          <div class="fw_600 f_13">Emergency Mobile No.</div>
+                          <input type="number" class="input_style f_13" id="Emergency_no" placeholder="Enter Your Emergency Mobile No....">
+                        </div>
+      
+                    <div class="col-md-4">
+                      <div class="fw_600 f_13">Telphone No.(R)</div>
+                      <input type="number" class="input_style f_13" id="tel_no" placeholder="Enter Your Tel. No....">
+                    </div>
+                   
+                    
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row mt-2">
+                <div class="col-12 ">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <div class="fw_600 f_13">Email ID</div>
+                          <input type="text" class="input_style f_13" placeholder="Enter Your Email ID..." id="email_id">
+                        </div>
+      
+                      <div class="col-md-4">
+                      <div class="fw_600 f_13">Date of Birth</div>
+                      <input type="text" class="input_style f_13 datepicker1" id="date_of_birth" placeholder="DD-MM-YYYY">
+                     </div>  
+                    <div class="col-md-4">
+                      <div class="fw_600 f_13">Age</div>
+                      <input type="number" class="input_style f_13" placeholder="Enter Your Age...." id="age">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row mt-2">
+                <div class="col-12 ">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <div class="fw_600 f_13">Gender</div>
+                          <select name="" id="gender" class="select_style f_13">
+                            <option value="none">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        </div>
+                        
+                    <div class="col-md-4">
+                        <div class="fw_600 f_13">Marital Status</div>
+                        <select name="" id="marital_status" class="select_style f_13">
+                          <option value="none">Select Marital Status</option>
+                          <option value="Single">Single</option>
+                          <option value="Married">Married</option>
+                          <option value="Divorced">Divorced</option>
+                        </select>
+                    </div>  
+                    <div class="col-md-4">
+                      <div class="fw_600 f_13">Spouse Name</div>
+                      <input type="text" class="input_style f_13" placeholder="Enter Your Father's/Husband's Name...." id="spouse_name">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row mt-2">
+                  <div class="col-12 ">
+                      <div class="row"> 
+                          <div class="col-md-4">
+                              <div class="fw_600 f_13">Occupation</div>
+                              <input type="text" class="input_style f_13" placeholder="Enter Occupation..." id="occupation">
+                            </div>
+                               
+                      <div class="col-md-4">
+                          <div class="fw_600 f_13">Blood Group</div>
+                          <input type="text" class="input_style f_13" placeholder="Enter Your Blood Group..." id="blood_group">
+                        </div>
+                      </div>
+                  </div>  
+              </div>        
+  
+              <div class="row mt-3 ">
+                <div class="col-12 fw_600 mb-1">
+                  Do you have a relative in the organization? If yes, mention name, designation and relationship with employee
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="input_style f_13" placeholder="Enter Employee Name...."  id="relative_name">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="input_style f_13" placeholder="Enter Employee Designation...." id="relative_designation">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="input_style f_13" placeholder="Enter Relationship...." id="relative_relationship">
+                </div>
+                <div class="col-md-12 text-center mt-3">
+                   <button class="btn btn-primary text-light f_13 fw-bold" id="submit_form">Submit</button>
+                </div>
+              </div>
+  
+  
+            </div>
+          </div>
+  
+          <!-- Languages known ejs start -->
+  
+          <!-- <div class="row">
+            <div class="col-12">
+              <div class="row mt-4">
+                <div class="col-12 fw-bold f_16 mb-3 d-flex justify-content-between align-items-end">
+                  <span>
+                    Languages known
+                  </span>
+                  <button class="btn btn-primary text-light f_13 fw-bold" id="language_tbl_btn">Add Row</button>
+  
+                </div>
+              </div>
+              <div class="row  ">
+                <div class="col-md-12 ">
+                  <table class="w-100 table_border text-center " id="language_tbl">
+                    <thead class="bg_color1 text-light ">
+                      <tr>
+                        <th>Language</th>
+                        <th>Speak</th>
+                        <th>Read</th>
+                        <th>Write</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="language1">English</td>
+                        <td>
+                          <select name="" id="Speak" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select name="" id="Read" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select name="" id="Write" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Hindi</td>
+                        <td>
+                          <select name="" id="language2" class="select_style f_13">
+                            <option id="" value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select name="" id="" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select name="" id="" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td></td>
+                      </tr>
+                  
+                      
+  
+                    </tbody>
+                  </table>
+                  <div class="col-md-12 text-center mt-3">
+                    <button class="btn btn-primary text-light f_13 fw-bold" id="submit_form">Submit</button>
+                 </div>
+                </div>
+              </div>
+  
+            </div>
+          </div> -->
+          <!-- Languages known ejs end -->
+
+
+          <div class="row">
+            <div class="col-12">
+              <div class="row mt-4">
+                <div class="col-12 fw-bold f_16 mb-3 d-flex justify-content-between align-items-end">
+                  <span>Languages known</span>
+                  <button class="btn btn-primary text-light f_13 fw-bold" id="language_tbl_btn">Add Row</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <table class="w-100 table_border text-center" id="language_tbl">
+                    <thead class="bg_color1 text-light">
+                      <tr>
+                        <th>Language</th>
+                        <th>Speak</th>
+                        <th>Read</th>
+                        <th>Write</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>English</td>
+                        <td>
+                          <select id="SpeakEnglish" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="ReadEnglish" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="WriteEnglish" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Hindi</td>
+                        <td>
+                          <select id="SpeakHindi" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="ReadHindi" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td>
+                          <select id="WriteHindi" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="col-md-12 text-center mt-3">
+                    <button class="btn btn-primary text-light f_13 fw-bold" id="language_submit_form">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+         
+  
+  
+          <!-- Details of family members ejs start -->
+  
+          <div class="row">
+            <div class="col-12">
+  
+              <div class="row mt-4">
+                <div class="col-12 fw-bold f_16 mb-3 d-flex justify-content-between align-items-end">
+                  <span>
+                    Details of family members
+                  </span>
+                  <button class="btn btn-primary text-light f_13 fw-bold" id="family_detl_btn">Add Row</button>
+                </div>
+              </div>
+  
+              <div class="row ">
+                <div class="col-md-12 table-responsive">
+                  <table class="w-100 table_border text-center " id="family_detl_tbl">
+                    <thead class="bg_color1 text-light ">
+                      <tr>
+                        <th class="text-nowrap">S. No.</th>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Relationship</th>
+                        <th>Occupation</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Name....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13 datepicker1" placeholder="Enter Date Of Birth....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Relationship....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Occupation....">
+                        </td>
+                        <td>
+                        </td>
+                      </tr>
+                    </tbody>
+  
+                  </table>
+                  <div class="col-md-12 text-center mt-3">
+                    <button class="btn btn-primary text-light f_13 fw-bold" id="familyForm">Submit</button>
+                 </div>
+                </div>
+  
+  
+              </div>
+            </div>
+          </div>
+          <!-- Details of family members ejs end -->
+  
+  
+  
+          <!-- Academic Record ejs start -->
+          <!-- Academic Record ejs start -->
+  
+          <div class="row">
+            <div class="col-12">
+  
+  
+              <div class="row mt-4">
+                <div class="col-12 fw-bold f_16 mb-3 d-flex justify-content-between align-items-end">
+                  <span>
+                    Academic Record: (in recent chronological order)
+                  </span>
+                  <button class="btn btn-primary text-light f_13 fw-bold" id="academic_record_btn">Add Row</button>
+                </div>
+              </div>
+  
+              <div class="row  ">
+                <div class="col-md-12 table-responsive">
+                  <table class="w-100 table_border text-center " id="academic_record_tbl">
+                    <thead class="bg_color1 text-light ">
+                      <tr>
+                        <th class="text-nowrap">Examination Passed</th>
+                        <th>Board/ University Institution</th>
+                        <th colspan="2">Year</th>
+                        <th>Specialization</th>
+                        <th>Division</th>
+                        <th>Percentage(%)/CGPA</th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <th colspan="2"></th>
+                        <th colspan="1">From </th>
+                        <th colspan="1">To</th>
+                        <th colspan="4"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Examination Passed....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Board/ University ....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13 datepicker2" id="academic_from" placeholder="Enter From....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13 datepicker2" id="academic_to" placeholder="Enter To....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Specialization....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Division....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Age/CGPA....">
+                        </td>
+  
+                        <td></td>
+  
+                      </tr>
+                    </tbody>
+  
+                  </table>
+                  <div class="col-md-12 text-center mt-3">
+                    <button class="btn btn-primary text-light f_13 fw-bold" id="education_record_submit">Submit</button>
+                 </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <!-- Academic Record ejs end -->
+          <!-- Academic Record ejs end -->
+  
+  
+          <!-- Job related training ejs start -->
+          <!-- Job related training ejs start -->
+          <div class="row">
+            <div class="col-12">
+  
+  
+              <div class="row mt-4">
+                <div class="col-12 fw-bold f_16 mb-3 d-flex justify-content-between align-items-end">
+                  <span>
+                    Job Related Training/ Courses Attended
+                  </span>
+                  <button class="btn btn-primary text-light f_13 fw-bold" id="job_related_btn">Add Row</button>
+                </div>
+              </div>
+  
+              <div class="row  ">
+                <div class="col-md-12 table-responsive">
+                  <table class="w-100 table_border text-center " id="job_related_tbl">
+                    <thead class="bg_color1 text-light ">
+                      <tr>
+                        <th>Name of the Course</th>
+                        <th>Duration</th>
+                        <th>Year</th>
+                        <th>Institute/ Organization</th>
+                        <th>Certificate Awarded(Yes/No)</th>
+                        <th></th>
+                      </tr>
+  
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Name of the Course....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Duration ....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13 datepicker2" placeholder="Enter Year....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Institute/ Organization....">
+                        </td>
+                        <td>
+                          <select name="" id="award" class="select_style f_13">
+                            <option value="none">Select Yes/No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </td>
+                        <td></td>
+  
+                      </tr>
+                    </tbody>
+  
+                  </table>
+                  <div class="col-md-12 text-center mt-3">
+                    <button class="btn btn-primary text-light f_13 fw-bold" id="Job_Related_Training_submit">Submit</button>
+                 </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <!-- Job related training ejs end -->
+          <!-- Job related training ejs end -->
+  
+  
+          <!-- Employment detatils ejs start -->
+          <!-- Employment detatils ejs start -->
+          <div class="row">
+            <div class="col-12">
+  
+  
+              <div class="row mt-4">
+                <div class="col-12 fw-bold f_16 mb-3 d-flex justify-content-between align-items-end">
+                  <span>
+                    Employment detatils:(In recent chronological order)
+                  </span>
+                  <button class="btn btn-primary text-light f_13 fw-bold" id="employment_detl_btn">Add Row</button>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-12 table-responsive">
+                  <table class="w-100 table_border text-center " id="employment_detl_tbl">
+                    <thead class="bg_color1 text-light ">
+                      <tr>
+                        <th class="text-nowrap">Name of the Organization</th>
+                        <th>Position</th>
+                        <th colspan="3">Duration</th>
+                        <th>Reporting (Name & Designation)</th>
+                        <th>Annual CTC</th>
+                        <th>Reason for Leaving</th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <th colspan="2"></th>
+                        <th colspan="1">From </th>
+                        <th colspan="1">To</th>
+                        <th colspan="1">Tenure</th>
+                        <th colspan="4"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Organization Name  ....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Position ....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13 datepicker1" id="employment_detl_from" placeholder="From....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13 datepicker1" id="employment_detl_to" placeholder="To....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Tenure....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Designation Name....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Annual CTC....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" placeholder="Enter Reason for Leaving....">
+                        </td>
+  
+                        <td></td>
+  
+  
+                      </tr>
+                    </tbody>
+  
+                  </table>
+                  <div class="col-12 mt-4  ">
+                  <b> Accecpted date when you can join </b>            
+                </div>
+              </div>
+
+                <div class="row mt-2">
+                  <div class="col-sm-4  ">
+                  <input type="text" class="f_13 input_style datepicker1" id="accecpted_join_date_form" placeholder="Select Date From....">
+                </div>
+
+                <div class="col-sm-4  ">
+                  <input type="text" class="f_13 input_style datepicker1" id="accecpted_join_date_to" placeholder="Select Date To....">
+                </div>
+              
+              </div>
+            </div>
+            <div class="col-md-12 text-center mt-3">
+              <button class="btn btn-primary text-light f_13 fw-bold" id="employment_submit">Submit</button>
+           </div>
+              
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <!-- Employment detatils ejs end -->
+          <!-- Employment detatils ejs end -->
+  
+  
+          <!-- <div class="row">
+            <div class="col-12">
+  
+  
+  
+  
+              <div class="row mt-2">
+                <div class="col-12 fw-bold f_13 ">
+                  Significant Achievements
+                </div>
+                <div class="col-12 f_13 mb-3 ">
+                  Mention some of the major contributions made by you in your present & previous jobs:
+                </div>
+                <div class="col-12 f_13">
+                  <textarea name="" id="" class="textarea_style2" placeholder="Achievements..."></textarea>
+                </div>
+              </div>
+  
+  
+  
+  
+  
+              <div class="row mt-4">
+                <div class="col-md-8 col-sm-12 fw-bold f_13 ">
+                  <div class="row">
+                    <div class="col-12  ">
+                        Accecpted date when you can join                
+                    </div>
+                  </div>
+  
+                    <div class="row mt-2">
+                      <div class="col-sm-4  ">
+                      <input type="text" class="f_13 input_style datepicker1" id="accecpted_join_date_form" placeholder="Select Date From....">
+                    </div>
+  
+                    <div class="col-sm-4  ">
+                      <input type="text" class="f_13 input_style datepicker1" id="accecpted_join_date_to" placeholder="Select Date To....">
+                    </div>
+                  
+                  </div>
+                </div>
+                <div class="col-md-12 text-center mt-3">
+                  <button class="btn btn-primary text-light f_13 fw-bold" id="employment_submit">Submit</button>
+               </div>
+              </div>
+  
+            </div>
+          </div> -->
+  
+  
+          <!-- reference people ejs start  -->
+  
+          <div class="row">
+            <div class="col-12">
+  
+  
+              <div class="row mt-4">
+                <div class="col-12 fw_600">
+                  Mention names of three people(Not related to you) to whom references can be made. Essentially people to whom you have had professional association
+                </div>
+  
+                <div class="col-md-12 table-responsive mt-3">
+                  <table class="w-100 table_border text-center " id="person_refer_tbl">
+                    <thead class="bg_color1 text-light ">
+                      <tr>
+                        <th>S.No.</th>
+                        <th>Name</th>
+                        <th>Occupation</th>
+                        <th>Contact No.</th>
+                        <th>Address </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% for(let i=0; i<3; i++){%>
+                      <tr>
+                        <td><%= i+1%></td>
+                        <td>
+                          <input type="text" class="f_13" id="name" placeholder="Enter Name...">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" id="Occupation"  placeholder="Enter Occupation...">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" id="Contact_No" placeholder="Enter Contact No....">
+                        </td>
+                        <td>
+                          <input type="text" class="f_13" id="Address" placeholder="Enter Address...">
+                        </td>
+                      </tr>
+                      <%}%>
+                              </tbody>
+                              
+                          </table>
+
+                          <div class="row">
+                            <div class="col-12">
+                
+                                <div class="row mt-4">
+                                    <div class="col-12 fw-bold f_16">
+                                        Declaration:
+                                    </div>
+                                    <div class="col-12">
+                                        I hereby declare that the information provided by me in this application is true to best of my knowledge. I am aware that any omission, falsification and misrepresentation above will disqualify me for employment. If I am hired, it will be grounds for termination at a later date.                         
+                                    </div>
+                                </div>
+                
+                                <div class="row mt_100 text-center ">
+                                    <div class="col-4 fw-bold ">
+                                        Signature
+                                    </div>
+                                    <div class="col-4 fw-bold ">
+                                        Date
+                                    </div>
+                                    <div class="col-4 fw-bold ">
+                                        Place
+                                    </div> 
+                                    <div class="col-md-12 text-center mt-3">
+                                      <a href="candidate_documents_pdf/<%= c_id %>">
+                                        <button class="btn btn-primary text-light f_13 fw-bold" id="whom_reference_submit">Submit</button></a>
+                                   </div>             
+                                </div>
+                              
+                            </div>
+                        </div>
+                      
+                      </div>
+  
+  
+                  </div>
+              </div>
+          </div>
+          <!-- reference people ejs end  -->
+  
+     
+          
+                  </div>
+  
+                   
+  
+              </div>
+  
+          </div>
+      
+  
+      
+        </div>
+
+      </div>     
+      </div>     
+
+      
+  
+  </body>
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+  <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+
+  <!-- <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.min.js"></script> -->
+  <!-- <script src="/static/cdn/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script> -->
+  <script src="/static/js/candidate_requirement_doc.js"></script>
+  <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+  <!-- <script src="/static/cdn/fontawesome/fontawesome6.5.1.js"></script> -->
+  
+  
+  
+  </html>
+      
+
+     
+          
+      
+        
+   

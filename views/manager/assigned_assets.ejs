@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/manage_report.css">
+  <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+  <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+  <link rel="icon" href="/static/images/it.webp">
+  <!-- <link rel="icon" href="/static/images/images-removebg-preview.png"> -->
+
+</head>
+
+<body>
+
+  <%-include('../common/header')%>
+
+  <%-include('../common/sidebar')%>
+
+  <div class="mt-5"></div>
+  <div class="container-fluid h-100 position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+      <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+    </button>
+    <div class="row dyn_row justify-content-end ">
+
+
+      <div class="col-xl-10 col-md-9 col-8 dyn_col">
+                
+                
+                <form method="POST">
+
+        <div class="container-fluid parentbox  my-4">
+          <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+            <div class="row bg_bck border-t">
+              <h5 class="text-light text-center f_16 mt-2">Assigned Assets</h5>
+            </div>
+            <div class="row">
+              <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+            </div>
+
+
+            <div class="container-fluid parentbox my-4">
+              <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+                <div class="row vbvb border-t">
+
+                    <div class="table-responsive mt-4">
+                        
+                        <table class="table table-bordered table-responsive table-striped" id="jd_table">
+                            <thead class="top_fix">
+                              <tr class="text-center text-nowrap f_13 bg_b fw_600">
+                                <th>Asset ID</th>
+                                <th>Candidate ID</th>
+                                <th>Asset Type</th>
+                                <th>Asset Brand</th>
+                                <th>Asset Serial No</th>
+                                <th>Condition at Assignment</th>
+                                <th>Assigned By</th>
+                                <th>Assigned Date</th>
+                                <th>Image</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% for (let i = 0; i < data.length; i++) { %>
+                                <tr class="f_13 text-center text-nowrap">
+                                  <td><%= data[i].asset_id %></td>
+                                  <td><%= data[i].candidate_id %></td>
+                                  <td><%= data[i].asset_type %></td>
+                                  <td><%= data[i].asset_brand %></td>
+                                  <td><%= data[i].asset_serial_no %></td>
+                                  <td><%= data[i].condition_at_assingnment %></td>
+                                  <td><%= data[i].assigned_by %></td>
+                                  <td><%= new Date(data[i].assigned_date).toLocaleString('en-GB', {
+                                    day: '2-digit',
+                                    month: '2-digit',
+                                    year: 'numeric',
+                                 
+                                  }) %></td>
+                                                                    <td>
+                                                                        <img src="/static/<%= data[i].img_1 %>" class=" btn_primary" width="60px" <%= data[i].img_1 ? `img_1="/static/${data[i].img_1}"` : '' %> <%= data[i].img_2 ? `img_2="/static/${data[i].img_2}"` : '' %> <%= data[i].img_3 ? `img_3="/static/${data[i].img_3}"` : '' %> <%= data[i].img_4 ? `img_4="/static/${data[i].img_4}"` : '' %> <%= data[i].img_5 ? `img_5="/static/${data[i].img_5}"` : '' %> data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                    </td>
+                                
+                                </tr>
+                              <% } %>
+                            </tbody>
+                          </table>
+                          
+                    </div>
+                </div>
+
+
+
+               
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+                
+                    <!-- crauser -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog Model-xl">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div id="carouselExample" class="carousel slide">
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <img src="..." class="d-block w-100" alt="...">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="..." class="d-block w-100" alt="...">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="..." class="d-block w-100" alt="...">
+                                  </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Next</span>
+                                </button>
+                              </div>
+                            </div>
+  
+                          </div>
+                        </div>
+                      </div>
+  
+  
+  
+  
+                    
+  <!-- -==================================modal========================================= -->
+  <div class="modal fade" id="staticBackdrop" class="bg-gray" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg bg-gray">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="m-auto">
+            <h1 class="modal-title fs-5 m-auto" id="staticBackdropLabel">Add Asset</h1>
+          </div>
+          <div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+        </div>
+        <div class="modal-body">
+          <form enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="asset_id" class="form-label">Asset Serial</label>
+              <input type="text" class="form-control" name="asset_id1" id="asset_id" disabled value="">
+            </div>
+            <div class="mb-3">
+              <label for="problem" class="form-label">Problem</label>
+              <input type="text" class="form-control" name="problem1" id="problem" required>
+            </div>
+            <div class="mb-3">
+              <label for="exp_problem" class="form-label">Explain Problem</label>
+              <input type="text" class="form-control" id="exp_problem" name="exp_problem1" required>
+            </div>
+            <div class="mb-3">
+              <label for="file_image" class="form-label">Asset's Image if it has Physical Problem (optional)</label>
+              <input type="file" class="form-control" id="file_image" name="file_image" >
+            </div>
+            <div class="text-center"><button type="submit" class="report_btn m-2 px-5" id="submit_btn">Submit</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- -==================================modal========================================= -->
+  
+
+    
+
+
+    </form>
+
+  
+
+
+    </div>
+  </div>
+  </div>
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+  <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+  <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+  <script src="/static/js/main_dataTable.js"></script>
+  <script src="/static/js/assigned_assets.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+  /* Style for the container */
+     /* Style for the container */
+     /* html,body{
+      margin: 0%;
+      height: 100%;
+      overflow-y: auto;
+     } */
+     .height_vh{
+        height:92.5vh;
+          }
+        
+        h5{
+          font-weight: 100;
+        }
+          
+              /* Style for the form */
+              .shadow {
+                padding: 30px;
+                border-radius: 15px; /* Rounded corners */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adjusted shadow effect */
+                background-color: #f8f9fa; /* Light background color */
+              }
+          
+              /* Style for the headings */
+              
+              .fs_16{ font-size: 16px;}
+              .fs_14{ font-size: 14px;}
+              .form1 label{ font-size: 14px; }
+              .form1 textarea::placeholder{ font-size: 13px; }
+              .form1 input::placeholder{ font-size: 13px; }
+              .form1 input{ font-size: 13px; }
+        
+              h5{
+                margin-bottom: 18px;
+                color: white;
+                background-color: #0c50a1;
+                padding: 8px;
+                border-radius: 10px; /* Rounded corners */
+              }
+          
+              /* Style for the labels */
+              label {
+                font-weight: bold;
+              }
+          
+              /* Style for the input fields */
+              .form-control {
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                border-top: 4px solid #0c50a1!important; /* Blue border at the top */
+                box-shadow: none; /* Remove default box shadow */
+              }
+          
+              /* Style for the submit button */
+              .btn-primary.btn {
+               
+               
+                border-radius: 6px;
+                background-color: #0c50a1;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+              }
+          
+              .btn-primary:hover {
+                background-color: #0c50a1;
+              }
+          
+              /* Optional: Add some spacing between elements */
+              .mb-3 {
+                margin-bottom: 20px;
+              }
+              input,textarea{
+                
+            box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514)!important ;
+        font-size: 12px!important;
+        
+        
+              }
+              .form-control:focus{
+                border-top: 2px solid #0c50a1;
+                /* border-color:#007bff; */
+              }
+        
+              .bg_blue{
+                /* background-color: #0c50a1; */
+                background-color: #0c4fa1ab;
+                }
+                
+        
+        .bg_green{
+          background-color: #00bf739f;
+        }
+        .bg_royal{
+          background-color: rgb(51, 70, 128);
+          /* background-color: #0c50a1; */
+        }
+        .on_hov a{
+          background-color:#0c4fa198;
+         
+        }
+        .on_hov a:hover{
+          background-color:#0c50a1 ;
+          transform: scale(1.03,1.03);
+          /* border-bottom-right-radius: 25px; */
+          /* border-top-right-radius: 25px; */
+          transition:1s all;
+        }
+        .bgF9F9F9{
+          /* background-color: #DFF8EB; */
+          /* background-color: #08a780; */
+          background-color: #1c1c35;
+          /* background-color: #a1b5dc; */
+        /* border:2px solid #0c50a1 ; */
+        
+        }
+        .border_blue_h6{
+        border-bottom:2px solid #0c50a1 ;
+        border-left:2px solid #0c50a1 ;
+        border-right:2px solid #0c50a1 ;
+        }

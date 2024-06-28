@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/cdn/bootstrap-5.3.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/manage_report.css">
+  <link rel="stylesheet" href="/static/cdn/datepicker/datapicker_cdn.css">
+  <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+  <link rel="icon" href="/static/images/it.webp">
+  <!-- <link rel="icon" href="/static/images/images-removebg-preview.png"> -->
+
+</head>
+
+<body>
+
+  <%-include('../common/header')%>
+
+  <%-include('../common/sidebar')%>
+
+  <div class="mt-5"></div>
+  <div class="container-fluid h-100 position-relative">
+    <button class=" pos offbtn border-0 p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+      <i class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+    </button>
+    <div class="row dyn_row justify-content-end ">
+
+
+      <div class="col-xl-10 col-md-9 col-8 dyn_col">
+                
+                
+                <form method="POST">
+
+        <div class="container-fluid parentbox  my-4">
+          <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+            <div class="row bg_bck border-t">
+              <h5 class="text-light text-center f_16 mt-2">Assets Report</h5>
+            </div>
+            <div class="row">
+              <p class="pb-0 mb-0 my-2 f_12  fw_600"></p>
+            </div>
+
+
+            <div class="container-fluid parentbox my-4">
+              <div class="container-fluid newmp pb-3  border-t childbox bg-light">
+                <div class="row vbvb border-t">
+
+                    <div class="table-responsive mt-4">
+                        
+          <table class="table table-bordered table-responsive table-striped" id="jd_table">
+            <thead class="top_fix">
+              <tr class="text-center text-nowrap f_13 bg_b fw_600">
+                <th>Report ID</th>
+                <th>Candidate ID</th>
+                <!-- <th>Report ID</th> -->
+                <th>Asset Serial No</th>
+                <th>Report Date & Time</th>
+                <th>Issue</th>
+                <th>Exp Issue</th>
+                <th>Image</th>
+                <th>Action</th>
+
+              </tr>
+            </thead>
+            <% function formatDate(dateString) { 
+              let date = new Date(dateString); 
+              let day = String(date.getDate()).padStart(2, '0'); 
+              let month = String(date.getMonth() + 1).padStart(2, '0'); 
+              let year = String(date.getFullYear()).slice(2); // Get last two digits of year 
+            
+              return `${day}-${month}-${year}`; 
+            } %>
+            
+            <% function formatDateTime(dateString) { 
+
+              let date = new Date(dateString); 
+              let day = String(date.getDate()).padStart(2, '0'); 
+              let month = String(date.getMonth() + 1).padStart(2, '0'); 
+              let year = String(date.getFullYear()).slice(2); // Get last two digits of year 
+            
+              let hours = String(date.getHours()).padStart(2, '0');
+              let minutes = String(date.getMinutes()).padStart(2, '0');
+              let seconds = String(date.getSeconds()).padStart(2, '0');
+            
+              return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`; 
+            } %>
+            
+            <tbody>
+              <% for (let i = 0; i < mg_data.length; i++) { %>
+              <tr class="f_13 text-center text-nowrap">
+                <td><%= mg_data[i].report_id %></td>
+                <td><%= mg_data[i].candidate_id %></td>
+                <!-- <td><%= mg_data[i].report_id %></td> -->
+                <td><%= mg_data[i].asset_serial_no %></td>
+                <td><%= formatDateTime(mg_data[i].current_date_time) %></td>
+                <td><%= mg_data[i].problem %></td>
+                <td><%= mg_data[i].exp_problem %></td>
+                <td>
+                  <% if (mg_data[i].image) { %>
+                    <img src="/static/<%= mg_data[i].image %>" width="50px" class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <% } else { %>
+
+                  <% } %>
+                </td>
+                
+                <td>
+                  <% if (mg_data[i].status === 'processing') { %>
+                    <button type="button" class="btn bg_b f_13 fw_600 text-light take-back-asset" 
+                            data-candidate-id="<%= mg_data[i].candidate_id %>" 
+                            data-asset-serial-no="<%= mg_data[i].asset_serial_no %>"
+                            data-report_id="<%= mg_data[i].report_id %>">
+                      Take back asset
+                    </button>
+                  <% } else if (mg_data[i].status === 'taken back') { %>
+                    <span>Confirmation Pending</span>
+                  <% } else if (mg_data[i].status === 'submitted') { %>
+                    <button type="button" class="btn bg_b f_13 fw_600 text-light confirm-receive-asset" 
+                            data-candidate-id="<%= mg_data[i].candidate_id %>" 
+                            data-asset-serial-no="<%= mg_data[i].asset_serial_no %>"
+                            data-report_id="<%= mg_data[i].report_id %>">
+                      Confirm Asset Receive
+                    </button>
+                    <% } else if (mg_data[i].status === 'received') { %>
+                      <button type="button" class="btn bg_b f_13 fw_600 text-light problem-resolved" 
+                              data-candidate-id="<%= mg_data[i].candidate_id %>" 
+                              data-asset-serial-no="<%= mg_data[i].asset_serial_no %>"
+                              data-report_id="<%= mg_data[i].report_id %>">
+                        Problem Resolved
+                      </button>
+                    <% } %>
+                  
+                </td>
+                
+                
+          
+              </tr>
+              <% } %>
+            </tbody>
+            
+            
+            </table>
+                    </div>
+                </div>
+
+
+
+               
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    
+
+
+    </form>
+
+    <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <!-- <div class="modal-header modal_bg">
+          <button type="button" class="btn-close close_button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+        <div class="modal-body">
+            <img id="modalImage" src="" width="100%">
+        </div>
+        <!-- <div class="modal-footer modal_bg">
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+  </div>
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+  <script src="/static/cdn/datepicker/datepicker_cdn.js"></script>
+  <script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+  <script src="/static/js/main_dataTable.js"></script>
+  <script src="/static/js/manage_report.js"></script>
+</body>
+
+</html>

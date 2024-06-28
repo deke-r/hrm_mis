@@ -1,0 +1,22 @@
+.pf{
+    height: 100px !important;
+    width: 100px !important;
+}
+
+.border_none{
+    border: none !important;
+}
+.f_12{font-size: 12px !important;}
+.f_13{font-size: 13px !important;}
+.f_14{font-size: 14px !important;}
+.f_15{font-size: 15px !important;}
+.f_16{font-size: 16px !important;}
+.fw_600{font-weight: 600 !important;}
+.brdr thead tr th{border: 1px solid black ;}
+.brdr tbody tr td{border: 1px solid black ;}
+
+
+
+.border-dark{
+    border: 1px solid black;
+}

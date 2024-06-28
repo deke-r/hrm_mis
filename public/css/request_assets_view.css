@@ -1,0 +1,147 @@
+
+    
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.f_13{
+    font-size: 13px;
+}
+
+
+.height_501 {
+    height: 420px;
+}
+
+.scroll {
+    overflow: auto;
+}
+
+.bg_green {
+    background-color: #00bf739f;
+}
+
+.bg_royal {
+    background-color: rgb(51, 70, 128);
+    /* background-color: #003f91; */
+    /* background-color: #5da9e9; */
+}
+
+.table_bg tr th {
+    background-color: #494e56;
+    /* background-color: royalblue; */
+    color: white;
+
+    text-wrap: nowrap;
+    /* border: 1px solid white; */
+
+}
+
+.table_text_aling_middle tr th,
+.table_text_aling_middle tr td {
+    vertical-align: middle;
+    text-align: center !important;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.shadow {
+    padding: 30px;
+    border-radius: 15px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted shadow effect */
+    background-color: #f8f9fa;
+    /* Light background color */
+}
+
+
+
+
+
+
+  .fs_16{ font-size: 16px;}
+  .fs_14{ font-size: 14px;}
+  h5{
+    margin-bottom: 18px;
+    color: white;
+    /* background-color: #0c50a1; */
+    background-color: #494e56;
+    padding: 8px;
+    border-radius: 10px; /* Rounded corners */
+  }
+
+ 
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    /* border-top: 4px solid #0c50a1!important;  */
+    border-top: 4px solid #494e56!important; 
+    box-shadow: none; 
+  }
+
+  
+  .mb-3 {
+    margin-bottom: 20px;
+  }
+input,textarea{
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.514)!important ;
+    font-size: 12px!important;
+}
+
+.form-control:focus{
+    /* border-top: 2px solid #0c50a1; */
+    border-top: 2px solid #494e56;
+    /* border-color:#007bff; */
+}
+
+.bg_blue{
+/* background-color: #0c50a1; */
+background-color: #0c4fa1ab;
+}
+
+.dataTables_length label{
+font-size: 12px;
+margin-top: 10px;
+}
+.dataTables_length select{
+  padding: 0 4px;
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.192);
+  }
+.dataTables_filter label{
+  font-size: 12px;
+}  
+.dataTables_filter input{
+  height:31px
+}
+.dataTables_info{
+  font-size: 12px;
+}
+.dataTables_paginate a {
+  font-size: 12px;
+  padding:2px 5px;
+}
+.dataTables_paginate li {
+margin-top: 5px;
+  width:20px;
+}
+.dataTables_paginate .pagination {
+ padding-top: 5px;
+}
+
+
+
+
+#req_assets_table .bg_red1{
+    background: rgba(255, 0, 0, 0.336);
+}
+
+#req_assets_table .bg_green1{
+    background: rgba(0, 128, 0, 0.253);
+}
+
+
+

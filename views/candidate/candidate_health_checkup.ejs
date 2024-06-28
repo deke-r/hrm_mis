@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Medical Health Check Up</title>
+    
+    <link rel="stylesheet" href="/static/css/candidate_health_checkup.css">
+
+</head>
+<body>
+
+    <%-include('../common/candidate_common/candidate_header')%>
+    <%-include('../common/candidate_common/candidate_sidebar')%>
+
+        <div class="mt_46"></div>
+        <div class="container-fluid h-100 position-relative">
+            <button class=" pos offbtn  p-0 " type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <i
+                    class="fa-solid  fa-angles-right rounded-end-3 text-light side_button fs-5 bg_bl  span_expand "></i>
+            </button>
+            <div class="row dyn_row justify-content-end ">
+
+                <div class="col-xl-10 col-md-9 col-8 dyn_col px-3">
+
+
+
+    
+<div class="container-fluid my-4">
+    <h5  id="PRE">Pre Medical Health Check Up</h5>
+    <form id="healthCheckupForm" enctype="multipart/form-data">
+    <div class="row">
+   
+        
+    
+            <div class="col-sm-6 col-md-4 mt-3">
+                <label for="blood_count">Complete Blood Count & ESR</label>
+                <input type="file" id="blood_count" name="blood_count" class="form-control shad_dark" >
+            </div>
+            <div class="col-sm-6 col-md-4 mt-3">
+                <label for="urine">Urine</label>
+                <input type="file" id="urine" name="urine" class="form-control shad_dark" accept=".pdf">
+            </div>
+            <div class="col-sm-6 col-md-4 mt-3">
+                <label for="abc_grouping">ABC Grouping & Rh Typing</label>
+                <input type="file" id="abc_grouping" name="abc_grouping" class="form-control shad_dark" >
+            </div>
+            <div class="col-sm-6 col-md-4 mt-3">
+                <label for="xray_chest">X-ray Chest</label>
+                <input type="file" id="xray_chest" name="xray_chest" class="form-control shad_dark" >
+            </div>
+            <div class="col-sm-6 col-md-4 mt-3">
+                <label for="diabetes_panel">Diabetes Panel</label>
+                <input type="file" id="diabetes_panel" name="diabetes_panel" class="form-control shad_dark" >
+            </div>
+            <div class="col-sm-6 col-md-4 mt-3">
+                <label for="cardiac_risk_profile">Cardiac Risk Profile</label>
+                <input type="file" id="cardiac_risk_profile" name="cardiac_risk_profile" class="form-control shad_dark" >
+            </div>
+            <div class="col-sm-6 col-md-4 mt-3">
+                <label for="fitness_certificate">Fitness Certificate</label>
+                <input type="file" id="fitness_certificate" name="fitness_certificate" class="form-control shad_dark" >
+            </div>
+            <div class="col-sm-6 col-md-4 mt-3">
+                <label for="general_physical_exam">General Physical Examination</label>
+                <input type="file" id="general_physical_exam" name="general_physical_exam" class="form-control shad_dark" >
+            </div>
+            <div class="col-sm-6 col-md-4 mt-5 text-center">
+                <button type="submit" id="submitBtn" class="submitBtn">Submit</button>
+            </div>
+    
+    </div>
+</form>
+</div>
+
+
+<script src="/static/cdn/jquery/jquery3.7.1.js"></script>
+<script src="/static/js/candidate_health_checkup.js"></script>
+<script src="/static/cdn/sweetalert2/sweetalert2.js"></script>
+
+
+
+</body>
+</html>
